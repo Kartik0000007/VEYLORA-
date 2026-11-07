@@ -1,0 +1,126 @@
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl">
+  <div class="site-header-inner w-full max-w-[1680px] mx-auto px-margin flex flex-col justify-center gap-1 py-2">
+
+    <!-- Brand row -->
+    <div class="flex items-center justify-between w-full">
+      <a href="index.html" class="brand group flex items-center gap-2 sm:gap-space-md" aria-label="Veylora — Home">
+        <span class="brand-mark relative flex items-center justify-center shrink-0">
+          <span class="brand-halo absolute inset-0 rounded-full" aria-hidden="true"></span>
+          <img src="assets/images/veylora-luxury-monogram-logo.png" alt="Veylora Luxury Monogram" class="brand-img relative h-10 w-auto object-contain sm:h-11"/>
+        </span>
+        <span class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary leading-none">VEYLORA</span>
+          <span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] mt-1 hidden sm:block">HAUTE CURATION</span>
+        </span>
+      </a>
+
+      <div class="flex items-center gap-1.5 sm:gap-space-md lg:gap-space-lg">
+        <div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-on-surface">
+          <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+          <span class="font-label-caps-sm text-label-caps-sm tracking-wider">AMAZON.IN VERIFIED DEALS</span>
+        </div>
+
+        <button type="button" aria-label="Search Archive" data-search-open class="icon-btn flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[22px]">search</span>
+        </button>
+
+        <button type="button" aria-label="Saved Wishlist" data-wishlist class="icon-btn relative flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[22px]">favorite</span>
+          <span id="wishlist-count" data-wishlist-count class="absolute -top-1 -right-1.5 bg-primary text-on-primary font-metadata text-metadata px-1 rounded-full h-4 min-w-[16px] flex items-center justify-center font-bold">4</span>
+        </button>
+
+        <button type="button" aria-label="Curator Account" data-account class="hidden sm:flex w-9 h-9 rounded-full bg-primary items-center justify-center text-on-primary transition-transform duration-300 hover:scale-105 active:scale-95">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+        </button>
+
+        <button type="button" id="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu" class="icon-btn lg:hidden flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[24px]" data-menu-icon>menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Desktop navigation -->
+    <nav class="hidden lg:flex items-center justify-center gap-2 xl:gap-space-lg overflow-x-auto no-scrollbar" aria-label="Primary navigation">
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="home" href="index.html">HOME</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="men" href="men.html">MEN</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="women" href="women.html">WOMEN</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="clothing" href="clothing.html">CLOTHING</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="footwear" href="footwear.html">FOOTWEAR</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="accessories" href="accessories.html">ACCESSORIES</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="aesthetics" href="aesthetics.html">AESTHETICS</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="trending" href="trending.html">TRENDING</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="the-style-edit" href="style-edit.html">THE STYLE EDIT</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile / tablet navigation drawer -->
+<div id="mobile-menu" class="mobile-menu fixed inset-0 z-[60]" aria-hidden="true">
+  <div class="mobile-menu-backdrop absolute inset-0" data-menu-close></div>
+  <aside class="mobile-menu-panel absolute right-0 top-0 h-full w-full max-w-[420px] bg-surface-container-low border-l border-outline-variant/40 flex flex-col" role="dialog" aria-modal="true" aria-label="Navigation" tabindex="-1">
+    <div class="flex items-center justify-between px-6 pt-6 pb-4 border-b border-outline-variant/30">
+      <a href="index.html" aria-label="Veylora — Home" class="flex items-center gap-3">
+        <img src="assets/images/veylora-luxury-monogram-logo.png" alt="Veylora Monogram" class="h-10 w-auto"/>
+        <span class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary leading-none">VEYLORA</span>
+          <span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] mt-1">HAUTE CURATION</span>
+        </span>
+      </a>
+      <button type="button" data-menu-close aria-label="Close navigation" class="icon-btn flex items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto px-6 py-6 flex flex-col gap-1" aria-label="Mobile navigation">
+      <a class="drawer-link" data-path="home" href="index.html"><span class="drawer-index">01</span><span class="drawer-label">Home</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="men" href="men.html"><span class="drawer-index">02</span><span class="drawer-label">Men's Archive</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="women" href="women.html"><span class="drawer-index">03</span><span class="drawer-label">Women's Edit</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="clothing" href="clothing.html"><span class="drawer-index">04</span><span class="drawer-label">Clothing Catalogue</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="footwear" href="footwear.html"><span class="drawer-index">05</span><span class="drawer-label">Footwear</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="accessories" href="accessories.html"><span class="drawer-index">06</span><span class="drawer-label">Accessories</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="aesthetics" href="aesthetics.html"><span class="drawer-index">07</span><span class="drawer-label">18 Aesthetic Moods</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="trending" href="trending.html"><span class="drawer-index">08</span><span class="drawer-label">Trending Curations</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="the-style-edit" href="style-edit.html"><span class="drawer-index">09</span><span class="drawer-label">The Style Edit</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+    </nav>
+
+    <div class="px-6 py-5 border-t border-outline-variant/30 flex flex-col gap-3">
+      <button type="button" data-search-open class="w-full py-3 rounded bg-primary text-on-primary font-label-caps-lg text-label-caps-lg uppercase tracking-widest flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">search</span>
+        <span>Search the Archive</span>
+      </button>
+      <div class="flex items-center justify-between">
+        <span class="font-metadata text-metadata text-outline uppercase tracking-wider">Edition India · MMXXV</span>
+        <span class="flex items-center gap-1 text-primary font-metadata text-metadata uppercase tracking-wider">
+          <span class="material-symbols-outlined text-[14px]">verified</span> Amazon.in
+        </span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- Thumb-reachable mobile quick navigation -->
+<nav class="mobile-bottom-nav" aria-label="Quick navigation">
+  <a class="bottom-nav-item" data-bottom-path="home" href="index.html">
+    <span class="material-symbols-outlined" aria-hidden="true">home</span>
+    <span class="bottom-nav-label">Home</span>
+  </a>
+  <a class="bottom-nav-item" data-bottom-path="women" href="women.html">
+    <span class="material-symbols-outlined" aria-hidden="true">woman</span>
+    <span class="bottom-nav-label">Women</span>
+  </a>
+  <a class="bottom-nav-item" data-bottom-path="men" href="men.html">
+    <span class="material-symbols-outlined" aria-hidden="true">man</span>
+    <span class="bottom-nav-label">Men</span>
+  </a>
+  <a class="bottom-nav-item" data-bottom-path="trending" href="trending.html">
+    <span class="material-symbols-outlined" aria-hidden="true">local_fire_department</span>
+    <span class="bottom-nav-label">Trending</span>
+  </a>
+  <button type="button" class="bottom-nav-item" data-wishlist aria-label="Saved Wishlist">
+    <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+    <span class="bottom-nav-label">Wishlist</span>
+    <span class="bottom-nav-count" data-wishlist-count>4</span>
+  </button>
+</nav>

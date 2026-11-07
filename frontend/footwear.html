@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<meta name="theme-color" content="#121315"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="description" content="The Veylora footwear index: hand-welted boots, sartorial oxfords, minimalist sneakers and sculptural silhouettes, curated for patina and permanence."/>
+<title>Footwear Index — Veylora | Boots, Loafers &amp; Sculptural Shoes</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/js/tailwind-theme.js"></script>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<style>
+  @layer base {
+    html, body { margin: 0; padding: 0; }
+    body { overscroll-behavior: none; }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+  }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+</style>
+<script>document.documentElement.classList.add('anim-ok');</script>
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}#preloader{display:none!important}</style></noscript>
+
+</head>
+<body data-page="footwear" class="bg-background text-on-surface font-body-md antialiased selection:bg-primary selection:text-on-primary">
+<!-- Initial curtain / preloader -->
+<div id="preloader" aria-hidden="true">
+  <div class="preloader-inner">
+    <img src="assets/images/veylora-luxury-monogram-logo.png" alt="" class="preloader-mark"/>
+    <span class="preloader-name">VEYLORA</span>
+    <span class="preloader-line"><i></i></span>
+    <span class="preloader-sub">HAUTE CURATION</span>
+  </div>
+</div>
+
+<!-- Page transition curtain -->
+<div id="page-transition" aria-hidden="true"><span class="transition-mark">V</span></div>
+
+<!-- Reading progress -->
+<div id="scroll-progress" aria-hidden="true"><span></span></div>
+
+<!-- Texture + ambient cursor -->
+<div class="grain" aria-hidden="true"></div>
+<div id="cursor-glow" aria-hidden="true"></div>
+
+<!-- Global search overlay -->
+<div id="search-overlay" class="search-overlay fixed inset-0 z-[70]" role="dialog" aria-modal="true" aria-label="Search the Veylora archive" aria-hidden="true">
+  <div class="search-backdrop absolute inset-0" data-search-close></div>
+  <div class="search-panel relative mx-auto w-[calc(100%-1.5rem)] sm:w-[calc(100%-3rem)] max-w-2xl mt-[10vh] sm:mt-[14vh] bg-surface-container-low border border-outline-variant/40 rounded-xl shadow-2xl p-5 sm:p-9">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <span class="font-label-caps-sm text-label-caps-sm text-primary tracking-[0.25em] uppercase">Curatorial Search</span>
+        <h2 class="font-headline-md text-headline-md text-on-surface mt-2">What are you looking for?</h2>
+      </div>
+      <button type="button" data-search-close aria-label="Close search" class="icon-btn shrink-0 flex items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+
+    <form action="search.html" method="get" class="mt-6" data-search-form>
+      <div class="search-field flex items-center gap-2 sm:gap-3 border-b border-outline-variant/50 focus-within:border-primary transition-colors pb-2">
+        <span class="material-symbols-outlined text-primary text-[20px]">search</span>
+        <input type="search" name="q" id="global-search-input" autocomplete="off" aria-label="Search the Veylora archive" placeholder="Search by fibre, mood, or era…" class="flex-1 min-w-0 bg-transparent text-on-surface font-body-lg text-body-lg focus:outline-none placeholder:text-outline"/>
+        <button type="submit" aria-label="Search" class="shrink-0 px-3 sm:px-4 py-2 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center justify-center">
+          <span class="hidden sm:inline">Search</span>
+          <span class="material-symbols-outlined text-[18px] sm:hidden" aria-hidden="true">arrow_forward</span>
+        </button>
+      </div>
+    </form>
+
+    <div class="mt-6">
+      <span class="font-metadata text-metadata text-outline uppercase tracking-wider">Curated shortcuts</span>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <a href="aesthetics.html" class="search-chip">Quiet Luxury</a>
+        <a href="aesthetics.html" class="search-chip">Old Money</a>
+        <a href="aesthetics.html" class="search-chip">Dark Academia</a>
+        <a href="style-edit.html" class="search-chip">The Style Edit</a>
+        <a href="trending.html" class="search-chip">The Viral Pulse</a>
+        <a href="search-empty.html" class="search-chip">Vicuña Storm Parka</a>
+      </div>
+    </div>
+
+    <p class="mt-6 font-metadata text-metadata text-outline tracking-wider uppercase flex flex-wrap items-center gap-2">
+      <span class="material-symbols-outlined text-[14px]">keyboard</span>
+      <span>Press <kbd class="kbd">Esc</kbd> to close</span>
+      <span class="hidden sm:inline-flex items-center gap-2">
+        <span class="opacity-50">·</span>
+        <kbd class="kbd">/</kbd>
+        <span>to search anywhere</span>
+      </span>
+    </p>
+  </div>
+</div>
+
+<!-- Toasts -->
+<div id="toast-stack" class="fixed right-4 sm:right-6 bottom-24 z-[80] flex flex-col gap-3 w-[calc(100%-2rem)] sm:w-auto sm:max-w-sm" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Back to top with progress ring -->
+<button id="to-top" type="button" aria-label="Back to top">
+  <span class="to-top-ring" aria-hidden="true"></span>
+  <span class="material-symbols-outlined to-top-icon">arrow_upward</span>
+</button>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl">
+  <div class="site-header-inner w-full max-w-[1680px] mx-auto px-margin flex flex-col justify-center gap-1 py-2">
+
+    <!-- Brand row -->
+    <div class="flex items-center justify-between w-full">
+      <a href="index.html" class="brand group flex items-center gap-2 sm:gap-space-md" aria-label="Veylora — Home">
+        <span class="brand-mark relative flex items-center justify-center shrink-0">
+          <span class="brand-halo absolute inset-0 rounded-full" aria-hidden="true"></span>
+          <img src="assets/images/veylora-luxury-monogram-logo.png" alt="Veylora Luxury Monogram" class="brand-img relative h-10 w-auto object-contain sm:h-11"/>
+        </span>
+        <span class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary leading-none">VEYLORA</span>
+          <span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] mt-1 hidden sm:block">HAUTE CURATION</span>
+        </span>
+      </a>
+
+      <div class="flex items-center gap-1.5 sm:gap-space-md lg:gap-space-lg">
+        <div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-on-surface">
+          <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+          <span class="font-label-caps-sm text-label-caps-sm tracking-wider">AMAZON.IN VERIFIED DEALS</span>
+        </div>
+
+        <button type="button" aria-label="Search Archive" data-search-open class="icon-btn flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[22px]">search</span>
+        </button>
+
+        <button type="button" aria-label="Saved Wishlist" data-wishlist class="icon-btn relative flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[22px]">favorite</span>
+          <span id="wishlist-count" data-wishlist-count class="absolute -top-1 -right-1.5 bg-primary text-on-primary font-metadata text-metadata px-1 rounded-full h-4 min-w-[16px] flex items-center justify-center font-bold">4</span>
+        </button>
+
+        <button type="button" aria-label="Curator Account" data-account class="hidden sm:flex w-9 h-9 rounded-full bg-primary items-center justify-center text-on-primary transition-transform duration-300 hover:scale-105 active:scale-95">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+        </button>
+
+        <button type="button" id="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu" class="icon-btn lg:hidden flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[24px]" data-menu-icon>menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Desktop navigation -->
+    <nav class="hidden lg:flex items-center justify-center gap-2 xl:gap-space-lg overflow-x-auto no-scrollbar" aria-label="Primary navigation">
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="home" href="index.html">HOME</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="men" href="men.html">MEN</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="women" href="women.html">WOMEN</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="clothing" href="clothing.html">CLOTHING</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="footwear" href="footwear.html">FOOTWEAR</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="accessories" href="accessories.html">ACCESSORIES</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="aesthetics" href="aesthetics.html">AESTHETICS</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="trending" href="trending.html">TRENDING</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="the-style-edit" href="style-edit.html">THE STYLE EDIT</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile / tablet navigation drawer -->
+<div id="mobile-menu" class="mobile-menu fixed inset-0 z-[60]" aria-hidden="true">
+  <div class="mobile-menu-backdrop absolute inset-0" data-menu-close></div>
+  <aside class="mobile-menu-panel absolute right-0 top-0 h-full w-full max-w-[420px] bg-surface-container-low border-l border-outline-variant/40 flex flex-col" role="dialog" aria-modal="true" aria-label="Navigation" tabindex="-1">
+    <div class="flex items-center justify-between px-6 pt-6 pb-4 border-b border-outline-variant/30">
+      <a href="index.html" aria-label="Veylora — Home" class="flex items-center gap-3">
+        <img src="assets/images/veylora-luxury-monogram-logo.png" alt="Veylora Monogram" class="h-10 w-auto"/>
+        <span class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary leading-none">VEYLORA</span>
+          <span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] mt-1">HAUTE CURATION</span>
+        </span>
+      </a>
+      <button type="button" data-menu-close aria-label="Close navigation" class="icon-btn flex items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto px-6 py-6 flex flex-col gap-1" aria-label="Mobile navigation">
+      <a class="drawer-link" data-path="home" href="index.html"><span class="drawer-index">01</span><span class="drawer-label">Home</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="men" href="men.html"><span class="drawer-index">02</span><span class="drawer-label">Men's Archive</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="women" href="women.html"><span class="drawer-index">03</span><span class="drawer-label">Women's Edit</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="clothing" href="clothing.html"><span class="drawer-index">04</span><span class="drawer-label">Clothing Catalogue</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="footwear" href="footwear.html"><span class="drawer-index">05</span><span class="drawer-label">Footwear</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="accessories" href="accessories.html"><span class="drawer-index">06</span><span class="drawer-label">Accessories</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="aesthetics" href="aesthetics.html"><span class="drawer-index">07</span><span class="drawer-label">18 Aesthetic Moods</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="trending" href="trending.html"><span class="drawer-index">08</span><span class="drawer-label">Trending Curations</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="the-style-edit" href="style-edit.html"><span class="drawer-index">09</span><span class="drawer-label">The Style Edit</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+    </nav>
+
+    <div class="px-6 py-5 border-t border-outline-variant/30 flex flex-col gap-3">
+      <button type="button" data-search-open class="w-full py-3 rounded bg-primary text-on-primary font-label-caps-lg text-label-caps-lg uppercase tracking-widest flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">search</span>
+        <span>Search the Archive</span>
+      </button>
+      <div class="flex items-center justify-between">
+        <span class="font-metadata text-metadata text-outline uppercase tracking-wider">Edition India · MMXXV</span>
+        <span class="flex items-center gap-1 text-primary font-metadata text-metadata uppercase tracking-wider">
+          <span class="material-symbols-outlined text-[14px]">verified</span> Amazon.in
+        </span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- Thumb-reachable mobile quick navigation -->
+<nav class="mobile-bottom-nav" aria-label="Quick navigation">
+  <a class="bottom-nav-item" data-bottom-path="home" href="index.html">
+    <span class="material-symbols-outlined" aria-hidden="true">home</span>
+    <span class="bottom-nav-label">Home</span>
+  </a>
+  <a class="bottom-nav-item" data-bottom-path="women" href="women.html">
+    <span class="material-symbols-outlined" aria-hidden="true">woman</span>
+    <span class="bottom-nav-label">Women</span>
+  </a>
+  <a class="bottom-nav-item" data-bottom-path="men" href="men.html">
+    <span class="material-symbols-outlined" aria-hidden="true">man</span>
+    <span class="bottom-nav-label">Men</span>
+  </a>
+  <a class="bottom-nav-item" data-bottom-path="trending" href="trending.html">
+    <span class="material-symbols-outlined" aria-hidden="true">local_fire_department</span>
+    <span class="bottom-nav-label">Trending</span>
+  </a>
+  <button type="button" class="bottom-nav-item" data-wishlist aria-label="Saved Wishlist">
+    <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+    <span class="bottom-nav-label">Wishlist</span>
+    <span class="bottom-nav-count" data-wishlist-count>4</span>
+  </button>
+</nav>
+
+<main id="main-content" tabindex="-1" class="w-full max-w-[1680px] mx-auto px-margin pt-28 flex-1 min-h-[calc(100vh-112px)]"><div class="flex flex-col w-full">
+<!-- Top Breadcrumb & Metadata Synchronization Bar -->
+<section class="w-full pb-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm bg-surface-container-lowest px-space-lg py-space-sm rounded">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<a class="font-label-caps-sm text-label-caps-sm hover:text-primary transition-colors" href="index.html">HOME</a>
+<span class="font-metadata text-metadata text-outline">/</span>
+<a class="font-label-caps-sm text-label-caps-sm hover:text-primary transition-colors" href="clothing.html">ALL COLLECTIONS</a>
+<span class="font-metadata text-metadata text-outline">/</span>
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest font-semibold">THE FOOTWEAR INDEX</span>
+</div>
+<div class="flex items-center gap-space-md text-outline">
+<div class="flex items-center gap-space-xs">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-metadata text-metadata text-secondary tracking-wider uppercase">INDEX SYNCHRONIZED: 12 MINS AGO</span>
+</div>
+<span class="font-metadata text-metadata text-outline-variant">•</span>
+<span class="font-metadata text-metadata text-primary tracking-wider font-semibold">386 CURATED PAIRS</span>
+</div>
+</div>
+</section>
+<!-- Collection Hero -->
+<section class="w-full relative overflow-hidden bg-surface-container-low rounded p-space-lg md:p-space-xl mb-space-lg shadow-xl">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl flex flex-col gap-space-sm">
+<div class="inline-flex items-center gap-space-xs w-fit px-space-sm py-1 bg-surface-container-highest rounded text-primary">
+<span class="material-symbols-outlined text-[14px]">architecture</span>
+<span class="font-label-caps-sm text-label-caps-sm tracking-[0.2em] uppercase">EDITION MMXXV • ARCHIVE VOL. 05 — SOLE ARCHITECTURE &amp; ARTISANAL LASTS</span>
+</div>
+<h1 class="font-headline-hero text-headline-hero-mobile sm:text-headline-hero text-on-surface tracking-tight mt-space-xs">
+        THE FOOTWEAR COMPENDIUM
+      </h1>
+<p class="font-headline-sm text-headline-sm text-primary italic font-normal">
+        Sculpted Soles, Goodyear-Welted Leather &amp; Minimalist Form
+      </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed pt-space-xs">
+        A discerning taxonomy of footwear engineered across classic cobbler craft, archival sneaker profiles, architectural heels, and unlined summer sandals mapped directly to verified Amazon.in affiliate gateways.
+      </p>
+<!-- Pill Filter Strip -->
+<div class="flex items-center gap-space-xs flex-wrap pt-space-md">
+<button class="px-space-md py-space-xs rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center gap-space-xs shadow-md">
+<span>All Footwear</span>
+<span class="px-1.5 py-0.5 rounded-full bg-on-primary/20 text-on-primary font-metadata text-metadata">386</span>
+</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center gap-space-xs transition-colors">
+<span>Sneakers &amp; Trainers</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest text-secondary font-metadata text-metadata">114</span>
+</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center gap-space-xs transition-colors">
+<span>Chelsea &amp; Lace-Up Boots</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest text-secondary font-metadata text-metadata">78</span>
+</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center gap-space-xs transition-colors">
+<span>Sartorial &amp; Formal Shoes</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest text-secondary font-metadata text-metadata">64</span>
+</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center gap-space-xs transition-colors">
+<span>Loafers &amp; Mules</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest text-secondary font-metadata text-metadata">48</span>
+</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center gap-space-xs transition-colors">
+<span>Sandals &amp; Slides</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest text-secondary font-metadata text-metadata">42</span>
+</button>
+<button class="px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center gap-space-xs transition-colors">
+<span>Sculptural Heels &amp; Pumps</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest text-secondary font-metadata text-metadata">40</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Live Stats Bar & Active Filter Chips -->
+<section class="w-full bg-surface-container-lowest p-space-md rounded mb-space-lg flex flex-col lg:flex-row lg:items-center justify-between gap-space-md shadow-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-space-xs pr-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-on-surface">386 Verified Footwear Discoveries</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-metadata text-metadata">
+          Boots &amp; Loafers
+          <button class="text-outline hover:text-on-surface transition-colors leading-none">✕</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-metadata text-metadata">
+          Construction: Goodyear Welt
+          <button class="text-outline hover:text-on-surface transition-colors leading-none">✕</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-metadata text-metadata">
+          Prime Fulfilled
+          <button class="text-outline hover:text-on-surface transition-colors leading-none">✕</button>
+</span>
+<button class="font-label-caps-sm text-label-caps-sm text-primary hover:underline px-space-xs tracking-widest">
+          CLEAR ALL
+        </button>
+</div>
+</div>
+<div class="flex items-center justify-between lg:justify-end gap-space-md">
+<div class="relative">
+<button class="flex items-center justify-between gap-space-md bg-surface-container px-space-md py-space-xs rounded text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors">
+<span class="text-outline-variant font-metadata text-metadata uppercase mr-1">ORDER:</span>
+<span class="font-medium">Curator's Recommendation</span>
+<span class="material-symbols-outlined text-primary text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="flex items-center bg-surface-container rounded p-0.5">
+<button aria-label="3-column view" class="p-1 rounded bg-surface-container-highest text-primary">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button aria-label="Compact view" class="p-1 rounded text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">view_column</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Main Body: Sticky Filter Panel + Product Gallery -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Specialized Left Sticky Filter Panel -->
+<aside class="w-full lg:col-span-3 lg:sticky lg:top-32 flex flex-col gap-space-md bg-surface-container-low p-space-lg rounded shadow-xl" aria-label="Product filters">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-lowest -mx-space-lg -mt-space-lg p-space-lg rounded-t">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+<span class="font-label-caps-lg text-label-caps-lg tracking-widest uppercase text-on-surface">FILTERS</span>
+</div>
+<button class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline hover:text-primary transition-colors">
+          RESET
+        </button>
+</div>
+<!-- Shoe Category / Silhouettes -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary font-semibold">Silhouettes &amp; Category</span>
+<div class="flex flex-col gap-space-xs">
+<label class="flex items-center justify-between cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-4 rounded bg-primary flex items-center justify-center text-on-primary text-[12px] font-bold">✓</span>
+<span class="font-body-sm text-body-sm text-on-surface">Sneakers &amp; Trainers</span>
+</div>
+<span class="font-metadata text-metadata text-outline">114</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-4 rounded bg-primary flex items-center justify-center text-on-primary text-[12px] font-bold">✓</span>
+<span class="font-body-sm text-body-sm text-on-surface">Hand-Welted Boots</span>
+</div>
+<span class="font-metadata text-metadata text-outline">78</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sartorial Oxfords &amp; Derbies</span>
+</div>
+<span class="font-metadata text-metadata text-outline">64</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Penny &amp; Horsebit Loafers</span>
+</div>
+<span class="font-metadata text-metadata text-outline">48</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Artisanal Leather Sandals</span>
+</div>
+<span class="font-metadata text-metadata text-outline">42</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Architectural Heels &amp; Pumps</span>
+</div>
+<span class="font-metadata text-metadata text-outline">40</span>
+</label>
+</div>
+</div>
+<!-- Price Band -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary font-semibold">Price Bracket (INR)</span>
+<span class="font-metadata text-metadata text-outline">AMAZON.IN</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="bg-surface-container-highest px-space-sm py-1 rounded text-left flex-1">
+<span class="font-metadata text-metadata text-outline block leading-none">MIN</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">₹1,800</span>
+</div>
+<span class="text-outline font-metadata text-metadata">—</span>
+<div class="bg-surface-container-highest px-space-sm py-1 rounded text-right flex-1">
+<span class="font-metadata text-metadata text-outline block leading-none">MAX</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">₹38,000</span>
+</div>
+</div>
+<!-- Stylized Range Bar -->
+<div class="w-full bg-surface-container h-1.5 rounded-full relative my-1">
+<div class="absolute left-1/12 right-2/6 h-full bg-primary rounded-full"></div>
+<div class="absolute left-1/12 top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-on-surface rounded-full shadow-md"></div>
+<div class="absolute right-2/6 top-1/2 -translate-y-1/2 translate-x-1/2 w-3.5 h-3.5 bg-on-surface rounded-full shadow-md"></div>
+</div>
+</div>
+<!-- Shoe Size Filter -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary font-semibold">Shoe Last Size</span>
+<div class="flex items-center gap-1 bg-surface-container-highest p-0.5 rounded text-metadata">
+<span class="px-1.5 py-0.5 rounded bg-primary text-on-primary font-bold">EU</span>
+<span class="px-1.5 py-0.5 rounded text-outline hover:text-on-surface cursor-pointer">UK</span>
+<span class="px-1.5 py-0.5 rounded text-outline hover:text-on-surface cursor-pointer">US</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-1.5">
+<button class="py-1.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm">39</button>
+<button class="py-1.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm">40</button>
+<button class="py-1.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm">41</button>
+<button class="py-1.5 rounded bg-primary text-on-primary font-body-sm text-body-sm font-bold shadow-sm">42</button>
+<button class="py-1.5 rounded bg-primary text-on-primary font-body-sm text-body-sm font-bold shadow-sm">43</button>
+<button class="py-1.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm">44</button>
+<button class="py-1.5 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm">45</button>
+<button class="py-1.5 rounded bg-surface-container-lowest text-outline-variant font-body-sm text-body-sm cursor-not-allowed">46</button>
+</div>
+</div>
+<!-- Leather & Upper Construction -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary font-semibold">Upper Construction</span>
+<div class="flex flex-col gap-space-xs">
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-primary flex items-center justify-center text-on-primary text-[12px] font-bold">✓</span>
+<span class="font-body-sm text-body-sm text-on-surface">Full-Grain Box Calf (Italian)</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-primary flex items-center justify-center text-on-primary text-[12px] font-bold">✓</span>
+<span class="font-body-sm text-body-sm text-on-surface">Horween Chromexcel Leather</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reverse Roughout Suede</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">High-Density Primeknit &amp; Canvas</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vegetable-Tanned Vachetta</span>
+</label>
+</div>
+</div>
+<!-- Sole Construction -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary font-semibold">Sole Engineering</span>
+<div class="flex flex-col gap-space-xs">
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-primary flex items-center justify-center text-on-primary text-[12px] font-bold">✓</span>
+<span class="font-body-sm text-body-sm text-on-surface">Goodyear Welted (Resoleable)</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Blake Stitch (Flexible)</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vibram Commando Lugged</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Crepe Rubber Sole</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center text-transparent text-[12px]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cuoio Leather Outsole</span>
+</label>
+</div>
+</div>
+<!-- Leather Tone & Swatches -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary font-semibold">Tannery Palette</span>
+<div class="flex items-center gap-2">
+<button aria-label="Espresso Brown" class="w-6 h-6 rounded-full bg-[#3B2219] ring-2 ring-primary" title="Espresso Brown"></button>
+<button aria-label="Onyx Black" class="w-6 h-6 rounded-full bg-[#121315] ring-1 ring-surface-variant" title="Onyx Black"></button>
+<button aria-label="Oxblood Burgundy" class="w-6 h-6 rounded-full bg-[#4A1521] ring-1 ring-surface-variant" title="Oxblood Burgundy"></button>
+<button aria-label="Chalk White" class="w-6 h-6 rounded-full bg-[#E5E0D8] ring-1 ring-surface-variant" title="Chalk White"></button>
+<button aria-label="Camel Tan" class="w-6 h-6 rounded-full bg-[#B28247] ring-1 ring-surface-variant" title="Camel Tan"></button>
+<button aria-label="Forest Suede" class="w-6 h-6 rounded-full bg-[#2C3B2D] ring-1 ring-surface-variant" title="Forest Suede"></button>
+</div>
+</div>
+<!-- Assurance & Fulfillment -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary font-semibold">Fulfillment Guarantee</span>
+<div class="flex flex-col gap-space-xs">
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-primary flex items-center justify-center text-on-primary text-[12px] font-bold">✓</span>
+<span class="font-body-sm text-body-sm text-on-surface">Amazon Prime Eligible</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-primary flex items-center justify-center text-on-primary text-[12px] font-bold">✓</span>
+<span class="font-body-sm text-body-sm text-on-surface">Next-Day Fulfilled Express</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer py-1 px-1.5 rounded hover:bg-surface-container transition-colors">
+<span class="w-4 h-4 rounded bg-primary flex items-center justify-center text-on-primary text-[12px] font-bold">✓</span>
+<span class="font-body-sm text-body-sm text-on-surface">4.2+ Star Review Certified</span>
+</label>
+</div>
+</div>
+<!-- Filter Action CTAs -->
+<div class="flex flex-col gap-space-xs pt-space-sm">
+<button class="w-full py-space-sm bg-primary text-on-primary rounded font-label-caps-lg text-label-caps-lg uppercase tracking-wider font-bold shadow-md hover:bg-primary-container transition-colors">
+          APPLY REFINEMENTS
+        </button>
+<button class="w-full py-space-xs text-outline hover:text-on-surface rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest transition-colors">
+          RESET ALL FILTERS
+        </button>
+</div>
+</aside>
+<!-- Comprehensive Footwear Product Gallery (9 Columns) -->
+<section class="w-full lg:col-span-9 flex flex-col gap-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg 2xl:grid-cols-4">
+<!-- Card 1 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Hand-Welted Horween Leather Chelsea Boots" fetchpriority="high" decoding="async" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Dark luxury studio still life photography of hand welted Horween leather Chelsea boots in burnished espresso tone, resting on raw black slate. Soft directional rim light accentuates the oiled leather texture, elastic side gusset, and heavy contrast welt stitching. Clean studio background with absolute absence of human presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1DlUWjyYqijT3KpvsRQnhgGzwdwEBVkVU9yo2v6nIQ-RZ2JZqKD_tMu7seiAKp0Tw6Mb0WcfcRPLsO-8ry70Hi69k4F6GgpVdEjxU9VaeSZw7L2qcRf8TI2fNWU31q-tSrkLBxpiRmZrw8G_Wx4ufxSb40cieTRYeoKA1CPoWfb7_qmoL-3A1ZYMu9xA2tHrHhLegEmQ0X5ZWAjtERUPZ4b16eSOGZarqoh5LLxA"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">GOODYEAR WELTED</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">VERAISON LEATHER</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.9</span>
+<span class="font-metadata text-metadata text-outline">(218)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Hand-Welted Horween Leather Chelsea Boots</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹14,299</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹19,000</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-25%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Hand-Welted%20Horween%20Leather%20Chelsea%20Boots" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 2 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Minimalist Low-Top Calfskin Sneakers" decoding="async" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="High-end editorial catalog shot of minimalist low-top Italian nappa leather sneakers in clean chalk white sitting elegantly on a monolithic dark charcoal travertine pedestal. Diffused gallery illumination accentuating clean architectural stitch lines and tonal margom rubber cupsole. Pure footwear object study, strictly no models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPnIRHW5hHWNfiijp0gDRy0odcQNhGcacKLgNPFD7kaa4suIKciaog1aH7xdXpoO5Np9VV1DaC4-QV6U_B5308FjUUQpqhjB0k8RTYI2FwUVFXFdlhlScxslzhXr4nryV0qsO1ys6jiPOgnUwK0sSVq60gvhic8Br-AgNT7uUrnkkvnznL-f-kzEzsajt8dFKaKS_BAe9tAXAzT6Bl2SuRwQ9GI54nAp6QPQEFNrk"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">ITALIAN NAPPA</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">ATELIER COURTS</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.8</span>
+<span class="font-metadata text-metadata text-outline">(340)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Minimalist Low-Top Calfskin Sneakers</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹6,499</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹9,200</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-29%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Minimalist%20Low-Top%20Calfskin%20Sneakers" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 3 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Double Monk-Strap Burnished Oxblood Shoes" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Still life object photography of hand burnished double monk-strap shoes in deep oxblood cordovan leather. Sculptural brass buckles reflecting warm champagne light against an architectural obsidian black background. Subtle reflections on polished shoe counter, no feet or people." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgWdgt3YdPqB-ymdKqClvX07zZFXS8g_-Gs73AC3-fL75cxIw98is3stSWj2Uld5DmoZdBpE507geH2e3edsyrIeu0CUw2qYoTLChNAa_ZunSTAE0bHaw9xKkQEJ2f3rEXTKn_4dJ_06b8VTXB1IihF53H4IdTxGHa6dQ4-h5O_IhA9LA1BCgHcDaNGC4pUCXSqjkqfSoLn0uemw_4GpcX7BUPWvSNe8EI2lttHh0"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">HAND-PATINA</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">SARTORIA MILANO</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.9</span>
+<span class="font-metadata text-metadata text-outline">(112)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Double Monk-Strap Burnished Oxblood Shoes</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹12,850</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹17,500</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-27%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Double%20Monk-Strap%20Burnished%20Oxblood%20Shoes" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 4 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Vibram Lug-Sole Combat Derby Shoes" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Industrial studio product composition showing heavyweight lug sole combat derby shoes with thick Vibram commando tread, matte black waxed leather upper, and tonal eyelets. Set atop textured concrete brutalist plinth under moody low-key studio lighting with no human elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYF3tati7mkomPbkS1NKc9Hd9fCfT_7n8Fwb5alFCuhjJvrzNqlPP3sC4v0tvRU4fHTz2oB04msXdWphmdr5Cr96ZbDnwT2YLM_OEwLSg3u4zaEwHKLRCguI2LJ-Wf2wtBS40AjkTUPHn-oNrqnhgTlP5E4aYQU2tTzR_yQOAkbbovCjiB3fVK6ytnO-Zx4h9k074dXvAFo5RVa1ZsmaFxySe09SQTBwlgGdOz3RU"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">COMMANDO SOLE</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">BRUT FOOTWEAR</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.7</span>
+<span class="font-metadata text-metadata text-outline">(185)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Vibram Lug-Sole Combat Derby Shoes</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹8,990</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹12,000</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-25%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Vibram%20Lug-Sole%20Combat%20Derby%20Shoes" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 5 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Architectural Sculptural Kitten Heel Pumps" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Architectural still life display of sculpted kitten heel pumps crafted in supple ebony Italian calf leather. The shoes feature an oblique geometric heel and razor sharp pointed toe, presented like fine contemporary sculpture on dark matte granite slab. Editorial chiaroscuro lighting, zero humans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxcVgnys0drmKrbmMU9C6JOSV50HjpYdYKNj5TgeZr-5fbZC5s1rSgFDyNnknQ6hchmWk4bqw-hJ1smOgBfkFeQ_qUGDtWN9uOYiH3P_74GNYRdQnvD_Nn471RcKO2nsWdtJJVRQ4Nt4ooC1MGIx96H3IqzFH3jQHk-e52Nefcec3Qq9GMdrwJJRMmJJXUEHuU7EBfjSC47XDevaENWIlZ7uaGj22o2VJCUPjEM5E"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">ITALIAN CALF</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">VALENTINA FLORENCE</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.9</span>
+<span class="font-metadata text-metadata text-outline">(95)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Architectural Sculptural Kitten Heel Pumps</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹16,400</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹22,000</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-25%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Architectural%20Sculptural%20Kitten%20Heel%20Pumps" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 6 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Hand-Braided Leather Fisherman Sandals" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="High angle macro studio product shot of vegetable-tanned tan leather woven fisherman sandals laid flat on weathered volcanic dark basalt stone. Beautiful hand-braided strap detail and brass roller buckle shown in sharp focus with warm natural studio glow. Entirely unmodeled footwear object." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3VISQ6Ue-LK7lW8daZTMPAAJ92ETtrV7PwiF2XHpjq30MgrJIuKFYSH6OIOX_sXLguVAxxK7b0hker3SBKtequ4LTN0DsQBFmO9wvBMzW6xPMWrSGFJebuQuOHI-TWUYXqaXI4ShTBNXcNKO3VREOJ2ssRtLIjGdHRhLgpFOWUyWSsavbmOMIdXtRq2LaJP_amBKgzws8kIIzob3CVBb-fgEdZ87K-Qp2u3cFwao"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">VEG-TANNED</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">MEDITERRANEA</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.8</span>
+<span class="font-metadata text-metadata text-outline">(140)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Hand-Braided Leather Fisherman Sandals</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹5,200</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹7,500</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-31%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Hand-Braided%20Leather%20Fisherman%20Sandals" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 7 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Suede Penny Loafers with Hand-Stitched Apron" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Refined footwear photography of rich tobacco brown reverse suede penny loafers with hand-stitched aprons and dark stacked leather heels. Positioned diagonally on a black oiled walnut tabletop with subtle warm sidelight capturing the velvety nap of the suede. Pure product still life, no models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH5RZwjSxe6z0Ct6MQKYu7ZURdLczBnPZOy3kQAyvNIHvSWpoMClegq5hsXZNVtHitNdlGd89dFeY_kCCAvfAJ6RCY7npdjYS3SX_79S1Q7rWhoiGHjdBxrFResOghJgsAGzQOm21mwH4YVlmc1N0nbMBeWeZaGJUuEomLvuGBp1knlZd4-XL_fopf89723dOoWeS46pX90ANPkEeHCzMD_laEgmYmRiqICqExqUM"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">REVERSE SUEDE</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">TAVISTOCK &amp; CO</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.8</span>
+<span class="font-metadata text-metadata text-outline">(210)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Suede Penny Loafers with Hand-Stitched Apron</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹9,650</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹13,800</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-30%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Suede%20Penny%20Loafers%20with%20Hand-Stitched%20Apron" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 8 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Technical Chunky Gorpcore Trail Sneakers" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Technical gorpcore trail sneaker still life in graphite grey and forest olive technical mesh with ripstop overlays, toggle cord lacing system, and aggressive lugged tread. Shot floating against a deep dark void with sharp architectural lighting accents. No legs or human elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC23CCFS-eYu12L-iBEf03IWrRP8V2y-aZCFKY77XVg3JKKpurFsyUm9mhiG8VayRonU6vN-wBFuvCELn1PZVr7-BQDE2aeIxtA4uXrWl7sC2Hc-kovbyZ-ZjHb0934ugaH84Sxwe_FOgqfr6GbJI_BifWzN8CaKvGYF6rTiPyLgusezDS0Rrxgtug69EQo_PhYrYeeRcvEQSyPIvXWqZyZn3ql43X0jmRgEpgMQA"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">WEATHERPROOF</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">AERODYNE LAB</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.7</span>
+<span class="font-metadata text-metadata text-outline">(315)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Technical Chunky Gorpcore Trail Sneakers</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹7,899</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹10,500</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-25%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Technical%20Chunky%20Gorpcore%20Trail%20Sneakers" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 9 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Espresso Pointed Mule Flats" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Minimalist flat-lay product photography of ultra-soft espresso brown pointed mule flats in supple nappa leather. Arranged in an elegant geometric pairing on dark charcoal linen weave with soft champagne specular highlights highlighting the bevelled vamp. Complete absence of people." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLCNruGcF9F4TmADudA22qBEvde6PBhEVB_OuwUOpiur6e98p0hPem1YilTWY5LldBhgL5E1OsIq86sLPONBd58npytBXPaC7ZD07dNVzA0cyZICeIrRPwCdgBxKbvV960JFUWm5V1rPwR8uyyysvEW5wDmNqaG0opLCBaKg-v0NXIYBwNHK32IV6g-l0izPnLxd7gBsc9AKk-PVryEKhRs5X38-8kPbpPIod8wtg"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">BUTTER SOFT NAPPA</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">ATELIER NOIR</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.9</span>
+<span class="font-metadata text-metadata text-outline">(88)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Espresso Pointed Mule Flats</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹8,400</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹11,900</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-29%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Espresso%20Pointed%20Mule%20Flats" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 10 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Classic Cap-Toe Oxford in Deep Onyx" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Formal luxury footwear studio shot of deep onyx box-calf classic cap-toe Oxford shoes with mirror-shined toe cap. Set against dark architectural concrete pillar under precision museum-grade lighting, displaying Goodyear welt stitching and five eyelet closed lacing. No feet, pure artifact." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCin7usxTGirUWLBzM0ApBfLPYIH-Zx0yBHdy7fVJtLZx0SbvCLKokBEmryR1k5-X-2olPHEwrlMGwnGqZTg6X4QO-w7wJPqPe1iVjpiMbwlx3FPy424A1ITQ4BIJQRD2GlmVQ7XEvbYKi2DfF7pKp8BXzI9uYfvCt8UvzA-vyY8t72PMORgjEwxjFdnsS9V6bU2Zh2Kh6Ici4yYtUlQGn_UGZSEMHl-8HJyg8HSTw"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">BOX CALF LEATHER</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">SAVILE &amp; BOND</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.9</span>
+<span class="font-metadata text-metadata text-outline">(160)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Classic Cap-Toe Oxford in Deep Onyx</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹15,500</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹21,000</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-26%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Classic%20Cap-Toe%20Oxford%20in%20Deep%20Onyx" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 11 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Raw Linen &amp; Suede Espadrille Loafers" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Artisanal summer footwear still life displaying raw linen and taupe suede espadrille loafers featuring a hand-plaited natural jute rope midsole and rubber tread. Photographed on coarse dark slate with warm raking side light casting textured shadows. Sole product focus, completely without human models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRU7Pk4gWgj5oQSoisFIdtZxOkiRJNchiBxVYwrNbz_txZN8X1g5b818KUDJIAics3O5PKvyVq5qB0yH_IvIfyxKWbGsFFgp29OJfqSmONHwKL_-kXEcSc6xbMg_Nqf2RPgt2LM5jcrrDMHBHdFcRpa5hnAhSY_-v2Gr9Ty3PwKo0ymoQnnadTicHbHiDEDW_xtpK33FlkICQtN4wRDIUlEvPGZPIm-GEGF9FuXCQ"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">HANDMADE JUTE</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">COSTA DEL SOL</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.6</span>
+<span class="font-metadata text-metadata text-outline">(92)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Raw Linen &amp; Suede Espadrille Loafers</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹3,850</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹5,500</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-30%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Raw%20Linen%20%26%20Suede%20Espadrille%20Loafers" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+<!-- Card 12 -->
+<article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Strappy Metallic Minimalist Stiletto Sandals" decoding="async" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="Macro luxury product display of strappy champagne gold metallic leather stiletto sandals with micro-thin ankle wrap ties. Positioned upright against a dark matte monolith, with gleaming metallic golden reflections under focused editorial lighting. Strictly unmodeled still life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBthtmXc_C5xoW9owfSfZMunf46bvxSiaanr4jKmxrBLT5QovEFnuZqVBrDlOai35woXXlGOENMaTq8myNpGnjJrqa2kDWBjQBTyFyX4lQGpHyzjTuVcVJ2eU1WWuAeB3MfYwLf-IWrYVwSaCwYaLdolJGE918TBgJh0kbePiIHv_JXtCnNzfl6It70bG2oe3bBo2Rglwhow6oC9pFyiZBZS-XzUQ8HES1MjpiGedo"/>
+<span class="absolute top-3 left-3 bg-surface-container-highest/90 backdrop-blur-md px-2 py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm tracking-wider uppercase">CHAMPAGNE GOLD LEATHER</span>
+<button aria-label="Save to Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-low">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">LUMIÈRE FEMME</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-metadata text-metadata text-on-surface">4.8</span>
+<span class="font-metadata text-metadata text-outline">(74)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Strappy Metallic Minimalist Stiletto Sandals</h2>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹11,200</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹15,000</span>
+<span class="font-metadata text-metadata text-primary font-semibold">-25%</span>
+</div>
+</div>
+<a class="w-full py-2.5 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm mt-space-xs" href="https://www.amazon.in/s?k=Strappy%20Metallic%20Minimalist%20Stiletto%20Sandals" target="_blank" rel="noopener noreferrer sponsored">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</article>
+</div>
+<!-- Pagination & Load More Section -->
+<section class="w-full flex flex-col items-center justify-center gap-space-md py-space-xl bg-surface-container-low rounded shadow-md mt-space-md">
+<button class="px-space-xl py-space-md bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded font-label-caps-lg text-label-caps-lg uppercase tracking-widest flex items-center gap-space-sm transition-colors shadow-sm">
+<span>LOAD NEXT 24 FOOTWEAR PIECES</span>
+<span class="material-symbols-outlined text-primary text-[18px]">south</span>
+</button>
+<div class="flex items-center gap-2 mt-space-xs">
+<button aria-label="Previous Page" class="w-9 h-9 rounded bg-surface-container-highest flex items-center justify-center text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded bg-primary text-on-primary font-bold font-metadata text-metadata">1</button>
+<button class="w-9 h-9 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-metadata text-metadata transition-colors">2</button>
+<button class="w-9 h-9 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-metadata text-metadata transition-colors">3</button>
+<span class="px-1 text-outline font-metadata text-metadata">...</span>
+<button class="w-9 h-9 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-metadata text-metadata transition-colors">32</button>
+<button aria-label="Next Page" class="w-9 h-9 rounded bg-surface-container-highest flex items-center justify-center text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<span class="font-metadata text-metadata text-outline uppercase tracking-widest mt-space-xs">
+          DISPLAYING 1 – 12 OF 386 CURATED FOOTWEAR OBJECTS
+        </span>
+</section>
+</section>
+</div>
+<!-- Affiliate Assurance & Integrity Block -->
+<section class="w-full mt-space-xl p-space-lg md:p-space-xl bg-surface-container-low rounded shadow-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary mb-1">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-bold">Direct Amazon.in Gateway</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          All catalog selections route directly through Amazon India’s secure infrastructure, preserving your Prime delivery benefits, return guarantees, and regional warranty rights.
+        </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary mb-1">
+<span class="material-symbols-outlined text-[22px]">price_check</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-bold">Zero Consumer Markup</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Veylora operates as an architectural directory. The listed price reflects real-time merchant pricing with zero added intermediary cost or hidden platform fees.
+        </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary mb-1">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-bold">Strict Craft &amp; Cobbler Curation</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Every piece is verified for leather grade authenticity, resilient last shape geometry, Goodyear-welt resoleability, and minimum verified consumer durability benchmarks.
+        </p>
+</div>
+</div>
+<!-- Affiliate Disclosure Statement -->
+<div class="bg-surface-container-lowest p-space-md rounded text-center">
+<p class="font-metadata text-metadata text-outline leading-relaxed tracking-wider">
+        AFFILIATE TRANSPARENCY: Curated independently. As an Amazon Associate, Veylora earns from qualifying purchases at no additional cost to you. Product prices and availability are updated periodically and remain subject to real-time merchant fluctuation on Amazon.in.
+      </p>
+</div>
+</section>
+</div></main>
+<!-- Editorial marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span>EVERY STYLE. ONE DESTINATION.</span><i>&#9670;</i>
+      <span>AMAZON.IN VERIFIED DISCOVERIES</span><i>&#9670;</i>
+      <span>18 AESTHETIC MOODS</span><i>&#9670;</i>
+      <span>ZERO MARKUP &mdash; HAUTE INTEGRITY</span><i>&#9670;</i>
+      <span>THE ART OF EVERYDAY STYLE</span><i>&#9670;</i>
+    </div>
+    <div class="marquee-group">
+      <span>EVERY STYLE. ONE DESTINATION.</span><i>&#9670;</i>
+      <span>AMAZON.IN VERIFIED DISCOVERIES</span><i>&#9670;</i>
+      <span>18 AESTHETIC MOODS</span><i>&#9670;</i>
+      <span>ZERO MARKUP &mdash; HAUTE INTEGRITY</span><i>&#9670;</i>
+      <span>THE ART OF EVERYDAY STYLE</span><i>&#9670;</i>
+    </div>
+  </div>
+</div>
+
+<footer class="w-full bg-surface-container-lowest mt-0">
+  <div class="max-w-[1680px] mx-auto px-margin py-10 sm:py-space-xl">
+
+    <div data-reveal class="flex flex-col md:flex-row justify-between items-start md:items-end gap-space-md pb-space-lg">
+      <div class="max-w-xl">
+        <a href="index.html" class="flex items-center gap-3 w-fit group">
+          <img src="assets/images/veylora-luxury-monogram-logo.png" alt="Veylora Monogram" class="h-12 w-auto transition-transform duration-700 group-hover:rotate-6"/>
+          <span class="font-headline-md text-headline-md tracking-tight text-primary uppercase">VEYLORA</span>
+        </a>
+        <p class="font-headline-sm text-headline-sm text-on-surface mt-space-xs italic">THE ART OF EVERYDAY STYLE &mdash; Curated Fashion Discoveries</p>
+        <p class="font-label-caps-sm text-label-caps-sm tracking-[0.2em] text-outline mt-space-xs uppercase">EVERY STYLE. ONE DESTINATION.</p>
+        <div class="flex items-center gap-space-md mt-space-xs">
+          <a class="footer-link cursor-pointer" href="https://www.instagram.com/veylora/" target="_blank" rel="noopener noreferrer" aria-label="Veylora on Instagram">INSTAGRAM</a>
+          <span class="font-metadata text-metadata text-primary" aria-hidden="true">&#9670;</span>
+          <a class="footer-link cursor-pointer" href="https://www.pinterest.com/veylora/" target="_blank" rel="noopener noreferrer" aria-label="Veylora on Pinterest">PINTEREST</a>
+        </div>
+
+      </div>
+      <div class="flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container rounded">
+        <span class="material-symbols-outlined text-primary text-[16px]">public</span>
+        <span class="font-metadata text-metadata text-on-surface-variant tracking-wider uppercase">EDITION INDIA / GLOBAL DISCOVERY</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 sm:gap-x-10 py-space-lg">
+      <div data-reveal class="flex flex-col gap-space-sm">
+        <span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Discovery</span>
+        <a class="footer-link" href="men.html">Men</a>
+        <a class="footer-link" href="women.html">Women</a>
+        <a class="footer-link" href="clothing.html">Clothing</a>
+        <a class="footer-link" href="footwear.html">Footwear</a>
+        <a class="footer-link" href="accessories.html">Accessories</a>
+        <a class="footer-link" href="aesthetics.html">Aesthetics</a>
+      </div>
+      <div data-reveal class="flex flex-col gap-space-sm">
+        <span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Editorial</span>
+        <a class="footer-link" href="style-edit.html">The Style Edit</a>
+        <a class="footer-link" href="trending.html">Trending Curations</a>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Wardrobe Guides">Wardrobe Guides</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Fabric Journal">Fabric Journal</button>
+      </div>
+      <div data-reveal class="flex flex-col gap-space-sm">
+        <span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Client Care</span>
+        <button type="button" class="footer-link cursor-pointer" data-soon="About Veylora">About Veylora</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Contact">Contact</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Wishlist Archive">Wishlist Archive</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="FAQ &amp; Assistance">FAQ &amp; Assistance</button>
+      </div>
+      <div data-reveal class="flex flex-col gap-space-sm">
+        <span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Legal &amp; Assurance</span>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Privacy Policy">Privacy Policy</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Terms &amp; Conditions">Terms &amp; Conditions</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Affiliate Transparency">Affiliate Transparency</button>
+        <span class="font-metadata text-metadata text-outline mt-space-xs flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[14px]">lock</span>
+          SSL Secured Haute Gateway
+        </span>
+      </div>
+    </div>
+
+    <div class="bg-surface-container-low p-space-md rounded mt-space-md">
+      <p class="font-metadata text-metadata text-outline leading-relaxed tracking-wider">AFFILIATE DISCLOSURE: As an Amazon Associate, Veylora earns from qualifying purchases. Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon.in at the time of purchase will apply.</p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg">
+      <span class="font-metadata text-metadata text-outline uppercase tracking-widest text-center sm:text-left">&copy; <span id="footer-year">2025</span> VEYLORA. ALL RIGHTS RESERVED. ARCHITECTURAL COMMERCE ARCHIVE.</span>
+      <div class="flex items-center gap-space-md">
+        <span class="font-metadata text-metadata text-outline uppercase tracking-wider">OBJECT DISCOVERY</span>
+        <span class="font-metadata text-metadata text-primary uppercase tracking-wider">NOUVELLE &Eacute;DITION</span>
+      </div>
+    </div>
+  </div>
+
+  <script>var fy=document.getElementById("footer-year");if(fy){fy.textContent=new Date().getFullYear();}</script></footer>
+
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

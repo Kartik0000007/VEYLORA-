@@ -1,0 +1,77 @@
+<!-- Initial curtain / preloader -->
+<div id="preloader" aria-hidden="true">
+  <div class="preloader-inner">
+    <img src="assets/images/veylora-luxury-monogram-logo.png" alt="" class="preloader-mark"/>
+    <span class="preloader-name">VEYLORA</span>
+    <span class="preloader-line"><i></i></span>
+    <span class="preloader-sub">HAUTE CURATION</span>
+  </div>
+</div>
+
+<!-- Page transition curtain -->
+<div id="page-transition" aria-hidden="true"><span class="transition-mark">V</span></div>
+
+<!-- Reading progress -->
+<div id="scroll-progress" aria-hidden="true"><span></span></div>
+
+<!-- Texture + ambient cursor -->
+<div class="grain" aria-hidden="true"></div>
+<div id="cursor-glow" aria-hidden="true"></div>
+
+<!-- Global search overlay -->
+<div id="search-overlay" class="search-overlay fixed inset-0 z-[70]" role="dialog" aria-modal="true" aria-label="Search the Veylora archive" aria-hidden="true">
+  <div class="search-backdrop absolute inset-0" data-search-close></div>
+  <div class="search-panel relative mx-auto w-[calc(100%-1.5rem)] sm:w-[calc(100%-3rem)] max-w-2xl mt-[10vh] sm:mt-[14vh] bg-surface-container-low border border-outline-variant/40 rounded-xl shadow-2xl p-5 sm:p-9">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <span class="font-label-caps-sm text-label-caps-sm text-primary tracking-[0.25em] uppercase">Curatorial Search</span>
+        <h2 class="font-headline-md text-headline-md text-on-surface mt-2">What are you looking for?</h2>
+      </div>
+      <button type="button" data-search-close aria-label="Close search" class="icon-btn shrink-0 flex items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+
+    <form action="search.html" method="get" class="mt-6" data-search-form>
+      <div class="search-field flex items-center gap-2 sm:gap-3 border-b border-outline-variant/50 focus-within:border-primary transition-colors pb-2">
+        <span class="material-symbols-outlined text-primary text-[20px]">search</span>
+        <input type="search" name="q" id="global-search-input" autocomplete="off" aria-label="Search the Veylora archive" placeholder="Search by fibre, mood, or era…" class="flex-1 min-w-0 bg-transparent text-on-surface font-body-lg text-body-lg focus:outline-none placeholder:text-outline"/>
+        <button type="submit" aria-label="Search" class="shrink-0 px-3 sm:px-4 py-2 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center justify-center">
+          <span class="hidden sm:inline">Search</span>
+          <span class="material-symbols-outlined text-[18px] sm:hidden" aria-hidden="true">arrow_forward</span>
+        </button>
+      </div>
+    </form>
+
+    <div class="mt-6">
+      <span class="font-metadata text-metadata text-outline uppercase tracking-wider">Curated shortcuts</span>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <a href="aesthetics.html" class="search-chip">Quiet Luxury</a>
+        <a href="aesthetics.html" class="search-chip">Old Money</a>
+        <a href="aesthetics.html" class="search-chip">Dark Academia</a>
+        <a href="style-edit.html" class="search-chip">The Style Edit</a>
+        <a href="trending.html" class="search-chip">The Viral Pulse</a>
+        <a href="search-empty.html" class="search-chip">Vicuña Storm Parka</a>
+      </div>
+    </div>
+
+    <p class="mt-6 font-metadata text-metadata text-outline tracking-wider uppercase flex flex-wrap items-center gap-2">
+      <span class="material-symbols-outlined text-[14px]">keyboard</span>
+      <span>Press <kbd class="kbd">Esc</kbd> to close</span>
+      <span class="hidden sm:inline-flex items-center gap-2">
+        <span class="opacity-50">·</span>
+        <kbd class="kbd">/</kbd>
+        <span>to search anywhere</span>
+      </span>
+    </p>
+  </div>
+</div>
+
+<!-- Toasts -->
+<div id="toast-stack" class="fixed right-4 sm:right-6 bottom-24 z-[80] flex flex-col gap-3 w-[calc(100%-2rem)] sm:w-auto sm:max-w-sm" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Back to top with progress ring -->
+<button id="to-top" type="button" aria-label="Back to top">
+  <span class="to-top-ring" aria-hidden="true"></span>
+  <span class="material-symbols-outlined to-top-icon">arrow_upward</span>
+</button>

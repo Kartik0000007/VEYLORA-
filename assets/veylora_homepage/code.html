@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#1b1c1e", "on-primary-fixed": "#271900", "surface-container": "#1f2022", "on-secondary": "#2f3035", "surface": "#121315", "background": "#121315", "surface-tint": "#e1c290", "on-secondary-container": "#bbbbc1", "secondary": "#c6c6cb", "tertiary-container": "#aaacb4", "on-secondary-fixed": "#1a1c20", "on-error-container": "#ffdad6", "on-tertiary-fixed": "#191c21", "secondary-fixed": "#e2e2e8", "primary": "#e2c391", "on-primary": "#402d08", "primary-container": "#c5a878", "on-primary-container": "#513d17", "surface-container-high": "#292a2c", "inverse-surface": "#e3e2e5", "surface-container-lowest": "#0d0e10", "on-tertiary": "#2d3037", "surface-variant": "#343537", "primary-fixed-dim": "#e1c290", "outline-variant": "#4d463b", "surface-dim": "#121315", "surface-container-highest": "#343537", "error-container": "#93000a", "tertiary-fixed-dim": "#c4c6ce", "tertiary-fixed": "#e1e2ea", "on-tertiary-fixed-variant": "#44474d", "on-secondary-fixed-variant": "#45474b", "inverse-primary": "#725b32", "on-primary-fixed-variant": "#58431c", "primary-fixed": "#fedeaa", "error": "#ffb4ab", "on-surface-variant": "#d0c5b7", "on-tertiary-container": "#3d4047", "on-error": "#690005", "secondary-fixed-dim": "#c6c6cb", "secondary-container": "#4a4b50", "inverse-on-surface": "#303033", "tertiary": "#c5c7cf", "surface-bright": "#38393b", "on-surface": "#e3e2e5", "outline": "#998f82", "on-background": "#e3e2e5" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1.5rem", "margin": "2.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "gutter": "1.5rem" }, "fontFamily": { "headline-lg-mobile": [ "Playfair Display" ], "headline-sm": [ "Playfair Display" ], "label-caps-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "metadata": [ "Plus Jakarta Sans" ], "headline-hero": [ "Playfair Display" ], "headline-md": [ "Playfair Display" ], "body-md": [ "Plus Jakarta Sans" ], "headline-hero-mobile": [ "Playfair Display" ], "label-caps-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Playfair Display" ] }, "fontSize": { "headline-lg-mobile": [ "26px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "label-caps-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.18em", "fontWeight": "700" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-sm": [ "12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" } ], "metadata": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" } ], "headline-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" } ], "body-md": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-hero-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "label-caps-lg": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.15em", "fontWeight": "600" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "500" } ] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 w-full max-w-[1680px] mx-auto px-margin flex flex-col justify-between py-space-sm"><div class="flex items-center justify-between w-full h-12"><div class="flex items-center gap-space-md"><img alt="Veylora Luxury Monogram Logo.png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VVWrcXQt4Y260Mj5h1Yk2rw7jHBCBcgP0kwaSQT-kRiwTaXCwE6BQ6UatEwJvOYEVFb0yu2cq2ff0HgNzoDm6AzcigP-CpIbtRu-3HWhzlV57L6Y00JYocBQZYDlUUfVlqRQWA-V1Vmb63Li308XPnU45Bgf42jrI_msbA9fzVyXddReO_uaG0PF0Epgzosxr34F9-mrcpVgoW3Pir-kQZDzN0_Hmh-rY3Syc3NmdKW9m35AfZZmt1lFk"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary">VEYLORA</span><span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] -mt-1 hidden sm:block">HAUTE CURATION</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">verified</span><span class="font-label-caps-sm text-label-caps-sm tracking-wider text-on-surface">AMAZON.IN VERIFIED DEALS</span></div><button aria-label="Search Archive" class="flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Saved Wishlist" class="relative flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">favorite</span><span class="absolute -top-1 -right-2 bg-primary text-on-primary font-metadata text-metadata px-1 rounded-full h-4 min-w-[16px] flex items-center justify-center font-bold">4</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><nav class="flex items-center justify-center gap-space-lg overflow-x-auto h-9 pb-1" data-active-classes="text-primary font-bold"><a aria-current="page" class="uppercase tracking-[0.18em] transition-colors shrink-0 text-primary font-bold" data-path="home" href="#">HOME</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="men" href="#">MEN</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="women" href="#">WOMEN</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="clothing" href="#">CLOTHING</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="footwear" href="#">FOOTWEAR</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="accessories" href="#">ACCESSORIES</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="aesthetics" href="#">AESTHETICS</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="trending" href="#">TRENDING</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="the-style-edit" href="#">THE STYLE EDIT</a></nav></div></header><main class="w-full max-w-[1680px] mx-auto px-margin pt-28 flex-1"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-container-lowest -mt-28 pt-36 pb-20 px-space-md sm:px-space-xl flex flex-col items-center text-center">
+<!-- Atmospheric Ambient Glows & Astrolabe Radiance -->
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+<div class="w-[500px] h-[500px] md:w-[720px] md:h-[720px] rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="absolute w-[360px] h-[360px] md:w-[540px] md:h-[540px] rounded-full bg-primary-container/10 blur-[80px]"></div>
+</div>
+<!-- Animated Horological Astrolabe Rings (Inline SVG) -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-20">
+<svg class="w-[700px] h-[700px] animate-spin" fill="none" style="animation-duration: 180s;" viewbox="0 0 800 800">
+<circle class="text-primary" cx="400" cy="400" r="380" stroke="currentColor" stroke-dasharray="4 8" stroke-width="1"></circle>
+<circle class="text-outline" cx="400" cy="400" r="320" stroke="currentColor" stroke-width="0.75"></circle>
+<circle class="text-primary" cx="400" cy="400" r="260" stroke="currentColor" stroke-dasharray="1 12" stroke-width="0.5"></circle>
+<line class="text-outline-variant" stroke="currentColor" stroke-width="0.5" x1="400" x2="400" y1="20" y2="780"></line>
+<line class="text-outline-variant" stroke="currentColor" stroke-width="0.5" x1="20" x2="780" y1="400" y2="400"></line>
+</svg>
+</div>
+<!-- Monogram Emblem Display with Gold Halo -->
+<div class="relative z-10 flex flex-col items-center mb-space-lg">
+<div class="relative flex items-center justify-center p-3 rounded-full bg-surface-container/60 backdrop-blur-md shadow-2xl">
+<div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden flex items-center justify-center bg-surface-container-high/80 p-2 shadow-inner">
+<img alt="Veylora Monogram Heraldry" class="w-full h-full object-contain filter drop-shadow-[0_0_24px_rgba(226,195,145,0.4)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR1G5yKqqgeoo7_QiKJTXGpbsdNfAtOZMM-t1TCl3I626eQgHisivPBmX_4NNyTHE4_RgmeyfdpWDzu8HfN1-zZ2m94yjVDEtrsad8CuLZKQtFKmLlD6Zc1EHAI-0x5MIyxhzSwrLcAqB0XcVMoTfcHzB0y2_eqnvM2ZDuFKLNv_oc_g6JA3Ge3RGSGTOya3heeHOb5YUpvCmzB2p8WbT6IzF3LDU91bGohybP4T4O_iZDP0yhuExA"/>
+</div>
+</div>
+<div class="flex items-center gap-space-sm mt-space-sm">
+<span class="w-8 h-[1px] bg-primary/40"></span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.3em] text-primary">Haute Curation Archive</span>
+<span class="w-8 h-[1px] bg-primary/40"></span>
+</div>
+</div>
+<!-- Editorial Typography Anchor -->
+<div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+<h1 class="font-headline-hero text-headline-hero text-on-surface tracking-tight leading-none mb-space-md">
+        EVERY STYLE. <span class="italic text-primary">ONE DESTINATION.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-space-xl">
+        A curated fashion discovery sanctuary bridging architectural editorial luxury with accessible, certified sartorial pieces available directly on Amazon.in.
+      </p>
+<!-- Dual Primary Navigation CTAs -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md w-full justify-center">
+<a class="w-full sm:w-auto px-8 py-4 rounded bg-primary text-on-primary font-label-caps-lg text-label-caps-lg tracking-[0.2em] uppercase transition-all duration-300 hover:shadow-[0_0_28px_rgba(226,195,145,0.35)] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-space-sm group" href="#men-archive">
+<span>Explore Men</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto px-8 py-4 rounded bg-surface-container-high text-on-surface hover:text-primary font-label-caps-lg text-label-caps-lg tracking-[0.2em] uppercase transition-all duration-300 hover:bg-surface-container-highest active:scale-[0.98] flex items-center justify-center gap-space-sm group" href="#women-edit">
+<span>Explore Women</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Stats & Verification Ticker -->
+<div class="relative z-10 mt-space-xl max-w-5xl w-full bg-surface-container/70 backdrop-blur-md rounded px-space-md py-space-sm shadow-xl">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md text-center divide-x-0">
+<div class="flex flex-col items-center py-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary tracking-normal">12,000+</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-outline">Curated Pieces</span>
+</div>
+<div class="flex flex-col items-center py-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-normal">18 Aesthetics</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-outline">Distinct Moods</span>
+</div>
+<div class="flex flex-col items-center py-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary tracking-normal">Verified Rates</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-outline">Amazon.in Direct</span>
+</div>
+<div class="flex flex-col items-center py-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-normal">Zero Markup</span>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-wider text-outline">Haute Integrity</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1: DUAL GENDER ARCHITECTURAL SHOWCASE -->
+<section class="w-full py-space-xl px-0 my-space-md">
+<div class="flex flex-col md:flex-row items-baseline justify-between mb-space-lg">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm tracking-[0.25em] text-primary uppercase">Volume 01 • Curated Directions</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">The Dual Disciplines</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mt-space-xs md:mt-0">
+        Strictly object-oriented flat lays capturing tailored heavyweight natural textiles, Horological precision, and sculptural leather craft.
+      </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Men's Archive Showcase -->
+<article class="group relative bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-xl transition-all duration-500 hover:shadow-2xl" id="men-archive">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Exquisite luxury flat lay of men's sartorial clothing laid out flat on polished black slate stone. Includes a tailored charcoal wool blazer folded crisply, a heavyweight heather gray cotton tee, hand-burnished brown leather Chelsea boots, and a luxury gold Swiss chronograph watch. Soft diffused studio lighting with subtle gold highlights and dramatic shadows, hyper-detailed texture, no human models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH1sEIEvxSi4UM9k_74IcTc0drqmZHeGm2UcchV0_cXYiVYLxj-jOIPsNYhoP48i2GUri05ZkYbQ3aFcs-WrryxuZrO_FpNiKkPHhgeAMqxBLfKhzRwShKiSNVpZOYB6lPqSKy2PuyOBuFq8B7IJlokVqphK3uyuYlCJDvk8BfanG3mMpFtY3d_23Fpv1l9fYPB0n1bXRlDc_j1xyueTl8NfAK6XcOo9U8ncHrZLQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
+<span class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">CATALOG NO. 01</span>
+</div>
+<div class="p-space-lg flex flex-col justify-between flex-1">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">The Men's Archive</h3>
+<span class="font-metadata text-metadata text-outline uppercase tracking-widest">3,420 Articles</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs mb-space-md">
+              Architectural tailoring, heavyweight French terry essentials, sculpted Horween leather boots, and certified Swiss-movement chronographs assembled for effortless permanence.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-md bg-surface-container-lowest/40 -mx-space-lg -mb-space-lg px-space-lg py-space-md">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-[0.15em] uppercase">VIEW REPERTOIRE</span>
+<span class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary group-hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- Women's Edit Showcase -->
+<article class="group relative bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-xl transition-all duration-500 hover:shadow-2xl" id="women-edit">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Refined luxury editorial flat lay of women's elevated capsule essentials positioned on a textured travertine marble slab. Features a folded champagne pure silk slip dress, a tailored beige double-breasted trench coat, a structured mini leather arch tote bag, minimalist 18k gold hoop earrings, and a designer amber glass perfume bottle. Chic, quiet luxury aesthetic, soft side-lighting, macro fabric texture, no people." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAe8-gyHVKQxB3ITu5fl-KyFxavi3h1rZmqlLgw-GsQLyyiPqs1cGRCxvCM4w4ZgiFywjgMrQu7lOEWv_rtrNOD54n1lBlktVUAh2taUha7GOGonyNA8WEtlBe5sZ8e-RGbrJ_UHGR3QI_x_q8XLmlCrYD2oy7wOlEf8is-nHD2b97ddvoSHNNebrA7mmlTruXZKzGBpRXmgN_K7Nz3IB63hPV9gfIh1gLWgxu0z8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/30"></div>
+<span class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">CATALOG NO. 02</span>
+</div>
+<div class="p-space-lg flex flex-col justify-between flex-1">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">The Women's Edit</h3>
+<span class="font-metadata text-metadata text-outline uppercase tracking-widest">4,810 Articles</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs mb-space-md">
+              Fluid Mulberry silk slip profiles, double-faced wool trench structures, architectural vegan leather arch bags, and restrained fine jewellery calibrated for luminous everyday cadence.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-md bg-surface-container-lowest/40 -mx-space-lg -mb-space-lg px-space-lg py-space-md">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-[0.15em] uppercase">VIEW REPERTOIRE</span>
+<span class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary group-hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION 2: DISCOVER YOUR AESTHETIC (BENTO CAROUSEL/GRID) -->
+<section class="w-full py-space-xl my-space-md">
+<div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-space-lg">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm tracking-[0.25em] text-primary uppercase">Categorical Taxonomy</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">Discover Your Aesthetic</h2>
+</div>
+<div class="flex items-center gap-space-sm mt-space-sm md:mt-0">
+<span class="font-metadata text-metadata text-outline uppercase tracking-wider">6 Curated Movements</span>
+</div>
+</div>
+<!-- 6 Aesthetics Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Aesthetic 1: Quiet Luxury -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-lg transition-all duration-300 hover:bg-surface-container">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Still-life product flat lay composition showcasing quiet luxury essentials: folded cream ribbed cashmere sweater, bespoke pleated taupe trousers, and chocolate calfskin penny loafers sitting on a brushed dark limestone surface. High-contrast soft lighting, macro fiber details, no human figures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABuyfSS3Z7jLRx0suQJguaMP37iYL-hQMRxtRmmqkPpG7GbAYnx3tQIXtrUCmGOoSVZ41JHSJ4DNKnikej5v-5gfB5rjYkkulqVRi4-RPOfEPhAyLP0ZtBfK0TXbIHjYOCm7lxXRGE9DMITmjo0WQeDTOaPKZiAYWf0pvzmGQ-_b3YzyC3Fqk6JKEGQQcm3k-fkV_AF5QKFuX3vypXo-dXiVQNPfej02nn7AD0Dn0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-0.5 rounded font-label-caps-sm text-label-caps-sm text-primary">01</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-outline">Subdued Excellence</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Quiet Luxury</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Cashmere sweaters, pleated neutral trousers, calfskin loafers, and unbranded heritage textures.</p>
+</div>
+<button class="mt-space-md w-full py-2.5 px-4 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-caps-sm text-label-caps-sm tracking-[0.18em] uppercase transition-all duration-200 flex items-center justify-center gap-space-xs">
+<span>Curate Aesthetic</span>
+<span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Aesthetic 2: Old Money -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-lg transition-all duration-300 hover:bg-surface-container">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Still life flat lay display of old money preppy fashion items: folded cream pique knit polo shirt, tailored off-white linen blazer, and navy suede driving moccasins arranged on rich mahogany wood panel background. Subtle brass pocket watch accessory, soft vintage warmth, pristine studio setup without humans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWzf6V5XVTn4nYjn7q-JyKT_Nk1Yy4fiaGkDwvElT-sHfDcH2ukgz7qFSQqnbbjpJ_u0FvDDn9qSILtTat7OSjHHq5tkDLDgyB6pkpsxdqzN-dTh4B3PoJ8V4MXDIIDz97p3PwECiTSNvLYoRImXWg6k2h6DjOyp8LBovCW3f4fi76lgBdQTJJsrXMzc2WZo1eNnArF7AEYp4beZ0gVdr9ccZhaKhQkeu8X9QHh0A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-0.5 rounded font-label-caps-sm text-label-caps-sm text-primary">02</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-outline">Aristocratic Heritage</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Old Money</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Cream knit polos, double-breasted linen blazers, and butter-soft suede driving shoes.</p>
+</div>
+<button class="mt-space-md w-full py-2.5 px-4 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-caps-sm text-label-caps-sm tracking-[0.18em] uppercase transition-all duration-200 flex items-center justify-center gap-space-xs">
+<span>Curate Aesthetic</span>
+<span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Aesthetic 3: Streetwear -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-lg transition-all duration-300 hover:bg-surface-container">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High-concept flat lay of dark modern streetwear: pitch black 500gsm oversized boxy hoodie, heavyweight tactical cargo joggers, and limited-edition sculpted black sneakers laid flat on industrial raw poured concrete. Sharp directional lighting, crisp drop shadows, no persons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBddqkT_QXsYOOy0eST95GMEPQ_I7XFf2Nb7PTBzb5Igft8M4JjysEDxwtJcjB22fK-YJabjA8gk4uwFaxhlgZsP65aGv1UXtzUbkju7hP6Dho2SB5st6CtVC2vYwB06rRv6pCz_--zYAleStAGMEU9dxc96cb0SrBVDrCIVnPsnyaGKrzBAIw4ZPCKZLMIIgylCT6Il71nRTPVjVhKbYU--r4IrTm8ClUGylkAskQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-0.5 rounded font-label-caps-sm text-label-caps-sm text-primary">03</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-outline">Contemporary Brutalism</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Streetwear</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Oversized 480GSM structured hoodies, dense cargo trousers, and architectural high-top sneakers.</p>
+</div>
+<button class="mt-space-md w-full py-2.5 px-4 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-caps-sm text-label-caps-sm tracking-[0.18em] uppercase transition-all duration-200 flex items-center justify-center gap-space-xs">
+<span>Curate Aesthetic</span>
+<span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Aesthetic 4: Clean Girl -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-lg transition-all duration-300 hover:bg-surface-container">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist clean flat lay composition: off-white ribbed fine-knit top, chunky polished 18k gold hoop earrings, a sleek black structured leather shoulder tote bag, and a sleek hydration glass vessel resting on smooth beige sandstone. Daylight bright, ethereal aesthetic, no human." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTAyrcmwSIcGVNYMVm0Y50__a4UV2jOVpmabJs3wZv5uSQYh6eY6HftpDUhO3fCqUHtFirUUxt3lcaH5etk5Bn7mtXfCuGJGXUpoedTeYhYj1lEoZ-UXn2zdV1S-SxIjggcWHXgtQLUEraBdqKnX-QRCrf-n59wqExUnNwcih2T-nsvEVXck0hGWXRh5vbu0FSeRpwr-BmnGVF21n7S4bRR9zoXBUK4eao6lf6od8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-0.5 rounded font-label-caps-sm text-label-caps-sm text-primary">04</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-outline">Effortless Purity</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Clean Girl</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Minimalist ribbed knits, sculptural warm gold hoops, and sleek Italian leather structured totes.</p>
+</div>
+<button class="mt-space-md w-full py-2.5 px-4 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-caps-sm text-label-caps-sm tracking-[0.18em] uppercase transition-all duration-200 flex items-center justify-center gap-space-xs">
+<span>Curate Aesthetic</span>
+<span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Aesthetic 5: Y2K -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-lg transition-all duration-300 hover:bg-surface-container">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Curated retro-futuristic still life flat lay: high-shine metallic silver baguette shoulder bag, tinted rimless rectangle sunglasses, and a cropped baby tee neatly styled on a dark brushed stainless steel plate. Cyberpunk-meets-luxury lighting, iridescent reflections, strictly product-focused with no models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUPMfpMeWygUVAxEJy3Wf3fZjTOysw3xG_txrBvVyXLz3BwXwWnjvOZhzfn0wuZsGEZd1ShsNmRrIHGGJ4x2CuPPpfnNQ0OvehZVMGBPyZGq4iCWtBo4PnZ2ZY8P4_FEs3N7fDVK_UZMUleltxUXXrBGR39JHSb6iiS3gEpfNopuCxnroHN_eF7BR_AmcdhpMr0XHcH7yyQX9lm9kU_QWvDZHW_bwlGMoE5XSvduI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-0.5 rounded font-label-caps-sm text-label-caps-sm text-primary">05</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-outline">Cyber Nostalgia</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Y2K High-Chic</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Liquid metallic silver shoulder bags, precision baby tees, and frameless gradient eyewears.</p>
+</div>
+<button class="mt-space-md w-full py-2.5 px-4 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-caps-sm text-label-caps-sm tracking-[0.18em] uppercase transition-all duration-200 flex items-center justify-center gap-space-xs">
+<span>Curate Aesthetic</span>
+<span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Aesthetic 6: Minimalist -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-lg transition-all duration-300 hover:bg-surface-container">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Monochrome architectural still life: stark black geometric tailored wool vest, crisp bone-white poplin spread, and a sleek matte black titanium chronometer resting on a matte charcoal pedestal. Bauhaus precision, razor-sharp composition, completely devoid of humans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQzstiqndBUkM8WwfBC8lO07hrXGj9ZhtUffJyeVbMlv1DTiLKtTp4ZbLKK5MMrDgdL35YnSsIbEbfxPCuLgf837-5zhoTBVeJqpWKqBlWa7Vj92E2b-Xb4it3dMOG87kbhnXMVFBTTQXDhaZbkP9J-c9jhNwXlHPX4OvFDZ4SymuZfnCOpGfFYJoMlYL6ZiTXN02YmbDUXkfXx64eVwbxze8-yx-_ecGcrzA9QDY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-0.5 rounded font-label-caps-sm text-label-caps-sm text-primary">06</span>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm tracking-wider uppercase text-outline">Bauhaus Restraint</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Pure Minimalist</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Monochrome tailoring, architectural silhouettes, and titanium-cased precision chronometers.</p>
+</div>
+<button class="mt-space-md w-full py-2.5 px-4 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-caps-sm text-label-caps-sm tracking-[0.18em] uppercase transition-all duration-200 flex items-center justify-center gap-space-xs">
+<span>Curate Aesthetic</span>
+<span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: TRENDING DISCOVERIES (AMAZON.IN VERIFIED COMMERCE) -->
+<section class="w-full py-space-xl my-space-md">
+<div class="flex flex-col md:flex-row items-baseline justify-between mb-space-lg">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-caps-sm text-label-caps-sm tracking-[0.25em] text-primary uppercase">Direct Amazon.in Verified Discovery</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">Trending Curations</h2>
+</div>
+<div class="flex items-center gap-space-sm mt-space-xs md:mt-0">
+<span class="font-metadata text-metadata text-outline">Real-time sync • Amazon Prime enabled fulfillment</span>
+</div>
+</div>
+<!-- 8 Product Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Item 1 -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-md transition-all duration-300 hover:shadow-2xl hover:bg-surface-container">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Studio catalog shot of a jet-black luxury heavyweight French terry oversized boxy hoodie neatly laid flat on dark volcanic rock background. Visible dense cotton weave, dropped shoulders, luxury label tag visible, completely empty, no humans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIuSmVPjwHmfq2FZMj2hYXfE8IUBdZ2P1_-mOahypiRTIVzxX90k5bk2SZjY_7193kc5XcGSCO9btEXWBAmN7KfyA6_n8Lxq9-UDkZYY-ao24cCdGPt3IJ9Bw2tQzZ0oz5zgVjqVr5rbZvh6Tpwv_k0LXLPz4-7isOqqNjr6C7DDlczFvKe9IQc28ZAkeALNh2v7fABHav-I8Alt-jc7iYWBCRd_1fIhrzUC6uMro"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">Streetwear</span>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span>
+<span class="font-metadata text-metadata text-primary font-bold">Prime</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">AETHEL NOIR</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 line-clamp-1">Noir Minimalist Oversized Boxy Hoodie</h4>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary">₹2,499</span>
+<span class="font-metadata text-metadata text-outline line-through">₹3,999</span>
+</div>
+</div>
+<a class="mt-space-md w-full py-2.5 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm tracking-[0.16em] uppercase flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm" href="#">
+<span>View on Amazon.in</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-md transition-all duration-300 hover:shadow-2xl hover:bg-surface-container">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High quality studio flat-lay of hand-stitched deep espresso brown leather Chelsea boots placed on a dark slate background with fine leather creasing and Goodyear welted sole visible. Studio lighting, no model." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD78sgD1HWhHcsniOpqjnqaAB84eMpFORF7BqRrqc96b-QrEDen5MBOyQlqMPx4Ff8yGc16ANeeste3G1lvV5ITGx136nMKOcBN44psSD835kVCnXtUlcunM6TEKsfo7f3Sz3B_duzYX2Edtl6rSMDxRRcPlAhJtMRCabyVJYBD0YD5w2_gPz5uXGU68_M-pEDq6-dE8p4sn7nmZAr36wxRMoNlM_rZw1-eVAo8OKc"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">Footwear</span>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span>
+<span class="font-metadata text-metadata text-primary font-bold">Prime</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">TAVISTOCK &amp; CO</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 line-clamp-1">Hand-Stitched Leather Chelsea Boots</h4>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary">₹4,899</span>
+<span class="font-metadata text-metadata text-outline line-through">₹7,200</span>
+</div>
+</div>
+<a class="mt-space-md w-full py-2.5 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm tracking-[0.16em] uppercase flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm" href="#">
+<span>View on Amazon.in</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-md transition-all duration-300 hover:shadow-2xl hover:bg-surface-container">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Architectural still life photography of a structured beige and black vegan leather crescent arch bag displayed on a raw travertine pedestal. Clean silhouette, polished metallic brass zipper hardware, studio setup, no people." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIZHHFxvpVQiOWcq_J-jR33_-GscmkP2u2IvqiJ7v9lAvWRxUN6rg9APaLZJ7wcPdY189fXljCLQiSLQdpQOGmjUIybAMixzsJNZQ9ABEcHieGAoxZ5GaeUok4naiEJ7WP5gbZ26pyOcdcpn8udP1LQwoiGRhbxz5EwfKP_he8B3w5stBKQp9rOzBc-FJi32orvY6dlylbypAoyom9VMYnEYp54ebPIS-GstQx8TE"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">Accessories</span>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span>
+<span class="font-metadata text-metadata text-primary font-bold">Prime</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">MAISON VALI</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 line-clamp-1">Structured Vegan Leather Arch Bag</h4>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary">₹3,250</span>
+<span class="font-metadata text-metadata text-outline line-through">₹4,500</span>
+</div>
+</div>
+<a class="mt-space-md w-full py-2.5 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm tracking-[0.16em] uppercase flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm" href="#">
+<span>View on Amazon.in</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-md transition-all duration-300 hover:shadow-2xl hover:bg-surface-container">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Refined top-down view of a pure ivory Mulberry silk camp-collar button shirt neatly folded on a dark minimalist concrete display. Subtle mother of pearl buttons shimmering under soft studio illumination, strictly apparel only." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZe0vXcboAo_zJWuQXwqeKtydotfwnsH0gCqVTDW5JTm5xjgpRcjSgq2ezsH020FmFrmUIt4e_KTgPnj_5-22_1r_6DpRb2ZoXxBk0Y1ctoduGw_MMQBagfumj_WO54st-276ZYgXfxP07kzSa5m0jEapa9_A64Qftnhi5M8Lb2Y0rP6vQ8mxKe_oVNg-853t4oYx7e_24R_aa8zSKwDRv3gqb9vDzoBDKHxY9ryA"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">Men's Clothing</span>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span>
+<span class="font-metadata text-metadata text-primary font-bold">Prime</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">AURELIA &amp; HYDE</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 line-clamp-1">Pure Mulberry Silk Camp-Collar Shirt</h4>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary">₹3,199</span>
+<span class="font-metadata text-metadata text-outline line-through">₹4,990</span>
+</div>
+</div>
+<a class="mt-space-md w-full py-2.5 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm tracking-[0.16em] uppercase flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm" href="#">
+<span>View on Amazon.in</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-md transition-all duration-300 hover:shadow-2xl hover:bg-surface-container">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Macro luxury product photograph of a 40mm minimalist chronograph watch with brushed champagne gold dial, sapphire crystal, and black croc-grain leather strap resting on a dark basalt stone cube. Dramatic studio spotlight, no human wrist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4wXgPqpkNeqcTo-DnD2c4afjvuMr5yESn4GVJH1lJHLg7kkWz3iK3GmV0IyQFAfdscYNOzZe892A0gRibHMCiMgV8bsZ4-xxyGkJ5DCfbJSK9gtS234MQISt_n10eiP-7Vcj4aFyXJEC35l8ktFm3bL18qjgz8Pj2vUxIK7pOsUI8OsdYD8ZmeWzLTqSpOeDPZ9Oj-keb8A9Q7ONbRMqdELmuX3L5MXijtf5hGro"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">Watches</span>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span>
+<span class="font-metadata text-metadata text-primary font-bold">Prime</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">CHRONOS GENEVE</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 line-clamp-1">Champagne Chronograph (40mm)</h4>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary">₹5,490</span>
+<span class="font-metadata text-metadata text-outline line-through">₹8,990</span>
+</div>
+</div>
+<a class="mt-space-md w-full py-2.5 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm tracking-[0.16em] uppercase flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm" href="#">
+<span>View on Amazon.in</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-md transition-all duration-300 hover:shadow-2xl hover:bg-surface-container">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Flat lay photograph of folded heavyweight 450GSM dark charcoal French terry sweatpants with metal aglet drawstrings resting against a textured granite surface. Studio soft-box lighting, fabric closeup, zero persons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_QOuxz-ajuX8o5Awrj9Q3_W2wvKqUL4GLhyLlIhq_UAGK2eo8-DVOKRsXPpbbCDOw0-fIZlgwpFgYYo9qIgX4oUXooczw4Q3QNO-aKgTl1S39YWY87OS43a5sO9qSG8DU85WdZAE-39DZOq81szNm_85MdSJ_34C9t2JFETq87QRdeXL2zzwJ3aR9M60fi8aFfTupdrRR9FHoI9EGaxygG5kP5KgOvnClSjlWWn4"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">Everyday</span>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span>
+<span class="font-metadata text-metadata text-primary font-bold">Prime</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">ELEMENTAL BASIS</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 line-clamp-1">French Terry Sweatpants (450GSM)</h4>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary">₹1,899</span>
+<span class="font-metadata text-metadata text-outline line-through">₹2,800</span>
+</div>
+</div>
+<a class="mt-space-md w-full py-2.5 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm tracking-[0.16em] uppercase flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm" href="#">
+<span>View on Amazon.in</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-md transition-all duration-300 hover:shadow-2xl hover:bg-surface-container">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Still-life product presentation of luxury Japanese acetate tortoiseshell sunglasses with tinted brown UV400 lenses resting upon an off-white rough plaster block. Warm side sunbeam casting sharp geometrical shadows, strictly eyewear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDhBArv_cxrg80PGHHUzc9zvw7uVztfjk6H9YMqOPrlQAGrxghcbhwNHsgPYcOZzbj1cLYjKnJJT5MfGA_5n6HH2L0ClT9DOfW6Kw6-FeqjBh5zmnzphFKdtvwy53EUqhz8BBW7WKUf6zj9mujqOp7pDZxUOaUVogQWQ2aB1TFhuXSP6T_Ef1stYrUquoAXNMDCnrCYnkexRxHLwsnfmK-tkrsPJr5D3jJJqpLJm8"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">Accessories</span>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span>
+<span class="font-metadata text-metadata text-primary font-bold">Prime</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">LUNETTES ARCHIVE</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 line-clamp-1">Tortoiseshell Acetate Sunglasses</h4>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary">₹1,650</span>
+<span class="font-metadata text-metadata text-outline line-through">₹2,999</span>
+</div>
+</div>
+<a class="mt-space-md w-full py-2.5 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm tracking-[0.16em] uppercase flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm" href="#">
+<span>View on Amazon.in</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Item 8 -->
+<div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-md transition-all duration-300 hover:shadow-2xl hover:bg-surface-container">
+<div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Folded luxury sand-beige linen-blend double-breasted tailored jacket laid flat on a smooth charcoal slate surface. Horn buttons and peak lapels crisply presented, macro weave visible, no people." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwRPDaZkvOlsv1xFMkYs5z9s7qm-mi6dEPJIn97dVSPi512Ef4LxqgBmIhDNehE7IM3q2OILgTwJzYBND2SnfKaxp1GZBmRrRDQYf_toc08E5__p2MuXXHF24Sj6sRiJYCqx6DjBlpunTZmxNlotMe9XTrEDK0M5REGIlo51HYty6vo3J7SmscZYFimcA7vhHsSxQrdSOh6z7mlRKkh91qnW57DipkrjKYJb0lDpA"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">Quiet Luxury</span>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span>
+<span class="font-metadata text-metadata text-primary font-bold">Prime</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-1">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SAVILE SARTORIAL</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 line-clamp-1">Linen Double-Breasted Tailored Jacket</h4>
+<div class="flex items-baseline gap-2 mt-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary">₹5,999</span>
+<span class="font-metadata text-metadata text-outline line-through">₹9,499</span>
+</div>
+</div>
+<a class="mt-space-md w-full py-2.5 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm tracking-[0.16em] uppercase flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm" href="#">
+<span>View on Amazon.in</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: THE STYLE EDIT (EDITORIAL INSPIRATION) -->
+<section class="w-full py-space-xl my-space-md">
+<div class="flex flex-col md:flex-row items-baseline justify-between mb-space-lg">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm tracking-[0.25em] text-primary uppercase">Journal • Edition XXIV</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">The Style Edit</h2>
+</div>
+<a class="font-label-caps-sm text-label-caps-sm text-primary hover:text-primary-fixed tracking-[0.18em] uppercase flex items-center gap-1 mt-space-xs md:mt-0" href="#">
+<span>Explore All Dispatches</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Article 1 -->
+<article class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-lg transition-all duration-300 hover:shadow-2xl">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial still life arrangement of quiet luxury wardrobe capsule: folded neutral cashmere sweater, horn-button cardigan, structured leather belt, and tortoiseshell pen laid out on dark slate stone with warm studio light, macro focus, no humans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfwecG6cnwgKxhO64M-yv2BO_3sI_PlJujcLk2y6UNv0DlsJF6-cjMY-qzLxwy1TWd-jt91-6uqOG2Wj3I-18rppgnrF35Ypae-5JdH5gCBNeBx0eR9skEFsInBcpSP3htKcm73wmNLFndXtlydm1I_TLqGrGf0UpADjsu8JgX4Ul24-oM7QUJ-iWgZz4HjtJrEKzWFxCbI10OA05dIBqNw0np2xjTk-fOXEOOuH8"/>
+<span class="absolute bottom-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-metadata text-metadata text-primary uppercase tracking-wider">ESSENTIALS ESSAY</span>
+</div>
+<div class="p-space-lg flex flex-col justify-between flex-1">
+<div>
+<span class="font-metadata text-metadata text-outline">6 MIN READ • WARDROBE ANATOMY</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-space-xs">
+              The Anatomy of Quiet Luxury: 7 Wardrobe Staples Under ₹4,000
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm line-clamp-3">
+              How to curate an unshakeable, tactile capsule wardrobe using premium Amazon-verified fabrications without paying brand taxes.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">READ MANIFESTO</span>
+<span class="material-symbols-outlined text-primary text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-lg transition-all duration-300 hover:shadow-2xl">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High-contrast still life flat lay featuring dark urban streetwear elements: heavy gauge raw Japanese denim folded with selvedge edge visible, silver link chain necklace, and a matte black pocket knife on weathered asphalt stone, no models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB67qpZaI-yXfGXRh1p_CuHVh-Qs0nqqEmY3bUX0WKDhISXqnmnnsj8NNyZOw89zfWeV5vPBtLHMve4wLhpB_Dp7IqQSTzcMCaSoogtqGbL4bLUKoCDdPiN5jpvyJyZTxsUeiIzIJMApnnyNNbPY4secx8ehn_WnBulOszqlSqYUzm6MX2b5fXBTUB7iPE05_lLhcGVV2Ti0rgtUeXGJmrIz6p6h_BhLgLEMS2ZxsM"/>
+<span class="absolute bottom-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-metadata text-metadata text-primary uppercase tracking-wider">CULTURE DISPATCH</span>
+</div>
+<div class="p-space-lg flex flex-col justify-between flex-1">
+<div>
+<span class="font-metadata text-metadata text-outline">8 MIN READ • SUB-CULTURE</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-space-xs">
+              Streetwear Evolution: From Tokyo to Mumbai Underground
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm line-clamp-3">
+              Tracing heavy-gauge silhouettes, boxy cuts, and drop-shoulder silhouettes through the lens of modern Indian street culture.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">READ MANIFESTO</span>
+<span class="material-symbols-outlined text-primary text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-lg transition-all duration-300 hover:shadow-2xl">
+<div class="relative aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Overhead still life lineup of 5 curated footwear pairs: dark leather Chelsea boots, white minimalist leather low-top sneakers, suede penny loafers, woven espadrilles, and clean trail runners displayed on a wide brushed concrete slab, no persons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjqWoVul-8_Ry5OykY7ldrZxlbtLTbtw55t0NCrQS4vMxO59-7lllp7BvYtkMuSFEweK8ckZ97434xKm7iyr8XnYDF-cpdKBIuRjY4KEo7mdjtlaXUkkj5A151jxfSufDpzLEPokrwmfI-wey0_8NlboIFDjc9SdO2hCFA-PQcjMjZBlJikHxJZ9rdSVwMMB9qTKR9aq9m-q8jdYNRNPgWWwdvl68BQc6cdfFJFQQ"/>
+<span class="absolute bottom-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded font-metadata text-metadata text-primary uppercase tracking-wider">SARTORIAL BLUEPRINT</span>
+</div>
+<div class="p-space-lg flex flex-col justify-between flex-1">
+<div>
+<span class="font-metadata text-metadata text-outline">5 MIN READ • FOOTWEAR DIRECTORY</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-space-xs">
+              The Capsule Footwear Guide: The 5 Pairs Every Closet Needs
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm line-clamp-3">
+              From hand-stitched Chelsea boots to clean leather trainers: the indispensable footwear foundation verified for longevity.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">READ MANIFESTO</span>
+<span class="material-symbols-outlined text-primary text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION 5: AMAZON AFFILIATE TRUST & TRANSPARENCY SHIELD -->
+<section class="w-full py-space-xl my-space-md">
+<div class="relative overflow-hidden bg-surface-container-low rounded p-space-lg md:p-space-xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="relative z-10 flex items-start gap-space-md max-w-2xl">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[28px]">verified_user</span>
+</div>
+<div>
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.2em] text-primary">Affiliate Trust &amp; Integrity Protocol</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Direct Amazon.in Fulfillment Guarantee</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+            Every product recommendation is curated independently through VEYLORA Haute Curation. When you select "View on Amazon.in", you are routed directly to Amazon India's verified infrastructure for secure SSL checkout, Amazon Prime same-day or next-day delivery, and guaranteed hassle-free 7-day returns.
+          </p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row md:flex-col lg:flex-row items-center gap-space-md shrink-0 w-full md:w-auto">
+<div class="flex items-center gap-space-sm px-space-md py-2.5 bg-surface-container-high rounded w-full sm:w-auto justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+<span class="font-metadata text-metadata text-on-surface uppercase tracking-wider">256-Bit SSL Encrypted</span>
+</div>
+<div class="flex items-center gap-space-sm px-space-md py-2.5 bg-surface-container-high rounded w-full sm:w-auto justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">published_with_changes</span>
+<span class="font-metadata text-metadata text-on-surface uppercase tracking-wider">Instant Returns Policy</span>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1680px] mx-auto px-margin py-space-xl"><div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-space-md pb-space-lg"><div class="max-w-xl"><div class="font-headline-md text-headline-md tracking-tight text-primary uppercase">VEYLORA</div><p class="font-headline-sm text-headline-sm text-on-surface mt-space-xs italic">THE ART OF EVERYDAY STYLE — Curated Fashion Discoveries</p><p class="font-label-caps-sm text-label-caps-sm tracking-[0.2em] text-outline mt-space-xs uppercase">EVERY STYLE. ONE DESTINATION.</p></div><div class="flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[16px]">public</span><span class="font-metadata text-metadata text-on-surface-variant tracking-wider uppercase">EDITION INDIA / GLOBAL DISCOVERY</span></div></div><div class="grid grid-cols-2 md:grid-cols-4 gap-space-xl py-space-lg"><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Discovery</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="men" href="#">Men</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="women" href="#">Women</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="clothing" href="#">Clothing</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="footwear" href="#">Footwear</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="accessories" href="#">Accessories</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="aesthetics" href="#">Aesthetics</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Editorial</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="the-style-edit" href="#">The Style Edit</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="trending" href="#">Trending Curations</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="wardrobe-guides" href="#">Wardrobe Guides</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="fabric-journal" href="#">Fabric Journal</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Client Care</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-veylora" href="#">About Veylora</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="wishlist" href="#">Wishlist Archive</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="faq" href="#">FAQ &amp; Assistance</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Legal &amp; Assurance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-conditions" href="#">Terms &amp; Conditions</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="affiliate-disclosure" href="#">Affiliate Transparency</a><span class="font-metadata text-metadata text-outline mt-space-xs">SSL Secured Haute Gateway</span></div></div><div class="bg-surface-container-low p-space-md rounded mt-space-md"><p class="font-metadata text-metadata text-outline leading-relaxed tracking-wider">AFFILIATE DISCLOSURE: As an Amazon Associate, Veylora earns from qualifying purchases. Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon.in at the time of purchase will apply.</p></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg"><span class="font-metadata text-metadata text-outline uppercase tracking-widest">© 2025 VEYLORA. ALL RIGHTS RESERVED. ARCHITECTURAL COMMERCE ARCHIVE.</span><div class="flex items-center gap-space-md"><span class="font-metadata text-metadata text-outline uppercase tracking-wider">OBJECT DISCOVERY</span><span class="font-metadata text-metadata text-primary uppercase tracking-wider">NOUVELLE ÉDITION</span></div></div></div></footer></body></html>

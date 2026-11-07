@@ -1,0 +1,870 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<script defer src="assets/js/main.js"></script>
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}#preloader{display:none!important}</style></noscript>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#2f3035", "error-container": "#93000a", "secondary": "#c6c6cb", "inverse-on-surface": "#303033", "tertiary-container": "#aaacb4", "on-error": "#690005", "on-tertiary-fixed": "#191c21", "primary-fixed-dim": "#e1c290", "primary-container": "#c5a878", "background": "#121315", "surface-dim": "#121315", "on-secondary-container": "#bbbbc1", "outline": "#998f82", "secondary-container": "#4a4b50", "on-surface-variant": "#d0c5b7", "primary": "#e2c391", "on-background": "#e3e2e5", "on-secondary-fixed": "#1a1c20", "tertiary-fixed": "#e1e2ea", "surface-bright": "#38393b", "surface-variant": "#343537", "surface-tint": "#e1c290", "on-error-container": "#ffdad6", "on-tertiary-container": "#3d4047", "secondary-fixed": "#e2e2e8", "on-tertiary": "#2d3037", "surface": "#121315", "surface-container-high": "#292a2c", "on-primary": "#402d08", "tertiary-fixed-dim": "#c4c6ce", "surface-container-low": "#1b1c1e", "surface-container-lowest": "#0d0e10", "on-surface": "#e3e2e5", "on-primary-container": "#513d17", "inverse-primary": "#725b32", "on-tertiary-fixed-variant": "#44474d", "outline-variant": "#4d463b", "on-primary-fixed-variant": "#58431c", "secondary-fixed-dim": "#c6c6cb", "error": "#ffb4ab", "primary-fixed": "#fedeaa", "surface-container": "#1f2022", "tertiary": "#c5c7cf", "on-secondary-fixed-variant": "#45474b", "surface-container-highest": "#343537", "on-primary-fixed": "#271900", "inverse-surface": "#e3e2e5" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1.5rem", "space-md": "1rem", "margin": "2.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-hero": [ "Playfair Display" ], "body-sm": [ "Plus Jakarta Sans" ], "metadata": [ "Plus Jakarta Sans" ], "headline-hero-mobile": [ "Playfair Display" ], "headline-lg": [ "Playfair Display" ], "body-lg": [ "Plus Jakarta Sans" ], "label-caps-sm": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Playfair Display" ], "label-caps-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ], "headline-sm": [ "Playfair Display" ] }, "fontSize": { "headline-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "body-sm": [ "12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" } ], "metadata": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" } ], "headline-hero-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "label-caps-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.18em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" } ], "label-caps-lg": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.15em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 w-full max-w-[1680px] mx-auto px-margin flex flex-col justify-between py-space-sm"><div class="flex items-center justify-between w-full h-12"><div class="flex items-center gap-space-md"><img alt="Veylora Luxury Monogram Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VVWrcXQt4Y260Mj5h1Yk2rw7jHBCBcgP0kwaSQT-kRiwTaXCwE6BQ6UatEwJvOYEVFb0yu2cq2ff0HgNzoDm6AzcigP-CpIbtRu-3HWhzlV57L6Y00JYocBQZYDlUUfVlqRQWA-V1Vmb63Li308XPnU45Bgf42jrI_msbA9fzVyXddReO_uaG0PF0Epgzosxr34F9-mrcpVgoW3Pir-kQZDzN0_Hmh-rY3Syc3NmdKW9m35AfZZmt1lFk"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary">VEYLORA</span><span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] -mt-1 hidden sm:block">HAUTE CURATION</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">verified</span><span class="font-label-caps-sm text-label-caps-sm tracking-wider text-on-surface">AMAZON.IN VERIFIED DEALS</span></div><button aria-label="Search Archive" class="flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Saved Wishlist" class="relative flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">favorite</span><span class="absolute -top-1 -right-2 bg-primary text-on-primary font-metadata text-metadata px-1 rounded-full h-4 min-w-[16px] flex items-center justify-center font-bold">4</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><nav class="flex items-center justify-center gap-space-lg overflow-x-auto h-9 pb-1" data-active-classes="text-primary font-bold"><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="home" href="index.html">HOME</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="men" href="men.html">MEN</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="women" href="women.html">WOMEN</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="clothing" href="clothing.html">CLOTHING</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="footwear" href="footwear.html">FOOTWEAR</a><a aria-current="page" class="uppercase tracking-[0.18em] transition-colors shrink-0 text-primary font-bold" data-path="accessories" href="accessories.html">ACCESSORIES</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="aesthetics" href="aesthetics.html">AESTHETICS</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="trending" href="trending.html">TRENDING</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="the-style-edit" href="style-edit.html">THE STYLE EDIT</a></nav></div></header><main class="w-full max-w-[1680px] mx-auto px-margin pt-28 flex-1 min-h-[calc(100vh-112px)]"><div class="flex flex-col w-full">
+<!-- Top Breadcrumb & Live Archival Telemetry -->
+<section class="py-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-metadata text-metadata uppercase tracking-widest text-outline">
+<a class="hover:text-primary transition-colors" href="index.html">HOME</a>
+<span>/</span>
+<a class="hover:text-primary transition-colors" href="index.html">ALL COLLECTIONS</a>
+<span>/</span>
+<span class="text-primary font-semibold">THE ACCESSORIES COMPENDIUM</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-full text-on-surface-variant font-metadata text-metadata">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="tracking-wider">INDEX SYNCHRONIZED: 8 MINS AGO • 468 CURATED ACCOUTREMENTS</span>
+</div>
+<div class="inline-flex items-center gap-1 px-space-sm py-1 bg-surface-container-high rounded text-primary font-metadata text-metadata">
+<span class="material-symbols-outlined text-[14px]" aria-hidden="true">favorite</span>
+<span data-wishlist-count>4</span>
+<span class="sr-only">Saved pieces</span>
+</div>
+<div class="hidden sm:inline-flex items-center px-space-sm py-1 bg-surface-container-high rounded text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-widest">
+        ARCHIVE VOL. 06
+      </div>
+</div>
+</section>
+<!-- Editorial Catalog Header -->
+<section class="py-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-5xl">
+<span class="font-label-caps-lg text-label-caps-lg uppercase tracking-[0.2em] text-primary">
+        EDITION MMXXV • ARCHIVE VOL. 06 — HOROLOGY, JEWELLERY &amp; TACTILE LEATHER
+      </span>
+<h1 class="font-headline-hero text-headline-hero text-on-surface tracking-tight">
+        The Accessories Compendium
+      </h1>
+<p class="font-headline-sm text-headline-sm text-on-surface-variant italic font-normal max-w-3xl">
+        Precision Timepieces, Sculptural Jewels, Artisanal Leather &amp; Optical Frames
+      </p>
+<p class="font-body-md text-body-md text-outline max-w-3xl leading-relaxed mt-space-xs">
+        An exacting repository of tactile micro-craftsmanship. Every artifact presented adheres to an absolute still-life canon—isolated on matte basalt stone, dark velvet, or raw slate. Each curation connects seamlessly to verified Amazon India fulfillment hubs, ensuring genuine provenance, buyer protection, and direct-to-destination transport.
+      </p>
+</div>
+<!-- Quick Category Horizontal Filter Bar -->
+<div class="flex items-center gap-space-xs overflow-x-auto py-space-sm no-scrollbar">
+<button class="px-space-md py-space-xs bg-primary text-on-primary font-label-caps-sm text-label-caps-sm uppercase tracking-widest rounded whitespace-nowrap shadow-sm transition-transform active:scale-95">
+        ALL ACCOUTREMENTS (468)
+      </button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest rounded whitespace-nowrap transition-colors">
+        HOROLOGY &amp; TIMEPIECES (112)
+      </button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest rounded whitespace-nowrap transition-colors">
+        FINE JEWELLERY (96)
+      </button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest rounded whitespace-nowrap transition-colors">
+        LEATHER BAGS &amp; TOTES (84)
+      </button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest rounded whitespace-nowrap transition-colors">
+        SUNGLASSES &amp; EYEWEAR (68)
+      </button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest rounded whitespace-nowrap transition-colors">
+        WALLETS &amp; CARDHOLDERS (54)
+      </button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest rounded whitespace-nowrap transition-colors">
+        BELTS &amp; HARDWARE (32)
+      </button>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-caps-sm text-label-caps-sm uppercase tracking-widest rounded whitespace-nowrap transition-colors">
+        LUGGAGE &amp; TRAVEL (22)
+      </button>
+</div>
+</section>
+<!-- Filter Status & Refinement Bar -->
+<section class="py-space-sm px-space-md bg-surface-container-low rounded flex flex-col lg:flex-row lg:items-center justify-between gap-space-md shadow-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-label-caps-lg text-label-caps-lg text-on-surface uppercase tracking-wider">
+        468 VERIFIED DISCOVERIES
+      </span>
+<div class="h-4 w-px bg-surface-variant hidden sm:block"></div>
+<!-- Active Chips -->
+<span class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-on-surface font-metadata text-metadata">
+        Category: Horology &amp; Leather
+        <button class="text-outline hover:text-primary leading-none text-sm">×</button>
+</span>
+<span class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-on-surface font-metadata text-metadata">
+        Metal: 18K Gold &amp; Titanium
+        <button class="text-outline hover:text-primary leading-none text-sm">×</button>
+</span>
+<span class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-on-surface font-metadata text-metadata">
+        Prime Verified
+        <button class="text-outline hover:text-primary leading-none text-sm">×</button>
+</span>
+<button class="font-metadata text-metadata text-primary uppercase tracking-widest hover:underline ml-space-xs">
+        CLEAR ALL
+      </button>
+</div>
+<!-- Sorting & Density Controls -->
+<div class="flex items-center gap-space-md self-end lg:self-auto">
+<div class="flex items-center gap-space-xs">
+<label class="font-metadata text-metadata text-outline uppercase tracking-wider" for="catalog-sort">Sort:</label>
+<select class="bg-surface-container-high text-on-surface font-body-sm text-body-sm py-1 px-space-sm rounded focus:outline-none focus:ring-1 focus:ring-primary border-none cursor-pointer" id="catalog-sort">
+<option selected="">Curator's Recommendation</option>
+<option>Price: High to Low (Haute Valuations)</option>
+<option>Price: Accessible to Prime</option>
+<option>Amazon India Verified Velocity</option>
+<option>Highest Customer Acclaim (★ 4.5+)</option>
+</select>
+</div>
+<div class="hidden sm:flex items-center gap-1 bg-surface-container-high p-1 rounded">
+<button class="p-1 rounded bg-surface text-primary flex items-center" title="Dense Quad View">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface flex items-center" title="Editorial Triple View">
+<span class="material-symbols-outlined text-[18px]">view_module</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Main Split Architecture: Sticky Filters + 12-Card Discovery Grid -->
+<section class="py-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- DESKTOP STICKY REFINEMENTS SIDEBAR (3 Columns) -->
+<aside class="lg:col-span-3 sticky top-32 flex flex-col gap-space-md bg-surface-container-low p-space-md rounded shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="font-label-caps-lg text-label-caps-lg text-on-surface uppercase tracking-widest">FILTERS</span>
+</div>
+<button class="font-metadata text-metadata text-outline hover:text-primary tracking-wider uppercase">RESET</button>
+</div>
+<!-- Department Accordion -->
+<div class="flex flex-col gap-space-xs">
+<button aria-expanded="true" class="flex items-center justify-between text-left py-space-xs text-on-surface font-label-caps-md text-body-md font-semibold" onclick='const o=this.getAttribute("aria-expanded")==="false";this.setAttribute("aria-expanded",o);this.nextElementSibling.classList.toggle("hidden",!o);this.querySelector(".filter-caret").textContent=o?"\u2212":"+";'>
+<span>DEPARTMENT &amp; CATEGORY</span>
+<span class="text-primary font-mono text-sm filter-caret" aria-hidden="true">−</span>
+</button>
+<div class="flex flex-col gap-space-xs pl-space-xs">
+<label class="flex items-center justify-between text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<span class="flex items-center gap-space-xs">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none cursor-pointer" type="checkbox"/>
+<span>Watches &amp; Horology</span>
+</span>
+<span class="font-metadata text-metadata text-outline">112</span>
+</label>
+<label class="flex items-center justify-between text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<span class="flex items-center gap-space-xs">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none cursor-pointer" type="checkbox"/>
+<span>Fine Jewellery &amp; Metals</span>
+</span>
+<span class="font-metadata text-metadata text-outline">96</span>
+</label>
+<label class="flex items-center justify-between text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<span class="flex items-center gap-space-xs">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none cursor-pointer" type="checkbox"/>
+<span>Handbags, Totes &amp; Briefcases</span>
+</span>
+<span class="font-metadata text-metadata text-outline">84</span>
+</label>
+<label class="flex items-center justify-between text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<span class="flex items-center gap-space-xs">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none cursor-pointer" type="checkbox"/>
+<span>Sunglasses &amp; Optical Acetate</span>
+</span>
+<span class="font-metadata text-metadata text-outline">68</span>
+</label>
+<label class="flex items-center justify-between text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<span class="flex items-center gap-space-xs">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none cursor-pointer" type="checkbox"/>
+<span>Wallets &amp; Small Leather Goods</span>
+</span>
+<span class="font-metadata text-metadata text-outline">54</span>
+</label>
+<label class="flex items-center justify-between text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<span class="flex items-center gap-space-xs">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none cursor-pointer" type="checkbox"/>
+<span>Leather Belts &amp; Buckles</span>
+</span>
+<span class="font-metadata text-metadata text-outline">32</span>
+</label>
+<label class="flex items-center justify-between text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<span class="flex items-center gap-space-xs">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none cursor-pointer" type="checkbox"/>
+<span>Luggage &amp; Weekenders</span>
+</span>
+<span class="font-metadata text-metadata text-outline">22</span>
+</label>
+</div>
+</div>
+<!-- Price Bracket Slider Section -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button aria-expanded="true" class="flex items-center justify-between text-left py-space-xs text-on-surface font-label-caps-md text-body-md font-semibold" onclick='const o=this.getAttribute("aria-expanded")==="false";this.setAttribute("aria-expanded",o);this.nextElementSibling.classList.toggle("hidden",!o);this.querySelector(".filter-caret").textContent=o?"\u2212":"+";'>
+<span>PRICE RANGE (INR ₹)</span>
+<span class="text-primary font-mono text-sm filter-caret" aria-hidden="true">−</span>
+</button>
+<div class="flex flex-col gap-space-sm">
+<div class="flex flex-col gap-space-xs my-2">
+<label class="sr-only" for="price-min">Minimum price</label>
+<input id="price-min" type="range" min="1200" max="65000" value="1200" step="100" class="w-full accent-primary cursor-pointer" aria-label="Minimum price (₹1,200–₹65,000)" oninput='document.getElementById("price-min-value").textContent="₹"+Number(this.value).toLocaleString("en-IN");'/>
+<label class="sr-only" for="price-max">Maximum price</label>
+<input id="price-max" type="range" min="1200" max="65000" value="65000" step="100" class="w-full accent-primary cursor-pointer" aria-label="Maximum price (₹1,200–₹65,000)" oninput='document.getElementById("price-max-value").textContent="₹"+Number(this.value).toLocaleString("en-IN");'/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm font-metadata text-metadata">
+<div class="bg-surface-container-high p-space-xs rounded flex flex-col">
+<span class="text-outline uppercase text-[11px]">MINIMUM</span>
+<span id="price-min-value" class="text-on-surface font-semibold">₹1,200</span>
+</div>
+<div class="bg-surface-container-high p-space-xs rounded flex flex-col text-right">
+<span class="text-outline uppercase text-[11px]">MAXIMUM</span>
+<span id="price-max-value" class="text-on-surface font-semibold">₹65,000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Material & Metallurgy Accordion -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button aria-expanded="true" class="flex items-center justify-between text-left py-space-xs text-on-surface font-label-caps-md text-body-md font-semibold" onclick='const o=this.getAttribute("aria-expanded")==="false";this.setAttribute("aria-expanded",o);this.nextElementSibling.classList.toggle("hidden",!o);this.querySelector(".filter-caret").textContent=o?"\u2212":"+";'>
+<span>MATERIAL &amp; METALLURGY</span>
+<span class="text-primary font-mono text-sm filter-caret" aria-hidden="true">−</span>
+</button>
+<div class="flex flex-col gap-space-xs pl-space-xs">
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>18K Gold Vermeil &amp; Solid Brass</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>316L Surgical Stainless Steel</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>Full-Grain Tuscan Leather</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>Japanese Handcrafted Acetate</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>Sterling Silver 925</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>Grade 5 Titanium</span>
+</label>
+</div>
+</div>
+<!-- Watch Specifications (Horological Precision) -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button aria-expanded="false" class="flex items-center justify-between text-left py-space-xs text-on-surface font-label-caps-md text-body-md font-semibold" onclick='const o=this.getAttribute("aria-expanded")==="false";this.setAttribute("aria-expanded",o);this.nextElementSibling.classList.toggle("hidden",!o);this.querySelector(".filter-caret").textContent=o?"\u2212":"+";'>
+<span>WATCH SPECIFICATIONS</span>
+<span class="text-primary font-mono text-sm filter-caret" aria-hidden="true">+</span>
+</button>
+<div class="flex flex-col gap-space-xs pl-space-xs hidden">
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>Swiss Automatic Movement</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>Sapphire Crystal Glass</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>100m Water Resistance</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer py-0.5">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>Minimalist Dress Profile</span>
+</label>
+</div>
+</div>
+<!-- Hardware Finish Swatches -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">HARDWARE FINISH</span>
+<div class="flex items-center gap-space-sm pt-1">
+<button class="w-6 h-6 rounded-full bg-primary ring-2 ring-primary ring-offset-2 ring-offset-surface-container-low" title="Champagne Gold"></button>
+<button class="w-6 h-6 rounded-full bg-secondary hover:scale-110 transition-transform" title="Silver Chrome"></button>
+<button class="w-6 h-6 rounded-full bg-amber-700 hover:scale-110 transition-transform" title="Antique Brass"></button>
+<button class="w-6 h-6 rounded-full bg-surface-variant hover:scale-110 transition-transform" title="Matte Black"></button>
+<button class="w-6 h-6 rounded-full bg-rose-300 hover:scale-110 transition-transform" title="Rose Gold"></button>
+</div>
+</div>
+<!-- Fulfillment & Trust Protocols -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">TRUST CRITERIA</span>
+<div class="flex flex-col gap-space-xs">
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span class="text-primary font-medium">Amazon Prime Eligible</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>Next-Day Fulfilled Express</span>
+</label>
+<label class="flex items-center gap-space-xs text-body-sm text-on-surface-variant hover:text-on-surface cursor-pointer">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container-high accent-primary border-none" type="checkbox"/>
+<span>4.2+ Star Review Certified</span>
+</label>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-space-xs pt-space-sm">
+<button class="w-full py-space-sm bg-primary text-on-primary font-label-caps-md text-label-caps-lg uppercase tracking-wider rounded font-bold hover:bg-primary-fixed transition-colors shadow-sm text-center">
+          APPLY REFINEMENTS
+        </button>
+<button class="text-center font-metadata text-metadata text-outline hover:text-on-surface uppercase tracking-wider py-1">
+          RESET ALL FILTERS
+        </button>
+</div>
+</aside>
+<!-- 12-ITEM PRODUCT CATALOG GALLERY (9 Columns) -->
+<main class="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-space-lg">
+<!-- ITEM 1: Horology - Sunburst Chronograph -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Luxury sunburst chronograph wristwatch 41mm in champagne gold on black slate" fetchpriority="high" decoding="async" data-alt="Macro studio product still-life photography of a luxury minimalist sunburst chronograph wristwatch resting flat on dark raw textured slate. Champagne gold case, black sunburst dial with sharp brass hour markers, no people, zero human elements, moody directional chiaroscuro lighting, dark noir background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVkd20yQjfuoEiz2W40rLeflLV4IYDufcFLG2_D4CscxsRVg7HSVWdT3v_QVWbmSa16YkwwG0C1Ao8P-6uO6Y21HLaTczhdLyeQEEenm4qVzB5-ecHWvVZ5mi_hnimZSe80NjbDihCSLJ9zvXObRpZBFVvk4yE2Kf7mJVei_kI8gMQdagnaRLoK_TO76xqOBRU1FNV2zcxDcffxWZ5r4H38cz8Otbt0hnMkj_-pu8"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              SWISS MOVEMENT
+            </span>
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">
+              SAPPHIRE GLASS
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">ATELIER HOROLOGIE</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.9</span>
+<span class="text-outline">(214)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Sunburst Chronograph 41mm in Champagne Gold
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Surgical 316L stainless casing electroplated in 18K champagne hue. Anti-reflective sapphire dome with deployant Italian leather strap.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹28,950</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹36,000</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-20%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 2: Leather Handbag - Sculptural Woven Flap Bag -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Sculptural woven black calfskin leather flap handbag with gold clasp" loading="lazy" decoding="async" data-alt="Still-life luxury product photograph of a sculptural woven black calfskin leather flap handbag positioned upright on polished obsidian block. Brushed champagne gold lock clasp closure, clean studio dark shadows, no models, no people, tactile matte leather grain close-up." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMK1YbTzhBkFrNPi9E_T6u6b1wvdAF_0JdveSWnc1DO6vTh4ZjWi7HewJnKp_W1mmJF2RJP4BMmgoykcrGekvi3yieaxSTkvp7JmhKW0OZIaB4hmpSLwk3Cfl5fBc37_4r-zxvY5cUkTYMCQgr0TeiFBh8ptNRALuswSfq3zV-ZaF-fiRIccVA0WWFm7bjHrmSubOhXI6GuXV_NuFOUQ59f3TAdJ2plDhg5OpssGk"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              TUSCAN CALFSKIN
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">MAISON CUIR</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.8</span>
+<span class="text-outline">(182)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Sculptural Woven Leather Flap Bag
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Intrecciato woven architecture in dense vegetable-tanned grain with architectural solid brass magnetic clasp mechanism.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹34,500</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹42,000</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-18%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 3: Sunglasses - Japanese Acetate Frames -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Black Japanese acetate sunglasses with gold temple details" loading="lazy" decoding="async" data-alt="Top-down still-life product photo of square black polished Japanese acetate sunglasses resting diagonally on dark textured charcoal stone. Subtle gold wirecore visible in translucent temple tips, deep dark bottle green polarized lenses, zero people, pure luxury object photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJfhjnDUvALY5l8QL7ejEpQb53qodTXUOcHAhqKnT0p8JYvvWGAZPHSnDUSPMAPz92P1gRhsk0XB9lzMQZSOPrOfDjJbLkHaAlQrHQrggc1Jku_LA_ZIOuGOI6woEiTCCnOBIVX5tv9h7VEwn5KCjO_DfCvPIlsUqFJm-ub7aPNTf5hiOmMe4iPqCdgbKC1WGsZAT91z42dGswXonXRMeFY12PgP6k7cGaEnMr0P0"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              HANDMADE ACETATE
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">OPTIQUE NOIR</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.9</span>
+<span class="text-outline">(340)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Hand-Polished Japanese Acetate Sunglasses
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Takiron cellulose acetate hand-tumbled for 72 hours. Category 3 polarized lenses with rear anti-reflective coating.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹14,200</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹18,500</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-23%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 4: Small Leather Goods - Calfskin Bifold Cardholder -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Pebbled espresso calfskin bifold cardholder on black sand" loading="lazy" decoding="async" data-alt="Crisp flat-lay still-life photograph of a folded dark espresso pebbled calfskin leather wallet and cardholder resting on black sand. Edges hand-lacquered in matte black, embossed gold foil monogram lettering, zero human hands or models, sharp luxury contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACz4cSEcYDidPkX9W92ii7gjv3YQAqfZEkLT0-y4KFsQy2msh5l5j6fMfcPiR1wdLY_Wf_eLXIFuXR2dqHcxK4my7TYRL7mtwAeZ56kYhAjSwKKKkIH3ScGGPd78dVbw3HUMsNbjAVDn4pO2uguZcM5AG3KW-GT1KNoVrohs3b9DMFv02kyRVTbneewWgWlJlWeTZ01rVG1OXSchMtqg_rO3QoKviqXpvjRN-GJ8I"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              RFID SHIELDED
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">PELLAME FLORENTINE</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.7</span>
+<span class="text-outline">(156)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Pebbled Calfskin Bifold Cardholder
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Six-slot origami card geometry with central banknote compartment. Hand-painted edge beveling in artisanal dark dye.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹6,800</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹8,500</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-20%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 5: Hardware - Solid Brass Monogram Belt -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Brown bridle leather belt with solid brass geometric buckle" loading="lazy" decoding="async" data-alt="Still life photograph of a rolled thick dark brown bridle leather belt with a heavy solid brushed brass geometric buckle resting on a dark slate background. Deep shadows, razor-sharp focus on the brass grain and saddle stitching, zero human presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-C2LlFOr0fimStwbJ3Eb0mHmdMPH1b1Odle2KicvB6O8V2SLzF2ahyPLV-_S-FYZRqQMk1QW3sTRsz__Orax3BlvkiWkSXGtdnmtXaQyB2CzJ7U9klrNWAGwDT7vi2dPL3zZ9SIEw6UnYvgP8-znfpMXGv9noHJGdTmX2YMHq0G1IoA-E5tPwygYjCmAgPXiIlOXyJtQhpaES_3K91c1SU5TueSWz3kMlM2WlAyw"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              SOLID BRASS
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">ATELIER CORIACE</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.8</span>
+<span class="text-outline">(98)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Solid Brass Monogram Buckle Leather Belt
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Full-grain English bridle leather, 35mm width, equipped with solid forged brass pin buckle with custom knurled detailing.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹8,900</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹11,000</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-19%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 6: Fine Jewellery - Minimalist 18K Gold Herringbone Chain -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="18K gold vermeil flat herringbone chain necklace on black velvet" loading="lazy" decoding="async" data-alt="Macro still life photograph of an 18K gold vermeil flat herringbone snake chain coiled fluidly on dark black velvet fabric. High specular highlights gleam along golden scales, completely isolated product study, no neck, no skin, zero people, fine jewellery photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuNV8GjdwEAPelGgIS9lLsBLvr86l9Mxjch95EEvg0ThMXuI2I0sC0BR4-IkBRtmqITRfcjcirxWMH7aNi7v1rheirWCVtppo2A86JepGqQcp3NhTBtw6zZY46YjuQTrDq6jctTmJ-ZFAhFyBzX0eJjYHQcZyqVcTPI5B9o5Y-npGFHD2lUr-W0aSEQmO0MnbZCtc2PIbZhjF-GrnsMhyNKcAY6LP0q4DfWGinxTc"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              18K GOLD VERMEIL
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">ORFEVRE MONTE</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.9</span>
+<span class="text-outline">(275)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Minimalist 18K Gold Herringbone Chain
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Liquid drape 4.5mm flat snake herringbone link in thick 2.5-micron gold vermeil over hypoallergenic 925 sterling silver base.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹16,400</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹21,000</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-22%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 7: Travel Luggage - Structured Weekender Duffel -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Charcoal waxed cotton and leather weekender duffel bag" loading="lazy" decoding="async" data-alt="Still-life luxury product image of a heavy charcoal waxed cotton and saddle leather weekender duffel bag sitting on a concrete plinth against a dark ambient studio backdrop. Matte black metal hardware, heavy gauge double zipper, no people, moody editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw-a8RmVfzFptZ4D3QGXdE1uHhhFaPcFmFPA7vzgoedoESXzPPzm85rXZGPwH_25DkYN88vr8zlQK5KtWT-e2DGXM_Y1XVLmszhylRW_JPM8goL1NYGKTq4TkfQWAU0YsXLB1rLpX9RQpTn4ND2thplTb-SRe_ZkbNrIfLQuwdOrcdihGZEIuRI8em4P-JUn17tRCTgIM4tEbogHYI2Y48_OBfFPMR4BAqumXLHXE"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              CABIN APPROVED
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">EXPEDITION MM</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.8</span>
+<span class="text-outline">(89)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Architectural Structured Weekender Duffel
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              42-litre capacity with dedicated waterproof footwear tunnel and padded microfibre interior cradle for laptops up to 16 inches.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹24,800</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹31,500</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-21%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 8: Horology - Automatic Ceramic Diver -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Automatic diver watch with black ceramic bezel on wet stone" loading="lazy" decoding="async" data-alt="Studio still life closeup photograph of a professional diver wristwatch with black unidirectional ceramic bezel, matte black textured dial, luminous indices, resting flat on dark wet basalt stone. Zero models, no arms, dramatic studio side illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUwrF2goLmgBAFrHCngGJelTaiE0SCy3Q1Lnz2LC0nVEj01fRsLmAVZoq9tTv_Mh_myQV78EMfOWsOVDYn0uhrOOFS7o9hilrn5xQWiv9xV24cOH2MKaXMksakwPB1fjzcjkB4wA0Az6LvXnQHZ-LlGW3EEB6Bk6NjpEcuVOfvVAsM5bYixbD4OmzMa9kY1cOO5pBqtD93S1o2-wjuGfYPaAL9lxbUMaMD_BgmP_U"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              300M DIVER
+            </span>
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">
+              CERAMIC BEZEL
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">KRONOS OCEAN</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.9</span>
+<span class="text-outline">(412)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Automatic Ceramic Bezel Diver Watch
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Seiko NH35 caliber regulated movement. Scratchproof laser-etched ceramic insert and solid steel link bracelet with dive extension.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹32,000</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹39,900</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-20%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 9: Fine Jewellery - Fluted Huggie Earrings in Vermeil -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Pair of gold vermeil fluted huggie hoop earrings" loading="lazy" decoding="async" data-alt="Macro jewellery still life of a pair of sculptural thick gold fluted hoop earrings resting side by side on dark charcoal travertine stone. Warm champagne reflections, no ears, no humans, pure editorial object focus, luxury minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTlCUUAgJqyHDRosntwD3CNRpXw8f1HGUB2miQBAMsCMpEmO9dmxaA_LXI48hyIUneBJBg1hHZu4zLvXLTul0SZIU9-i_8yENcWSBig4Fii51ExJZPtYBtE3UfJsSKM8dAAa0MpM09bW43ZDMheaewc0QIOdZhrDeK8ZmZ1Kb8Q4C6gBwI_sNAsRQ3d5dbeAalv4p0hOSEZVy4msjoz6GZSuM4Bg7fIacCAuRo1-A"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              VERMEIL METALS
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">ATELIER AURA</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.7</span>
+<span class="text-outline">(164)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Fluted Huggie Earrings in Vermeil
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Doric architectural column fluting sculpted in 18K yellow gold plated sterling silver. Secure click hinge clasp closure.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹7,450</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹9,800</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-24%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 10: Leather Folio - Bridle Leather Passport Folio -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Open cognac bridle leather travel passport folio flat-lay" loading="lazy" decoding="async" data-alt="Overhead flat-lay photograph of an open dark cognac bridle leather travel passport wallet displaying currency sleeve and boarding pass pocket, lying on dark gray wool flannel. No hands, no people, crisp leather stitching visible, editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCokZJyK8EwPHLnT3Gkfg8Vfl7hdW2CGp4DHDkcsIFVcQ_NexdJBSe-96X6fIqahP5_XEMkPp6OQM97Q_9L2e7JwueyD5bAzJDmCg2Z1YW9h-0rQRyBtRZF_fIXSWAkC0_mrQpAC5JthgBqtUdJA8kInSo-PZ8supCJRfOx_JKPmWkuUkAtp_wg__XkG-wOkD5uIxJn8YnCBzNZPAWvadk9qsw3V1Q5RnaPf5gFAsY"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              BRIDLE LEATHER
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">VOYAGE ARCHIVE</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.9</span>
+<span class="text-outline">(119)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Bridle Leather Travel Passport Folio
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              English bridle saddle-stitched hide tailored for two international passports, boarding credentials, and sim-card tool storage.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹9,200</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹11,500</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-20%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 11: Optical Eyewear - Minimalist Titanium Round Frame -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Round titanium optical frames in matte antique gold" loading="lazy" decoding="async" data-alt="Still-life studio shot of ultralight round titanium optical frames in matte antique gold finish resting on black architectural slate. No faces, no models, subtle geometric reflection in anti-reflective optical display lenses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-HKLem3bDgdky1nuwZAqILWVU2WYGX17idq06uyZcGeYccIVQ7Q-S-Ts5MhCeuirUqDFtBv8lRKvUQmgEb7_dZP8zeUT-iy1rj9k4MhU7lJLs8VXSjR0YreOXqED5MswRw8logW7cqiVcoS6AqUHjhTrsF9jvFv4N4zP75lANYsZRVLUReoh48Mlz8fW9kz4qncd6yT4ITkl-7VLJtqpHoRZGGUk9-x7Ph4wpNXU"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              BETA TITANIUM
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">OPTOMETRIE SABA</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.8</span>
+<span class="text-outline">(203)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Minimalist Titanium Round Optical Frame
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Japanese Beta-titanium wire chassis weighing merely 11 grams. Screwless spring hinges and hypoallergenic medical-grade nosepads.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹18,500</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹23,000</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-20%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- ITEM 12: Hardware - Artisanal Braided Leather Keyring -->
+<article data-reveal class="group bg-surface-container-low rounded overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden flex items-center justify-center p-space-md">
+<img alt="Braided black leather keyring with brass screw-gate carabiner" loading="lazy" decoding="async" data-alt="Macro studio photograph of a luxury braided black leather lanyard loop connected to a solid matte brass screw-gate carabiner resting on black silk. Heavy metal luster and crisp braided texture, zero human presence, still life product photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQVgsjwzkoluZYk7JJXiVcmtjTPkgfSnF1qKRC3tgBOi4U8wrCYzR45t50qZEZS71Tcb3rk8ffYY-aLjSCZLyQDYfx5nfLOoxmMU7xekR-x8yrKpAH0VJ7_4xtWNGLKJvbrE0p1y7xAXynQPoO5OkAOv3di5cSyZM9OowQv0vbiaqxyZm-GE7ymq6qkvfzxPgDYB_G8U2lgl4HWU142WJZzRkSdWI2vBykLUBlVTA"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1 items-start">
+<span class="bg-surface/85 backdrop-blur-md px-2 py-0.5 rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-primary">
+              FORGED HARDWARE
+            </span>
+</div>
+<button class="absolute top-space-sm right-space-sm w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-outline hover:text-primary transition-colors" aria-label="Save to wishlist" title="Save to Archival Wishlist">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm uppercase tracking-widest text-outline">ATELIER CORIACE</span>
+<div class="flex items-center text-primary font-metadata text-metadata gap-1">
+<span>★ 4.9</span>
+<span class="text-outline">(318)</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 font-semibold group-hover:text-primary transition-colors">
+              Artisanal Braided Leather Keyring &amp; Carabiner
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Four-strand round-braided calfskin cord married to an architectural screw-locking brass marine carabiner clasp.
+            </p>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹3,400</span>
+<span class="font-body-sm text-body-sm text-outline line-through">₹4,200</span>
+<span class="font-metadata text-metadata text-primary uppercase font-semibold">-19%</span>
+</div>
+<a class="w-full py-space-xs px-space-sm bg-primary text-on-primary font-label-caps-sm text-label-caps-sm font-bold uppercase tracking-wider rounded flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+<span>DISCOVER ON AMAZON.IN</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</article>
+</main>
+</section>
+<!-- Editorial Pagination & Dynamic Expansion -->
+<section class="py-space-xl flex flex-col items-center justify-center gap-space-md border-t border-surface-container-high/40 mt-space-md">
+<button class="px-space-xl py-space-sm bg-surface-container-high hover:bg-surface-variant text-on-surface hover:text-primary font-label-caps-lg text-label-caps-lg uppercase tracking-[0.2em] rounded flex items-center gap-space-sm transition-all shadow-sm">
+<span>LOAD NEXT 24 ACCOUTREMENTS</span>
+<span class="material-symbols-outlined text-[18px]">south</span>
+</button>
+<div class="flex items-center gap-space-xs font-metadata text-metadata text-outline">
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant">&lt;</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-primary text-on-primary font-bold">1</button>
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface">2</button>
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface">3</button>
+<span class="px-1">...</span>
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface">39</button>
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant">&gt;</button>
+</div>
+</section>
+<!-- Haute Gateway Assurance Banner -->
+<section class="py-space-lg bg-surface-container-low rounded p-space-lg my-space-md flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-md">
+<div class="flex flex-col gap-space-xs max-w-xl">
+<div class="flex items-center gap-space-xs text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>HAUTE GATEWAY GUARANTEE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+        Direct Amazon India Gateway. Zero Consumer Markup.
+      </h3>
+<p class="font-body-md text-body-md text-outline">
+        Veylora operates as an uncompromised curatorial portal. When selecting any accoutrement, you transition immediately to Amazon.in with authentic warranty protections, Prime dispatch guarantees, and frictionless return options.
+      </p>
+</div>
+<div class="grid grid-cols-2 gap-space-md text-center shrink-0">
+<div class="bg-surface-container p-space-md rounded flex flex-col items-center justify-center min-w-[140px]">
+<span class="font-headline-md text-headline-md text-primary font-bold">100%</span>
+<span class="font-metadata text-metadata text-on-surface-variant uppercase tracking-wider mt-1">Prime Eligible</span>
+</div>
+<div class="bg-surface-container p-space-md rounded flex flex-col items-center justify-center min-w-[140px]">
+<span class="font-headline-md text-headline-md text-primary font-bold">₹0</span>
+<span class="font-metadata text-metadata text-on-surface-variant uppercase tracking-wider mt-1">Platform Surcharge</span>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1680px] mx-auto px-margin py-space-xl"><div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-space-md pb-space-lg"><div class="max-w-xl"><div class="font-headline-md text-headline-md tracking-tight text-primary uppercase">VEYLORA</div><p class="font-headline-sm text-headline-sm text-on-surface mt-space-xs italic">THE ART OF EVERYDAY STYLE — Curated Fashion Discoveries</p><p class="font-label-caps-sm text-label-caps-sm tracking-[0.2em] text-outline mt-space-xs uppercase">EVERY STYLE. ONE DESTINATION.</p></div><div class="flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[16px]">public</span><span class="font-metadata text-metadata text-on-surface-variant tracking-wider uppercase">EDITION INDIA / GLOBAL DISCOVERY</span></div></div><div class="grid grid-cols-2 md:grid-cols-4 gap-space-xl py-space-lg"><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Discovery</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="men" href="men.html">Men</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="women" href="women.html">Women</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="clothing" href="clothing.html">Clothing</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="footwear" href="footwear.html">Footwear</a><a class="font-body-sm text-body-sm text-primary font-bold transition-colors" data-path="accessories" href="accessories.html">Accessories</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="aesthetics" href="aesthetics.html">Aesthetics</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Editorial</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="the-style-edit" href="style-edit.html">The Style Edit</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="trending" href="trending.html">Trending Curations</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="wardrobe-guides" href="style-edit.html">Wardrobe Guides</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="fabric-journal" href="style-edit.html">Fabric Journal</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Client Care</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-veylora" href="index.html">About Veylora</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="index.html">Contact</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="wishlist" href="index.html">Wishlist Archive</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="faq" href="index.html">FAQ &amp; Assistance</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Legal &amp; Assurance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="index.html">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-conditions" href="index.html">Terms &amp; Conditions</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="affiliate-disclosure" href="index.html">Affiliate Transparency</a><span class="font-metadata text-metadata text-outline mt-space-xs">SSL Secured Haute Gateway</span></div></div><div class="bg-surface-container-low p-space-md rounded mt-space-md"><p class="font-metadata text-metadata text-outline leading-relaxed tracking-wider">AFFILIATE DISCLOSURE: As an Amazon Associate, Veylora earns from qualifying purchases. Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon.in at the time of purchase will apply.</p></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg"><span class="font-metadata text-metadata text-outline uppercase tracking-widest">© 2025 VEYLORA. ALL RIGHTS RESERVED. ARCHITECTURAL COMMERCE ARCHIVE.</span><div class="flex items-center gap-space-md"><span class="font-metadata text-metadata text-outline uppercase tracking-wider">OBJECT DISCOVERY</span><span class="font-metadata text-metadata text-primary uppercase tracking-wider">NOUVELLE ÉDITION</span></div></div></div></footer></body></html>

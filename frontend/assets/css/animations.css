@@ -1,0 +1,1422 @@
+/* ==========================================================================
+   VEYLORA — motion, micro-interaction & responsive layer
+   Designed to sit on top of the Tailwind theme used by every page.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   00. Tokens & base
+   -------------------------------------------------------------------------- */
+:root {
+  --vey-gold: #e2c391;
+  --vey-gold-deep: #c5a878;
+  --vey-gold-pale: #fedeaa;
+  --vey-ink: #0d0e10;
+  --vey-surface: #121315;
+  --vey-line: rgba(77, 70, 59, 0.45);
+  --vey-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --vey-ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+::selection {
+  background: var(--vey-gold);
+  color: #402d08;
+}
+
+:focus-visible {
+  outline: 2px solid var(--vey-gold);
+  outline-offset: 3px;
+}
+
+/* Remove the 300ms double-tap delay without disabling pinch-zoom. */
+a,
+button,
+[role="button"],
+label,
+summary,
+select,
+input,
+textarea {
+  touch-action: manipulation;
+}
+
+/* Refined scrollbar (desktop only) */
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #0d0e10; }
+  ::-webkit-scrollbar-thumb {
+    background: #343537;
+    border: 2px solid #0d0e10;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--vey-gold-deep); }
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+  user-select: none;
+}
+
+img { max-width: 100%; }
+
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.no-scrollbar,
+.scrollbar-none { scrollbar-width: none; }
+
+.rounded-xs { border-radius: 0.0625rem; }
+
+/* --------------------------------------------------------------------------
+   01. Keyframes
+   -------------------------------------------------------------------------- */
+@keyframes veyFadeUp {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes veyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes veyHeaderDrop {
+  from { transform: translate3d(0, -102%, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+@keyframes veyPageIn {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes veyWordRise {
+  to { transform: translate3d(0, 0, 0); }
+}
+@keyframes veyPreMark {
+  0% { opacity: 0; transform: scale(0.82) rotate(-8deg); filter: blur(6px); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); filter: blur(0); }
+}
+@keyframes veyPreLine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes veyPreFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes veyTransitionPulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.96); }
+  50% { opacity: 0.9; transform: scale(1); }
+}
+@keyframes veyHeartPop {
+  0% { transform: scale(0.8); }
+  45% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+@keyframes veyToastIn {
+  from { opacity: 0; transform: translate3d(0, 16px, 0) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes veyToastOut {
+  to { opacity: 0; transform: translate3d(0, 10px, 0) scale(0.98); }
+}
+@keyframes veyMarquee {
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes veyGoldPulse {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.06); }
+}
+@keyframes veyHeroSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes veyFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+}
+@keyframes veyShimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+/* --------------------------------------------------------------------------
+   02. Scroll progress / grain / cursor glow
+   -------------------------------------------------------------------------- */
+#scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 90;
+  pointer-events: none;
+}
+#scroll-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #725b32, var(--vey-gold), var(--vey-gold-pale));
+  box-shadow: 0 0 14px rgba(226, 195, 145, 0.65);
+  transition: width 0.08s linear;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+#cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 520px;
+  margin: -260px 0 0 -260px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(226, 195, 145, 0.11), rgba(226, 195, 145, 0.04) 38%, transparent 62%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.cursor-ready #cursor-glow { opacity: 1; }
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  #cursor-glow { display: none; }
+  .grain { opacity: 0.022; }
+}
+
+/* --------------------------------------------------------------------------
+   03. Preloader & page transition
+   -------------------------------------------------------------------------- */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vey-ink);
+  transition: opacity 0.75s var(--vey-ease), visibility 0.75s var(--vey-ease);
+}
+#preloader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  animation: veyPreFade 0.8s var(--vey-ease) both;
+}
+.preloader-mark {
+  height: 62px;
+  width: auto;
+  filter: drop-shadow(0 0 26px rgba(226, 195, 145, 0.4));
+  animation: veyPreMark 1.2s var(--vey-ease) both;
+}
+.preloader-name {
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  color: var(--vey-gold);
+  text-transform: uppercase;
+}
+.preloader-line {
+  width: 132px;
+  height: 1px;
+  background: #2a2b2e;
+  overflow: hidden;
+}
+.preloader-line i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--vey-gold), transparent);
+  animation: veyPreLine 1.15s var(--vey-ease) infinite;
+}
+.preloader-sub {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #998f82;
+}
+
+#page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  display: grid;
+  place-items: center;
+  background: var(--vey-ink);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s var(--vey-ease), visibility 0.4s var(--vey-ease);
+}
+#page-transition.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.transition-mark {
+  font-family: "Playfair Display", serif;
+  font-size: 54px;
+  color: var(--vey-gold);
+  animation: veyTransitionPulse 1.1s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   04. Header & navigation
+   -------------------------------------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid rgba(77, 70, 59, 0.22);
+  transition: transform 0.55s var(--vey-ease), background-color 0.4s ease,
+              box-shadow 0.4s ease, border-color 0.4s ease;
+  animation: veyHeaderDrop 0.9s var(--vey-ease) 0.08s both;
+}
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(226, 195, 145, 0.35), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.site-header.is-scrolled {
+  background-color: rgba(18, 19, 21, 0.94);
+  box-shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.9);
+  border-color: rgba(77, 70, 59, 0.5);
+}
+.site-header.is-scrolled::after { opacity: 1; }
+.site-header.is-hidden { transform: translate3d(0, -104%, 0); }
+
+.site-header-inner {
+  height: 5rem;
+  justify-content: center;
+  transition: height 0.45s var(--vey-ease);
+}
+
+@media (min-width: 1024px) {
+  .site-header-inner {
+    height: 7rem;
+    justify-content: space-between;
+  }
+}
+
+.brand-mark { width: 40px; height: 40px; }
+.brand-img {
+  filter: drop-shadow(0 0 14px rgba(226, 195, 145, 0.22));
+  transition: transform 0.7s var(--vey-ease), filter 0.5s ease;
+}
+.brand:hover .brand-img {
+  transform: rotate(7deg) scale(1.06);
+  filter: drop-shadow(0 0 20px rgba(226, 195, 145, 0.45));
+}
+.brand-halo {
+  background: radial-gradient(circle, rgba(226, 195, 145, 0.2), transparent 65%);
+  animation: veyGoldPulse 4.5s ease-in-out infinite;
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 5px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--vey-gold), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s var(--vey-ease);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after { transform: scaleX(1); }
+.nav-link[aria-current="page"] { color: var(--vey-gold); }
+.nav-link.is-active { color: var(--vey-gold); font-weight: 700; }
+
+.icon-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.35s ease, color 0.35s ease, transform 0.25s var(--vey-ease);
+}
+.icon-btn:hover {
+  color: var(--vey-gold);
+  background: rgba(255, 255, 255, 0.045);
+}
+.icon-btn:active { transform: scale(0.9); }
+
+@media (max-width: 380px) {
+  .icon-btn { width: 2.25rem; height: 2.25rem; }
+}
+
+/* --------------------------------------------------------------------------
+   05. Mobile / tablet drawer
+   -------------------------------------------------------------------------- */
+.mobile-menu {
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0.5s;
+}
+.mobile-menu-backdrop {
+  background: rgba(9, 10, 12, 0.72);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.mobile-menu-panel {
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.55s var(--vey-ease);
+  box-shadow: -30px 0 90px rgba(0, 0, 0, 0.55);
+  max-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.mobile-menu-panel:focus { outline: none; }
+.mobile-menu.is-open { visibility: visible; pointer-events: auto; }
+.mobile-menu.is-open .mobile-menu-backdrop { opacity: 1; }
+.mobile-menu.is-open .mobile-menu-panel { transform: none; }
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 52px;
+  padding: 0.65rem 0.25rem;
+  border-bottom: 1px solid rgba(77, 70, 59, 0.22);
+  opacity: 0;
+  translate: 16px 0;
+  transition: opacity 0.45s var(--vey-ease), translate 0.45s var(--vey-ease),
+              color 0.3s ease, background-color 0.3s ease;
+}
+.mobile-menu.is-open .drawer-link {
+  opacity: 1;
+  translate: 0 0;
+}
+.mobile-menu.is-open .drawer-link:nth-child(1) { transition-delay: 0.10s; }
+.mobile-menu.is-open .drawer-link:nth-child(2) { transition-delay: 0.145s; }
+.mobile-menu.is-open .drawer-link:nth-child(3) { transition-delay: 0.19s; }
+.mobile-menu.is-open .drawer-link:nth-child(4) { transition-delay: 0.235s; }
+.mobile-menu.is-open .drawer-link:nth-child(5) { transition-delay: 0.28s; }
+.mobile-menu.is-open .drawer-link:nth-child(6) { transition-delay: 0.325s; }
+.mobile-menu.is-open .drawer-link:nth-child(7) { transition-delay: 0.37s; }
+.mobile-menu.is-open .drawer-link:nth-child(8) { transition-delay: 0.415s; }
+.mobile-menu.is-open .drawer-link:nth-child(9) { transition-delay: 0.46s; }
+
+.drawer-link:hover { color: var(--vey-gold); }
+.drawer-index {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #998f82;
+  width: 24px;
+  flex-shrink: 0;
+}
+.drawer-label {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #e3e2e5;
+  flex: 1;
+}
+.drawer-link:hover .drawer-label { color: var(--vey-gold); }
+.drawer-arrow {
+  font-size: 16px;
+  color: #998f82;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s var(--vey-ease);
+}
+.drawer-link:hover .drawer-arrow,
+.drawer-link.is-active .drawer-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+  color: var(--vey-gold);
+}
+.drawer-link.is-active .drawer-label { color: var(--vey-gold); }
+.drawer-link.is-active .drawer-index { color: var(--vey-gold); }
+
+@media (min-width: 1024px) {
+  .mobile-menu { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   06. Search overlay
+   -------------------------------------------------------------------------- */
+.search-overlay {
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0.4s;
+}
+.search-backdrop {
+  background: rgba(9, 10, 12, 0.84);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.search-panel {
+  opacity: 0;
+  transform: translateY(-18px) scale(0.985);
+  transition: opacity 0.45s var(--vey-ease), transform 0.45s var(--vey-ease);
+  max-height: 78vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.search-overlay.is-open { visibility: visible; pointer-events: auto; }
+.search-overlay.is-open .search-backdrop { opacity: 1; }
+.search-overlay.is-open .search-panel { opacity: 1; transform: none; }
+
+.search-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(77, 70, 59, 0.55);
+  border-radius: 9999px;
+  background: rgba(41, 42, 44, 0.5);
+  color: #d0c5b7;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease,
+              transform 0.3s var(--vey-ease);
+}
+.search-chip:hover {
+  color: #402d08;
+  background: var(--vey-gold);
+  border-color: var(--vey-gold);
+  transform: translateY(-2px);
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 5px;
+  border: 1px solid rgba(77, 70, 59, 0.7);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: #d0c5b7;
+  background: #1b1c1e;
+}
+
+.search-field input::-webkit-search-cancel-button { display: none; }
+
+/* --------------------------------------------------------------------------
+   07. Hero treatments
+   -------------------------------------------------------------------------- */
+.hero-section { isolation: isolate; }
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  z-index: 0;
+  pointer-events: none;
+  background: conic-gradient(from 0deg,
+    transparent 0deg,
+    rgba(226, 195, 145, 0.055) 40deg,
+    transparent 96deg,
+    transparent 220deg,
+    rgba(226, 195, 145, 0.04) 268deg,
+    transparent 330deg);
+  animation: veyHeroSpin 60s linear infinite;
+}
+.hero-section > * { position: relative; z-index: 1; }
+
+/* The hand-built astrolabe SVGs get a slow breathing glow */
+main svg[viewBox="0 0 800 800"] {
+  filter: drop-shadow(0 0 30px rgba(226, 195, 145, 0.12));
+}
+
+/* --------------------------------------------------------------------------
+   08. Scroll reveal & headline split
+   -------------------------------------------------------------------------- */
+html.anim-ok [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  filter: blur(5px);
+  transition: opacity 0.9s var(--vey-ease), transform 0.9s var(--vey-ease),
+              filter 0.9s var(--vey-ease);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+html.anim-ok [data-reveal="left"] { transform: translate3d(-38px, 0, 0); }
+html.anim-ok [data-reveal="right"] { transform: translate3d(38px, 0, 0); }
+html.anim-ok [data-reveal="scale"] { transform: scale(0.94); }
+html.anim-ok [data-reveal="fade"] { transform: none; filter: none; }
+html.anim-ok [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+  will-change: auto;
+}
+
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.split-word-inner {
+  display: inline-block;
+  transform: translate3d(0, 116%, 0);
+  animation: veyWordRise 1s var(--vey-ease) forwards;
+  animation-delay: var(--word-delay, 0s);
+  will-change: transform;
+}
+
+@media (max-width: 767px) {
+  html.anim-ok [data-reveal] {
+    filter: none;
+    transform: translate3d(0, 22px, 0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   09. Cards, buttons & links
+   -------------------------------------------------------------------------- */
+main article,
+main .group {
+  transition: translate 0.55s var(--vey-ease), box-shadow 0.55s var(--vey-ease),
+              background-color 0.4s ease, border-color 0.4s ease;
+}
+
+main article { position: relative; }
+
+@media (hover: hover) {
+  main article:hover,
+  main .group:hover { translate: 0 -5px; }
+}
+
+main article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(226, 195, 145, 0);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color 0.5s ease;
+}
+@media (hover: hover) {
+  main article:hover::after { border-color: rgba(226, 195, 145, 0.26); }
+}
+
+/* Cursor-following specular sheen on cards */
+.shine { position: relative; }
+.shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(226, 195, 145, 0.09), transparent 46%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+@media (hover: hover) {
+  .shine:hover::before { opacity: 1; }
+}
+
+/* Gold sweep on primary actions */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-sheen::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -80%;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.75s var(--vey-ease);
+  z-index: 1;
+  pointer-events: none;
+}
+.btn-sheen:hover::before { left: 135%; }
+.btn-sheen > * { position: relative; z-index: 2; }
+
+/* Image loading fade */
+img.img-fade {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.5s ease;
+}
+img.img-fade.is-loaded { opacity: 1; }
+
+/* Saved-to-archive heart */
+.is-saved .material-symbols-outlined {
+  color: var(--vey-gold) !important;
+  animation: veyHeartPop 0.5s var(--vey-ease);
+}
+
+/* Footer link micro-motion */
+.footer-link {
+  width: fit-content;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #d0c5b7;
+  transition: color 0.3s ease, translate 0.3s var(--vey-ease);
+}
+.footer-link:hover {
+  color: var(--vey-gold);
+  translate: 3px 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. Marquee
+   -------------------------------------------------------------------------- */
+.marquee {
+  overflow: hidden;
+  background: #0d0e10;
+  border-top: 1px solid rgba(77, 70, 59, 0.35);
+  border-bottom: 1px solid rgba(77, 70, 59, 0.35);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: veyMarquee 46s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.95rem 1.25rem;
+}
+.marquee-group span {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #998f82;
+  white-space: nowrap;
+}
+.marquee-group i {
+  font-style: normal;
+  font-size: 8px;
+  color: var(--vey-gold-deep);
+  opacity: 0.7;
+}
+@media (max-width: 639px) {
+  .marquee-track { animation-duration: 34s; }
+  .marquee-group { gap: 1.5rem; }
+}
+
+/* --------------------------------------------------------------------------
+   11. Toasts & back-to-top
+   -------------------------------------------------------------------------- */
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  background: rgba(31, 32, 34, 0.97);
+  border: 1px solid rgba(226, 195, 145, 0.24);
+  border-left: 2px solid var(--vey-gold);
+  border-radius: 0.5rem;
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  animation: veyToastIn 0.45s var(--vey-ease) both;
+}
+.toast.is-leaving { animation: veyToastOut 0.35s ease forwards; }
+.toast > .material-symbols-outlined {
+  color: var(--vey-gold);
+  font-size: 18px;
+  margin-top: 1px;
+}
+.toast-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--vey-gold);
+}
+.toast-message {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: #d0c5b7;
+  margin-top: 2px;
+}
+
+#to-top {
+  position: fixed;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 65;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(var(--vey-gold) calc(var(--progress, 0) * 1%), rgba(255, 255, 255, 0.09) 0);
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 16px;
+  transition: opacity 0.4s ease, visibility 0.4s ease, translate 0.4s var(--vey-ease),
+              transform 0.3s var(--vey-ease);
+}
+#to-top::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: #121315;
+}
+#to-top.show { opacity: 1; visibility: visible; translate: 0 0; }
+#to-top.at-footer { opacity: 0; visibility: hidden; translate: 0 12px; }
+#to-top:hover { transform: scale(1.06); }
+#to-top:active { transform: scale(0.94); }
+.to-top-icon {
+  position: relative;
+  z-index: 1;
+  color: var(--vey-gold);
+  font-size: 20px;
+}
+@media (min-width: 640px) {
+  #to-top { right: 1.75rem; bottom: 1.75rem; }
+}
+
+/* --------------------------------------------------------------------------
+   12. Responsive shell refinements
+   -------------------------------------------------------------------------- */
+/* Fluid page margins: 16px phone / 24px tablet / 40px desktop */
+@media (max-width: 767px) {
+  .px-margin { padding-left: 1rem !important; padding-right: 1rem !important; }
+  .-mx-margin { margin-left: -1rem !important; margin-right: -1rem !important; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .px-margin { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .-mx-margin { margin-left: -1.5rem !important; margin-right: -1.5rem !important; }
+}
+
+/* Fluid display typography */
+@media (max-width: 639px) {
+  .font-headline-hero {
+    font-size: 36px !important;
+    line-height: 43px !important;
+    letter-spacing: -0.015em !important;
+  }
+  .font-headline-lg {
+    font-size: 27px !important;
+    line-height: 34px !important;
+  }
+  .font-headline-md {
+    font-size: 21px !important;
+    line-height: 29px !important;
+  }
+  .font-headline-sm { line-height: 24px !important; }
+  .font-body-lg { font-size: 15px !important; line-height: 24px !important; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .font-headline-hero {
+    font-size: 46px !important;
+    line-height: 54px !important;
+  }
+}
+
+/* Body copy never runs too wide on large monitors */
+main p { text-wrap: pretty; }
+main h1, main h2, main h3 { text-wrap: balance; }
+
+/* Sticky filter rails become internally scrollable on shorter screens */
+@media (min-width: 1024px) {
+  aside[class*="lg:sticky"] {
+    max-height: calc(100vh - 8.5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #4d463b transparent;
+    padding-right: 2px;
+  }
+  aside[class*="lg:sticky"]::-webkit-scrollbar { width: 5px; }
+  aside[class*="lg:sticky"]::-webkit-scrollbar-thumb {
+    background: #343537;
+    border-radius: 99px;
+  }
+}
+
+/* Keep in-page sticky rails clear of the shorter mobile header */
+@media (max-width: 1023px) {
+  .sticky.top-28 { top: 5rem !important; }
+}
+
+/* Tablet: keep filter bars from crowding the viewport */
+@media (max-width: 1023px) {
+  .sticky.top-32 { position: static !important; }
+}
+
+/* Tight price and title rows on narrow phones */
+@media (max-width: 639px) {
+  main article .flex.items-center.justify-between { flex-wrap: wrap; row-gap: 0.25rem; }
+  main article .flex.items-baseline { flex-wrap: wrap; row-gap: 0.2rem; }
+  main article .gap-space-xs { min-width: 0; }
+  .font-headline-sm { overflow-wrap: break-word; }
+}
+
+/* Very small phones (320–360px) */
+@media (max-width: 359px) {
+  .px-margin { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+  .-mx-margin { margin-left: -0.75rem !important; margin-right: -0.75rem !important; }
+  .brand-img { height: 2rem; }
+  .font-headline-hero { font-size: 30px !important; line-height: 37px !important; }
+}
+
+/* Large screens: give hero copy a little more air */
+@media (min-width: 1536px) {
+  .font-headline-hero { letter-spacing: -0.025em; }
+}
+
+/* Landscape phones: shorten the curtain animation */
+@media (max-height: 480px) {
+  .search-panel { margin-top: 0.75rem; max-height: 94vh; }
+  .preloader-mark { height: 44px; }
+}
+
+/* Anchor targets clear the fixed masthead */
+[id] { scroll-margin-top: 7.75rem; }
+@media (max-width: 1023px) {
+  [id] { scroll-margin-top: 5.75rem; }
+}
+
+/* Mobile refinement drawer: catalog filter asides become a compact disclosure */
+.filter-toggle { display: none; }
+.filter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+@media (max-width: 1023px) {
+  .filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(77, 70, 59, 0.55);
+    border-radius: 0.5rem;
+    background: #1b1c1e;
+    color: var(--vey-gold);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: left;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  .filter-toggle:hover { border-color: var(--vey-gold-deep); }
+  .filter-toggle .filter-caret {
+    margin-left: auto;
+    font-size: 20px;
+    transition: transform 0.35s var(--vey-ease);
+  }
+  .filter-toggle[aria-expanded="true"] .filter-caret { transform: rotate(180deg); }
+
+  aside.filter-collapsed:not(.is-open) {
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    max-height: none !important;
+    position: static !important;
+  }
+  aside.filter-collapsed .filter-body { display: none; }
+  aside.filter-collapsed.is-open .filter-body { display: flex; }
+  aside.filter-collapsed.is-open { padding: 1rem !important; }
+}
+
+/* Prevent iOS auto-zoom on compact form controls */
+@media (max-width: 767px) {
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Overlays reign over the utility button */
+body.menu-open #to-top,
+body.search-open #to-top {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Footer marquee should never cause horizontal scroll */
+.marquee-track { max-width: none; }
+
+/* Touch: prevent sticky hover states */
+@media (hover: none) {
+  main article:hover,
+  main .group:hover { translate: none; }
+  main article::after { display: none; }
+  .shine::before { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   13. Accessibility / reduced motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  html.anim-ok [data-reveal] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  .split-word-inner { transform: none; }
+  .marquee-track { animation: none; }
+  #cursor-glow, .grain { display: none; }
+  #to-top { transition: none; }
+}
+
+/* --------------------------------------------------------------------------
+   14. UX audit refinements — mobile ergonomics & accessibility
+   -------------------------------------------------------------------------- */
+/* Keyboard skip link */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 300;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.25rem;
+  background: var(--vey-gold);
+  color: #271900;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: translateY(-180%);
+  transition: transform 0.3s var(--vey-ease);
+}
+.skip-link:focus,
+.skip-link:focus-visible { transform: translateY(0); }
+
+/* Interactive affordances */
+a,
+button,
+[role="button"],
+summary,
+select,
+input[type="checkbox"],
+input[type="radio"] { cursor: pointer; }
+
+main article:has(a[href]),
+main .group:has(a[href]),
+main .group:has(button) { cursor: pointer; }
+
+#main-content:focus { outline: none; }
+
+.vey-count { font-variant-numeric: tabular-nums; }
+
+/* Hero astrolabe: viewport-safe, richer on desktop */
+.vey-astrolabe-wrap { opacity: 0.22; }
+.vey-astrolabe {
+  width: min(90vw, 700px);
+  height: min(90vw, 700px);
+}
+.vey-astrolabe-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 19%;
+  border: 1px dashed rgba(226, 195, 145, 0.4);
+  border-radius: 50%;
+  animation: veyHeroSpin 120s linear infinite reverse;
+  pointer-events: none;
+}
+@media (min-width: 1024px) {
+  .vey-astrolabe-wrap { opacity: 0.3; }
+}
+
+/* Homepage hero reaches the viewport edges at every breakpoint.
+   `w-full` fixes the width to the parent content box, so the negative
+   margins must be added back to the width or the hero leaves a gutter
+   on the right at every breakpoint. */
+.vey-hero-bleed.vey-hero-bleed {
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+@media (min-width: 768px) {
+  .vey-hero-bleed.vey-hero-bleed {
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .vey-hero-bleed.vey-hero-bleed {
+    width: calc(100% + 5rem);
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+  }
+}
+
+/* Hero statistics: airy 2×2 on phones, single column only on tiny handsets */
+.hero-stats { align-items: stretch; }
+.hero-stats > div { padding-block: 0.65rem; }
+@media (max-width: 359px) {
+  .hero-stats { grid-template-columns: 1fr; }
+}
+@media (min-width: 768px) {
+  .hero-stats > div + div { border-left: 1px solid rgba(77, 70, 59, 0.35); }
+}
+
+/* Editorial section rhythm on the homepage */
+@media (min-width: 768px) {
+  .vey-section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  .vey-section > div:first-child[class*="mb-space-lg"] {
+    margin-bottom: 2rem !important;
+  }
+}
+@media (min-width: 1280px) {
+  .vey-section {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+}
+
+/* Image shimmer while the editorial photography loads */
+.img-shimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(100deg, #1b1c1e 20%, #2b2c2f 40%, #1b1c1e 60%);
+  background-size: 200% 100%;
+  animation: veyShimmer 1.45s linear infinite;
+  opacity: 0.85;
+  transition: opacity 0.45s ease;
+}
+.img-shimmer.is-done { opacity: 0; }
+
+/* Tablet-width desktop navigation: tighten before it ever needs to scroll */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .site-header .nav-link {
+    font-size: 9px !important;
+    letter-spacing: 0.13em !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. Quick navigation, touch targets & readable type
+   -------------------------------------------------------------------------- */
+.mobile-bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 55;
+  display: none;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  padding: 0.3rem 0.35rem calc(0.3rem + env(safe-area-inset-bottom));
+  background: rgba(18, 19, 21, 0.94);
+  border-top: 1px solid rgba(77, 70, 59, 0.45);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 -18px 40px -28px rgba(0, 0, 0, 0.95);
+  transition: transform 0.4s var(--vey-ease), opacity 0.3s ease;
+}
+
+.bottom-nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0.2rem 0.15rem;
+  border-radius: 0.5rem;
+  color: #998f82;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+.bottom-nav-item .material-symbols-outlined {
+  font-size: 21px;
+  line-height: 1;
+}
+.bottom-nav-item[aria-current="page"],
+.bottom-nav-item.is-active { color: var(--vey-gold); }
+.bottom-nav-item[aria-current="page"]::before,
+.bottom-nav-item.is-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 22px;
+  height: 1px;
+  background: var(--vey-gold);
+  transform: translateX(-50%);
+}
+.bottom-nav-item:active { background: rgba(255, 255, 255, 0.05); }
+.bottom-nav-count {
+  position: absolute;
+  top: 0.25rem;
+  left: calc(50% + 5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border-radius: 999px;
+  background: var(--vey-gold);
+  color: #402d08;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Phones and tablets get the thumb-reachable bar. Desktop keeps the
+   masthead navigation, so the two systems never appear together. */
+@media (max-width: 1023px) {
+  .mobile-bottom-nav { display: grid; }
+
+  body.menu-open .mobile-bottom-nav,
+  body.search-open .mobile-bottom-nav {
+    transform: translateY(110%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Keep floating utilities and the footer clear of the quick bar */
+  #to-top { bottom: calc(4.85rem + env(safe-area-inset-bottom)); }
+  footer > div {
+    padding-bottom: calc(5.8rem + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .icon-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  #search-overlay button[type="submit"] { min-height: 44px; }
+  .text-body-md {
+    font-size: 15px !important;
+    line-height: 24px !important;
+  }
+  .text-body-sm {
+    font-size: 13px !important;
+    line-height: 21px !important;
+  }
+  .text-metadata {
+    font-size: 11px !important;
+    line-height: 16px !important;
+  }
+  #to-top { right: 1rem; }
+
+  /* WCAG-friendly touch targets */
+  main article a[href*="amazon.in"],
+  main article a[class*="bg-primary"] {
+    min-height: 44px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+  main article button[aria-label*="wishlist" i] {
+    width: 44px;
+    height: 44px;
+  }
+  main .overflow-x-auto > button,
+  main .overflow-x-auto > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  aside.filter-collapsed .filter-body label,
+  aside.filter-collapsed .filter-body button,
+  aside.filter-collapsed .filter-body select {
+    min-height: 40px;
+  }
+  .search-chip {
+    min-height: 40px;
+    padding: 0.6rem 0.95rem;
+  }
+  .footer-link { padding-block: 0.3rem; }
+}
+
+/* Query-relaxation chips act as toggles, so the active state must be
+   unmistakable rather than only a hover tint. */
+.relax-chip {
+  border: 1px solid transparent;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+.relax-chip.is-active,
+.relax-chip[aria-pressed="true"] {
+  background: rgba(226, 195, 145, 0.12) !important;
+  border-color: var(--vey-gold) !important;
+  color: var(--vey-gold) !important;
+}
+
+/* Two primary search-empty actions stack cleanly on narrow phones. */
+@media (max-width: 639px) {
+  .search-empty-actions > * {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vey-astrolabe-wrap::after { animation: none; }
+  .img-shimmer { animation: none; opacity: 0.35; }
+  .skip-link { transition: none; }
+}
+
+/* --------------------------------------------------------------------
+   Sidebar price sliders. main.js lays a real dual-range pair of native
+   <input type="range"> controls over the existing track. The pseudo
+   thumbs are given pointer-events back so they grab correctly on top
+   of a pointer-events:none track input, matching the catalogue's
+   on-surface thumb colour (#e3e2e5) with a primary focus ring.
+   -------------------------------------------------------------------- */
+.vey-range-track {
+  --vey-range-thumb: #e3e2e5;
+  cursor: pointer;
+  touch-action: none;
+}
+.vey-range-fill {
+  transition: left 0.08s linear, right 0.08s linear;
+}
+.vey-range-input {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  margin: 0;
+  transform: translateY(-50%);
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  pointer-events: none;
+  touch-action: none;
+  cursor: pointer;
+}
+.vey-range-input:focus,
+.vey-range-input:focus-visible {
+  outline: none;
+}
+.vey-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, var(--vey-range-thumb) 0 9px, transparent 10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.vey-range-input::-moz-range-thumb {
+  pointer-events: auto;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, var(--vey-range-thumb) 0 9px, transparent 10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.vey-range-input:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px var(--vey-surface), 0 0 0 4px var(--vey-gold);
+}
+.vey-range-input:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 2px var(--vey-surface), 0 0 0 4px var(--vey-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vey-range-fill { transition: none; }
+}
+
+/* --------------------------------------------------------------------------
+    18. Print styles — utility chrome off, ink-friendly output
+    -------------------------------------------------------------------------- */
+@media print {
+  #preloader, #cursor-glow, .vey-grain, #scroll-progress, #to-top,
+  .mobile-bottom-nav, .vey-marquee-wrap, #page-transition, #search-overlay,
+  #mobile-menu, #toast-stack, .marquee { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  a { color: #000 !important; text-decoration: underline; }
+  img { max-width: 100% !important; }
+}

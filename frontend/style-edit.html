@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<meta name="theme-color" content="#121315"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="description" content="The Style Edit: Veylora's editorial essays, fabric deep-dives and buying guides for the discerning wardrobe. Zero promotional clutter, only considered curation."/>
+<title>The Style Edit — Veylora | Editorial Articles &amp; Buying Guides</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/js/tailwind-theme.js"></script>
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<style>
+  @layer base {
+    html, body { margin: 0; padding: 0; }
+    body { overscroll-behavior: none; }
+    main > :first-child { margin-top: 0 !important; }
+    main > :last-child { margin-bottom: 0 !important; }
+  }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+</style>
+<script>document.documentElement.classList.add('anim-ok');</script>
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}#preloader{display:none!important}</style></noscript>
+
+</head>
+<body data-page="the-style-edit" class="bg-background text-on-surface font-body-md antialiased selection:bg-primary selection:text-on-primary">
+<!-- Initial curtain / preloader -->
+<div id="preloader" aria-hidden="true">
+  <div class="preloader-inner">
+    <img src="assets/images/veylora-luxury-monogram-logo.png" alt="" class="preloader-mark"/>
+    <span class="preloader-name">VEYLORA</span>
+    <span class="preloader-line"><i></i></span>
+    <span class="preloader-sub">HAUTE CURATION</span>
+  </div>
+</div>
+
+<!-- Page transition curtain -->
+<div id="page-transition" aria-hidden="true"><span class="transition-mark">V</span></div>
+
+<!-- Reading progress -->
+<div id="scroll-progress" aria-hidden="true"><span></span></div>
+
+<!-- Texture + ambient cursor -->
+<div class="grain" aria-hidden="true"></div>
+<div id="cursor-glow" aria-hidden="true"></div>
+
+<!-- Global search overlay -->
+<div id="search-overlay" class="search-overlay fixed inset-0 z-[70]" role="dialog" aria-modal="true" aria-label="Search the Veylora archive" aria-hidden="true">
+  <div class="search-backdrop absolute inset-0" data-search-close></div>
+  <div class="search-panel relative mx-auto w-[calc(100%-1.5rem)] sm:w-[calc(100%-3rem)] max-w-2xl mt-[10vh] sm:mt-[14vh] bg-surface-container-low border border-outline-variant/40 rounded-xl shadow-2xl p-5 sm:p-9">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <span class="font-label-caps-sm text-label-caps-sm text-primary tracking-[0.25em] uppercase">Curatorial Search</span>
+        <h2 class="font-headline-md text-headline-md text-on-surface mt-2">What are you looking for?</h2>
+      </div>
+      <button type="button" data-search-close aria-label="Close search" class="icon-btn shrink-0 flex items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+
+    <form action="search.html" method="get" class="mt-6" data-search-form>
+      <div class="search-field flex items-center gap-2 sm:gap-3 border-b border-outline-variant/50 focus-within:border-primary transition-colors pb-2">
+        <span class="material-symbols-outlined text-primary text-[20px]">search</span>
+        <input type="search" name="q" id="global-search-input" autocomplete="off" aria-label="Search the Veylora archive" placeholder="Search by fibre, mood, or era…" class="flex-1 min-w-0 bg-transparent text-on-surface font-body-lg text-body-lg focus:outline-none placeholder:text-outline"/>
+        <button type="submit" aria-label="Search" class="shrink-0 px-3 sm:px-4 py-2 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center justify-center">
+          <span class="hidden sm:inline">Search</span>
+          <span class="material-symbols-outlined text-[18px] sm:hidden" aria-hidden="true">arrow_forward</span>
+        </button>
+      </div>
+    </form>
+
+    <div class="mt-6">
+      <span class="font-metadata text-metadata text-outline uppercase tracking-wider">Curated shortcuts</span>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <a href="aesthetics.html" class="search-chip">Quiet Luxury</a>
+        <a href="aesthetics.html" class="search-chip">Old Money</a>
+        <a href="aesthetics.html" class="search-chip">Dark Academia</a>
+        <a href="style-edit.html" class="search-chip">The Style Edit</a>
+        <a href="trending.html" class="search-chip">The Viral Pulse</a>
+        <a href="search-empty.html" class="search-chip">Vicuña Storm Parka</a>
+      </div>
+    </div>
+
+    <p class="mt-6 font-metadata text-metadata text-outline tracking-wider uppercase flex flex-wrap items-center gap-2">
+      <span class="material-symbols-outlined text-[14px]">keyboard</span>
+      <span>Press <kbd class="kbd">Esc</kbd> to close</span>
+      <span class="hidden sm:inline-flex items-center gap-2">
+        <span class="opacity-50">·</span>
+        <kbd class="kbd">/</kbd>
+        <span>to search anywhere</span>
+      </span>
+    </p>
+  </div>
+</div>
+
+<!-- Toasts -->
+<div id="toast-stack" class="fixed right-4 sm:right-6 bottom-24 z-[80] flex flex-col gap-3 w-[calc(100%-2rem)] sm:w-auto sm:max-w-sm" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Back to top with progress ring -->
+<button id="to-top" type="button" aria-label="Back to top">
+  <span class="to-top-ring" aria-hidden="true"></span>
+  <span class="material-symbols-outlined to-top-icon">arrow_upward</span>
+</button>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl">
+  <div class="site-header-inner w-full max-w-[1680px] mx-auto px-margin flex flex-col justify-center gap-1 py-2">
+
+    <!-- Brand row -->
+    <div class="flex items-center justify-between w-full">
+      <a href="index.html" class="brand group flex items-center gap-2 sm:gap-space-md" aria-label="Veylora — Home">
+        <span class="brand-mark relative flex items-center justify-center shrink-0">
+          <span class="brand-halo absolute inset-0 rounded-full" aria-hidden="true"></span>
+          <img src="assets/images/veylora-luxury-monogram-logo.png" alt="Veylora Luxury Monogram" class="brand-img relative h-10 w-auto object-contain sm:h-11"/>
+        </span>
+        <span class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary leading-none">VEYLORA</span>
+          <span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] mt-1 hidden sm:block">HAUTE CURATION</span>
+        </span>
+      </a>
+
+      <div class="flex items-center gap-1.5 sm:gap-space-md lg:gap-space-lg">
+        <div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-on-surface">
+          <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+          <span class="font-label-caps-sm text-label-caps-sm tracking-wider">AMAZON.IN VERIFIED DEALS</span>
+        </div>
+
+        <button type="button" aria-label="Search Archive" data-search-open class="icon-btn flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[22px]">search</span>
+        </button>
+
+        <button type="button" aria-label="Saved Wishlist" data-wishlist class="icon-btn relative flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[22px]">favorite</span>
+          <span id="wishlist-count" data-wishlist-count class="absolute -top-1 -right-1.5 bg-primary text-on-primary font-metadata text-metadata px-1 rounded-full h-4 min-w-[16px] flex items-center justify-center font-bold">4</span>
+        </button>
+
+        <button type="button" aria-label="Curator Account" data-account class="hidden sm:flex w-9 h-9 rounded-full bg-primary items-center justify-center text-on-primary transition-transform duration-300 hover:scale-105 active:scale-95">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+        </button>
+
+        <button type="button" id="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu" class="icon-btn lg:hidden flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[24px]" data-menu-icon>menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Desktop navigation -->
+    <nav class="hidden lg:flex items-center justify-center gap-2 xl:gap-space-lg overflow-x-auto no-scrollbar" aria-label="Primary navigation">
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="home" href="index.html">HOME</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="men" href="men.html">MEN</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="women" href="women.html">WOMEN</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="clothing" href="clothing.html">CLOTHING</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="footwear" href="footwear.html">FOOTWEAR</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="accessories" href="accessories.html">ACCESSORIES</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="aesthetics" href="aesthetics.html">AESTHETICS</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="trending" href="trending.html">TRENDING</a>
+      <a class="nav-link font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant transition-colors shrink-0" data-path="the-style-edit" href="style-edit.html">THE STYLE EDIT</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile / tablet navigation drawer -->
+<div id="mobile-menu" class="mobile-menu fixed inset-0 z-[60]" aria-hidden="true">
+  <div class="mobile-menu-backdrop absolute inset-0" data-menu-close></div>
+  <aside class="mobile-menu-panel absolute right-0 top-0 h-full w-full max-w-[420px] bg-surface-container-low border-l border-outline-variant/40 flex flex-col" role="dialog" aria-modal="true" aria-label="Navigation" tabindex="-1">
+    <div class="flex items-center justify-between px-6 pt-6 pb-4 border-b border-outline-variant/30">
+      <a href="index.html" aria-label="Veylora — Home" class="flex items-center gap-3">
+        <img src="assets/images/veylora-luxury-monogram-logo.png" alt="Veylora Monogram" class="h-10 w-auto"/>
+        <span class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary leading-none">VEYLORA</span>
+          <span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] mt-1">HAUTE CURATION</span>
+        </span>
+      </a>
+      <button type="button" data-menu-close aria-label="Close navigation" class="icon-btn flex items-center justify-center text-on-surface-variant">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto px-6 py-6 flex flex-col gap-1" aria-label="Mobile navigation">
+      <a class="drawer-link" data-path="home" href="index.html"><span class="drawer-index">01</span><span class="drawer-label">Home</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="men" href="men.html"><span class="drawer-index">02</span><span class="drawer-label">Men's Archive</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="women" href="women.html"><span class="drawer-index">03</span><span class="drawer-label">Women's Edit</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="clothing" href="clothing.html"><span class="drawer-index">04</span><span class="drawer-label">Clothing Catalogue</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="footwear" href="footwear.html"><span class="drawer-index">05</span><span class="drawer-label">Footwear</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="accessories" href="accessories.html"><span class="drawer-index">06</span><span class="drawer-label">Accessories</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="aesthetics" href="aesthetics.html"><span class="drawer-index">07</span><span class="drawer-label">18 Aesthetic Moods</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="trending" href="trending.html"><span class="drawer-index">08</span><span class="drawer-label">Trending Curations</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+      <a class="drawer-link" data-path="the-style-edit" href="style-edit.html"><span class="drawer-index">09</span><span class="drawer-label">The Style Edit</span><span class="drawer-arrow material-symbols-outlined">north_east</span></a>
+    </nav>
+
+    <div class="px-6 py-5 border-t border-outline-variant/30 flex flex-col gap-3">
+      <button type="button" data-search-open class="w-full py-3 rounded bg-primary text-on-primary font-label-caps-lg text-label-caps-lg uppercase tracking-widest flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">search</span>
+        <span>Search the Archive</span>
+      </button>
+      <div class="flex items-center justify-between">
+        <span class="font-metadata text-metadata text-outline uppercase tracking-wider">Edition India · MMXXV</span>
+        <span class="flex items-center gap-1 text-primary font-metadata text-metadata uppercase tracking-wider">
+          <span class="material-symbols-outlined text-[14px]">verified</span> Amazon.in
+        </span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- Thumb-reachable mobile quick navigation -->
+<nav class="mobile-bottom-nav" aria-label="Quick navigation">
+  <a class="bottom-nav-item" data-bottom-path="home" href="index.html">
+    <span class="material-symbols-outlined" aria-hidden="true">home</span>
+    <span class="bottom-nav-label">Home</span>
+  </a>
+  <a class="bottom-nav-item" data-bottom-path="women" href="women.html">
+    <span class="material-symbols-outlined" aria-hidden="true">woman</span>
+    <span class="bottom-nav-label">Women</span>
+  </a>
+  <a class="bottom-nav-item" data-bottom-path="men" href="men.html">
+    <span class="material-symbols-outlined" aria-hidden="true">man</span>
+    <span class="bottom-nav-label">Men</span>
+  </a>
+  <a class="bottom-nav-item" data-bottom-path="trending" href="trending.html">
+    <span class="material-symbols-outlined" aria-hidden="true">local_fire_department</span>
+    <span class="bottom-nav-label">Trending</span>
+  </a>
+  <button type="button" class="bottom-nav-item" data-wishlist aria-label="Saved Wishlist">
+    <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+    <span class="bottom-nav-label">Wishlist</span>
+    <span class="bottom-nav-count" data-wishlist-count>4</span>
+  </button>
+</nav>
+
+<main id="main-content" tabindex="-1" class="w-full max-w-[1680px] mx-auto px-margin pt-28 flex-1 min-h-[calc(100vh-112px)]"><div class="flex flex-col w-full">
+<!-- Top Meta Ribbon & Edition Header -->
+<div class="flex flex-col gap-space-xs pb-space-lg">
+<div class="flex flex-wrap items-center justify-between gap-space-sm text-outline font-label-caps-sm text-label-caps-sm tracking-[0.2em] uppercase">
+<div class="flex items-center gap-space-xs">
+<span>HOME</span>
+<span class="text-outline-variant">/</span>
+<span>EDITORIAL</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-bold">THE STYLE EDIT — SARTORIAL ESSAYS &amp; TACTILE BUYING GUIDES</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant">
+<span>EDITION MMXXV</span>
+<span class="inline-block w-1 h-1 rounded-full bg-primary"></span>
+<span>VOLUME IX</span>
+<span class="inline-block w-1 h-1 rounded-full bg-primary"></span>
+<span class="text-primary tracking-widest font-semibold">CURATED SARTORIAL JOURNALISM</span>
+</div>
+</div>
+<!-- Editorial Masthead -->
+<div class="pt-space-md pb-space-sm">
+<h1 class="font-headline-hero text-headline-hero-mobile sm:text-headline-hero text-on-surface font-normal tracking-tight max-w-4xl">
+        The Style Edit <span class="italic text-primary font-serif">&amp; Buying Guides</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mt-space-sm">
+        In-depth sartorial treatises, tactile material investigations, and objective buying frameworks — bridging uncompromising luxury aesthetics with verified Amazon India commerce.
+      </p>
+</div>
+<!-- Editorial Key Metrics -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md bg-surface-container-low p-space-md rounded mt-space-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">CATALOG ARCHIVE</span>
+<span class="font-headline-md text-headline-md text-on-surface">24 Volumes</span>
+<span class="font-metadata text-metadata text-outline">Published &amp; Indexed</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">INTEGRITY POLICY</span>
+<span class="font-headline-md text-headline-md text-on-surface">100% Sponsor-Free</span>
+<span class="font-metadata text-metadata text-outline">Strict Editorial Independence</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">LABORATORY BENCHMARK</span>
+<span class="font-headline-md text-headline-md text-on-surface">428 Artifacts</span>
+<span class="font-metadata text-metadata text-outline">Tensile &amp; Fabric Tested</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">COMMERCE FULFILLMENT</span>
+<span class="font-headline-md text-headline-md text-on-surface">Amazon Prime</span>
+<span class="font-metadata text-metadata text-outline">Direct Dispatch in India</span>
+</div>
+</div>
+</div>
+<!-- Editorial Navigation Bar & Live Refinements -->
+<div class="sticky top-28 z-40 bg-surface/95 backdrop-blur-md py-space-sm mb-space-lg flex flex-col md:flex-row gap-space-md justify-between items-stretch md:items-center">
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1" id="editorial-filter-pills">
+<button class="px-space-md py-2 rounded bg-surface-container-high text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider shrink-0 transition-colors">
+        All Editorial (24)
+      </button>
+<button class="px-space-md py-2 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-caps-sm text-label-caps-sm uppercase tracking-wider shrink-0 transition-colors">
+        Tactile Buying Guides (8)
+      </button>
+<button class="px-space-md py-2 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-caps-sm text-label-caps-sm uppercase tracking-wider shrink-0 transition-colors">
+        Sartorial History &amp; Codes (5)
+      </button>
+<button class="px-space-md py-2 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-caps-sm text-label-caps-sm uppercase tracking-wider shrink-0 transition-colors">
+        Fabric &amp; Material Deep Dives (6)
+      </button>
+<button class="px-space-md py-2 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-caps-sm text-label-caps-sm uppercase tracking-wider shrink-0 transition-colors">
+        Wardrobe Architecture (5)
+      </button>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="relative flex items-center w-full md:w-72 bg-surface-container rounded px-space-sm py-2">
+<span class="material-symbols-outlined text-outline text-[18px] mr-2">search</span>
+<input aria-label="Search the Veylora archive" class="bg-transparent text-on-surface font-body-sm text-body-sm focus:outline-none placeholder-outline w-full" placeholder="Search essays, fabrics, or guides..." type="text"/>
+</div>
+<div class="relative bg-surface-container rounded px-space-sm py-2 flex items-center gap-1 cursor-pointer">
+<span class="font-metadata text-metadata text-on-surface-variant uppercase tracking-wider">Sort:</span>
+<select aria-label="Sort and refine results" class="bg-transparent font-metadata text-metadata text-primary uppercase focus:outline-none cursor-pointer pr-1">
+<option class="bg-surface-container-high text-on-surface" value="newest">Newest Edition</option>
+<option class="bg-surface-container-high text-on-surface" value="readership">Highest Readership</option>
+<option class="bg-surface-container-high text-on-surface" value="curator">Curator's Choice</option>
+</select>
+</div>
+</div>
+</div>
+<!-- FEATURED COVER STORY (Large Hero Editorial Feature) -->
+<article data-reveal class="bg-surface-container-low rounded-lg p-space-lg md:p-space-xl mb-space-xl flex flex-col lg:flex-row gap-space-xl relative overflow-hidden">
+<!-- Left Hero Image Stack: Flat-lay No-Human -->
+<div class="w-full lg:w-7/12 flex flex-col gap-space-md">
+<div class="relative w-full aspect-[16/10] bg-surface-container-highest rounded overflow-hidden group shadow-xl">
+<img alt="The Architecture of Weight: Why 500+ GSM Loopback Cotton &amp; Selvedge Denim Define the Modern Wardrobe" fetchpriority="high" decoding="async" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Editorial flat-lay still-life photography of folded heavyweight 14.5oz Japanese selvedge denim jeans showing raw red-line selvedge ID cuff, textured charcoal loopback fleece fabric swatch, precision vintage brass caliper measuring fabric thickness on a textured dark black slate background with diffused cinematic softbox side lighting. No people, luxury studio stillness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpXqwNPiaNkLMXpg0JMoaGi-JIC7pnGX1_RvkSWKutCaLVTbhSqfdu-8tevR_1ZlYfpswf_xHvVrEkw1Bp9muKMx_W59DF1yCqPfSIMbxc-IGYZX8QPmywo3HfdGgpN81B6vEPi4SYKCsR4siWiLuR24J2RBo7ZBgpcwLy_2SoRae5ydKaNb1E5v0Od7I1D64Q-abBYsL2s50VSmf81OvbwgeNxyGOLorp2J2Hgyw"/>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          COVER ESSAY • VOLUME 09 / ISSUE 01
+        </div>
+<div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded text-on-surface-variant font-metadata text-metadata uppercase tracking-widest">
+          FIG. 01 — 500+ GSM WEFT ARCHITECTURE
+        </div>
+</div>
+<!-- Live Micro Visualizer: Tensile Fabric Strength Inline Chart -->
+<div class="bg-surface-container p-space-md rounded flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">LABORATORY BENCHMARK</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Cotton Density vs Wash Distortion Ratio</span>
+<span class="font-metadata text-metadata text-outline">After 40 standardized industrial wash cycles</span>
+</div>
+<div class="flex items-center gap-space-lg w-full md:w-auto">
+<!-- Inline Sparkline / Bar Micro Viz -->
+<div class="flex items-end gap-2 h-10">
+<div class="flex flex-col items-center gap-1">
+<span class="text-[9px] text-outline font-metadata">180G</span>
+<div class="w-3 bg-surface-variant rounded-sm h-4"></div>
+<span class="text-[9px] text-error font-metadata">-24%</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="text-[9px] text-outline font-metadata">280G</span>
+<div class="w-3 bg-secondary-container rounded-sm h-6"></div>
+<span class="text-[9px] text-on-surface-variant font-metadata">-11%</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="text-[9px] text-primary font-metadata font-bold">500G+</span>
+<div class="w-3 bg-primary rounded-sm h-9"></div>
+<span class="text-[9px] text-primary font-metadata font-bold">-0.8%</span>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-variant hidden md:block"></div>
+<div class="text-right">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase block">RATING</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">9.9 / 10</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Content & Shoppable Breakdown -->
+<div class="w-full lg:w-5/12 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-sm text-outline font-metadata text-metadata uppercase tracking-wider mb-space-xs">
+<span>VEYLORA SARTORIAL BUREAU</span>
+<span>•</span>
+<span>9 MIN READ</span>
+<span>•</span>
+<span class="text-primary font-semibold">TACTILE ESSAY</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight mb-space-sm font-medium">
+          The Architecture of Weight: Why 500+ GSM Loopback Cotton &amp; Selvedge Denim Define the Modern Wardrobe
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+          Fast-fashion relies on lightweight carded yarns that surrender structural integrity at the third laundering. In this dissertation, our curators analyze shuttle-loom tension, staple fiber length, and why true 500 GSM loopback jersey provides thermodynamic insulation superior to synthetic fleece.
+        </p>
+<div class="p-space-sm bg-surface-container rounded mb-space-lg">
+<p class="font-body-sm text-body-sm italic text-on-surface-variant">
+            “True luxury in casualwear is tactile gravity — the way a 14.5oz selvedge twill refuses to collapse against the silhouette.”
+          </p>
+</div>
+</div>
+<!-- Shoppable Breakdown in Essay -->
+<div class="flex flex-col gap-space-sm bg-surface-container p-space-md rounded">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">TESTED ARTIFACTS IN THIS ESSAY</span>
+<span class="font-metadata text-metadata text-outline">VERIFIED AMAZON INDIA COMMERCE</span>
+</div>
+<!-- Item 1 -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-low p-space-xs rounded hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 bg-surface-container-highest rounded shrink-0 overflow-hidden">
+<img alt="The Architecture of Weight: Why 500+ GSM Loopback Cotton &amp; Selvedge Denim Define the Modern Wardrobe" decoding="async" class="w-full h-full object-cover" data-alt="Folded dark indigo Kurabo Japanese selvedge denim jeans showing raw copper rivets on neutral slate surface, flat-lay photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYjZ34-nxpEX7GBLWENjBh5KGeSUrsf7baw_th_cBlhYH6-D3bDzk86-9aE0L8tFLU0zdAQOBV4_OQgHiaX-U4CtRqfsIZOVp8UVeDMcwxPa9EECHWL0MWlpcB4bfyFF2-r3A2Voqf0kUAnbgQGHpjwuTCmAstOhiCjj5b6Ke21i0HGA8WhFuYBdmqfVZb_9Whci1_TA-Ek3nMTHUpG-hVIJkv9qmmt46Z3CqEJt8"/>
+</div>
+<div class="flex flex-col min-w-0 truncate">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Kurabo 14.5oz Selvedge Denim</span>
+<span class="font-metadata text-metadata text-outline">Shuttle-Loomed • 4.8 ★ (184 reviews)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-body-md text-body-md text-primary font-semibold">₹11,200</span>
+<a class="px-space-sm py-1 bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold hover:bg-primary-container transition-colors inline-flex items-center gap-1 shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+              DISCOVER <span class="text-xs">↗</span>
+</a>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-low p-space-xs rounded hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 bg-surface-container-highest rounded shrink-0 overflow-hidden">
+<img alt="The Architecture of Weight: Why 500+ GSM Loopback Cotton &amp; Selvedge Denim Define the Modern Wardrobe" decoding="async" loading="lazy" class="w-full h-full object-cover" data-alt="Heavyweight charcoal grey loopback cotton french terry hoodie neatly folded on basalt stone background, accessory studio still life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIShPYDlZiYsm3e6Qjy9KzCQje5yD4vxKcX3zbcHxbLIk2DTw8RtisGl_FNiKB-ekyEA8Su-xZ73Bqgx6MFRsQxY0E8alBH6bQXlQI0iqt6XI1lj0GkzvcZ6_tVW5dlXnjQx76k_5TkCOKqZUspIZjoGCKvLJ33EWytcyrfp9ZBhsxQleO1SDIp_R04_Z_MwTzul01iF2IDogT90yiYuHALV9ka5ns_JMsLufjKFs"/>
+</div>
+<div class="flex flex-col min-w-0 truncate">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Loopback 500 GSM Heavy Hoodie</span>
+<span class="font-metadata text-metadata text-outline">Combed Ring-Spun • 4.9 ★ (312 reviews)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-body-md text-body-md text-primary font-semibold">₹3,699</span>
+<a class="px-space-sm py-1 bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold hover:bg-primary-container transition-colors inline-flex items-center gap-1 shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+              DISCOVER <span class="text-xs">↗</span>
+</a>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-low p-space-xs rounded hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 bg-surface-container-highest rounded shrink-0 overflow-hidden">
+<img alt="The Architecture of Weight: Why 500+ GSM Loopback Cotton &amp; Selvedge Denim Define the Modern Wardrobe" decoding="async" loading="lazy" class="w-full h-full object-cover" data-alt="Folded crisp optic white Giza 88 long-staple cotton poplin overshirt showing mother-of-pearl buttons on dark slate background, tabletop photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyPYKHxTwmjWO5yY-gMFCDjt7DQ7UWel8i9o_Ys-V7OQgtIeIaPwNIhs7aZx6jiH_GVaqbKma5rI1mKGpqNiFHq3wuuRZl418Rc4npGEBwPa9FfuiA9fGjGhYN6o2mSE86OzVrWGBiV2xZw3Xjwldr2Lxo-aoSuprrXeQRg8HwXFdZkfeLQ4NfLHYk1Ipb_wpD-g64h9IqnBGhOEkkz7GE1HToBSUpCVqYkxHdhWY"/>
+</div>
+<div class="flex flex-col min-w-0 truncate">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Giza 88 Poplin Overshirt</span>
+<span class="font-metadata text-metadata text-outline">Egyptian Extra-Long Staple • 4.7 ★ (98 reviews)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-body-md text-body-md text-primary font-semibold">₹4,400</span>
+<a class="px-space-sm py-1 bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-wider font-bold hover:bg-primary-container transition-colors inline-flex items-center gap-1 shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+              DISCOVER <span class="text-xs">↗</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- EDITORIAL ARTICLES & BUYING GUIDES GRID (6 Diverse Curated Guides) -->
+<section class="flex flex-col gap-space-lg mb-space-xl">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-space-sm pb-space-xs">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-[0.2em] uppercase">CURATED FIELD INQUIRIES</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-medium mt-1">
+          Tactile Investigations &amp; Buying Frameworks
+        </h3>
+</div>
+<p class="font-body-sm text-body-sm text-outline max-w-md">
+        Analytical, zero-compromise consumer guides evaluating construction integrity, stitch density, and long-term durability.
+      </p>
+</div>
+<!-- 6 Guides Grid (3 Columns Desktop, 2 Tablet, 1 Mobile) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-space-lg">
+<!-- Guide 1: Goodyear Welted Footwear -->
+<article data-reveal class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between group hover:bg-surface-container transition-all duration-300 shadow-md">
+<div>
+<div class="relative w-full aspect-[4/3] bg-surface-container-highest rounded overflow-hidden mb-space-md">
+<img alt="The Ultimate Goodyear Welted Footwear Buying Guide" decoding="async" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" data-alt="Still-life macro photography of a cutaway Goodyear welted leather boot cross-section showing natural granulated cork filler, 360-degree storm welt stitching, and a rich Horween Chromexcel leather swatch resting on dark textured reclaimed walnut timber. Strict tabletop object composition, no human models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlPScRSnLoXXsKU7yxr4QhFIwzsfNuTQaLgRh04esMGYqsxgcgQhOnE3ZIjqBjFMRTzS0e9-RYcg9e0Pg83mCRU09TtbftYp-ItMenxF4y1gD1HuUEdrqpM_PuDdJuU1Xw9hOcwvvf7S8lOo8_5fxh7u16XIcvg-Km-kGw5CjfzCYdOB7Er56ECF0KfQKhdePf4-B1B9kC02ACteGuVXIV5XVWer1SLfKQhPb8-U"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider">
+              TACTILE BUYING GUIDE
+            </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-on-surface-variant font-metadata text-metadata">
+              7 MIN READ
+            </div>
+</div>
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="text-primary font-metadata text-metadata uppercase tracking-widest">CHAPTER 01</span>
+<span class="text-outline text-xs">•</span>
+<span class="text-outline font-metadata text-metadata">VOL. IX</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mb-space-xs">
+            The Ultimate Goodyear Welted Footwear Buying Guide
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+            How to distinguish Blake stitch, cemented EVA outsoles, and true 360° Goodyear welts on Amazon India. 4 tested resoleable pairs under ₹15,000 for lifelong longevity.
+          </p>
+</div>
+<!-- Featured Artifact Cardlet -->
+<div class="bg-surface-container-high p-space-sm rounded mt-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline font-metadata text-metadata">
+<span>EDITORIAL CHOICE</span>
+<span class="text-primary">4.9 ★ (142 REVIEWS)</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Hand-Welted Horween Chelsea Boots</span>
+<span class="font-body-sm text-body-sm text-primary font-bold shrink-0">₹14,299</span>
+</div>
+<a class="w-full mt-1 py-2 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-bold text-center hover:bg-primary-container transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+            DISCOVER ON AMAZON.IN <span>↗</span>
+</a>
+</div>
+</article>
+<!-- Guide 2: Cashmere Demystified -->
+<article data-reveal class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between group hover:bg-surface-container transition-all duration-300 shadow-md">
+<div>
+<div class="relative w-full aspect-[4/3] bg-surface-container-highest rounded overflow-hidden mb-space-md">
+<img alt="Cashmere Demystified: Grading 2-Ply vs 4-Ply Mongolian Wool" decoding="async" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" data-alt="Luxury still life composition of three folded cream and oat Mongolian cashmere mockneck knit sweaters, polished dark horn buttons, and unspun raw wool roving fibers resting on a smooth volcanic basalt stone block. High-contrast soft studio lighting, textile closeup, no people." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPZblZL2ibEkKhqcQabHOpBhKCdmG1X5nTMZZ4S5RLGaqhX6VyGlySL3VXormDjtXdyM3MMBvk695EPeEHSyUBReamgKxScoQgsJLTWMv5cwDpB7b8BM93FaRzWojzaH7W3N4dSDy_Xp9aqDfnAqN3gLtp15KwZEbk7SKclVnPYT7YXMIkgPXCHGgx_tEakeCoaMlyafvmW_2HAFI-rSskRdFUxaZ6t2FRvAUfhFE"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider">
+              FABRIC DEEP DIVE
+            </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-on-surface-variant font-metadata text-metadata">
+              6 MIN READ
+            </div>
+</div>
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="text-primary font-metadata text-metadata uppercase tracking-widest">CHAPTER 02</span>
+<span class="text-outline text-xs">•</span>
+<span class="text-outline font-metadata text-metadata">VOL. IX</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mb-space-xs">
+            Cashmere Demystified: Grading 2-Ply vs 4-Ply Mongolian Wool
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+            Micron counts below 15.5μm, pilling resistance abrasion cycles, and finding authentic Grade-A Mongolian cashmere at direct-to-consumer prices without vanity markups.
+          </p>
+</div>
+<!-- Featured Artifact Cardlet -->
+<div class="bg-surface-container-high p-space-sm rounded mt-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline font-metadata text-metadata">
+<span>EDITORIAL CHOICE</span>
+<span class="text-primary">4.8 ★ (89 REVIEWS)</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Hand-Stitched Cashmere Mockneck</span>
+<span class="font-body-sm text-body-sm text-primary font-bold shrink-0">₹9,499</span>
+</div>
+<a class="w-full mt-1 py-2 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-bold text-center hover:bg-primary-container transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+            DISCOVER ON AMAZON.IN <span>↗</span>
+</a>
+</div>
+</article>
+<!-- Guide 3: Capsule Wardrobe Algorithm -->
+<article data-reveal class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between group hover:bg-surface-container transition-all duration-300 shadow-md">
+<div>
+<div class="relative w-full aspect-[4/3] bg-surface-container-highest rounded overflow-hidden mb-space-md">
+<img alt="The Capsule Wardrobe Algorithm: 12 Pieces, 48 Outfits" decoding="async" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" data-alt="Overhead flat-lay grid arrangement of 12 luxury clothing items neatly spaced on charcoal Belgian linen: unstructured Solaro trench coat, tailored pleated wool trousers, crisp cotton poplin shirts, polished leather loafers, and a structured tote bag. Architectural precision, zero human subjects." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZu9qBZp4asjhpIlTloYH-A35IlZVdqVnGVjSUL6QhPxww8UXT8iqilZPQ-Cu9_MdRubRR3mvZuOqD8mgW0JrYWEGEIOL7PLlq_UEQOslmEptUHq7OBIc0RQZwJb8hSeDjOPos37x1WfgytMbSW-meKmsTWdEu4gtLwkGfWn8mZ4UfhGF3hjoHNxWlWdALvSi1lac7GFZCHGWxfYxWf2oB0-nWMznzsaTa63Qi3ZA"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider">
+              WARDROBE ARCHITECTURE
+            </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-on-surface-variant font-metadata text-metadata">
+              11 MIN READ
+            </div>
+</div>
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="text-primary font-metadata text-metadata uppercase tracking-widest">CHAPTER 03</span>
+<span class="text-outline text-xs">•</span>
+<span class="text-outline font-metadata text-metadata">VOL. IX</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mb-space-xs">
+            The Capsule Wardrobe Algorithm: 12 Pieces, 48 Outfits
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+            The mathematical combinatorial matrix of high-versatility dressing for metropolitan living. Complete tonal compatibility with zero redundant garments.
+          </p>
+</div>
+<!-- Featured Artifact Cardlet -->
+<div class="bg-surface-container-high p-space-sm rounded mt-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline font-metadata text-metadata">
+<span>EDITORIAL CHOICE</span>
+<span class="text-primary">4.7 ★ (216 REVIEWS)</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Solaro Double-Pleat Wide Leg Trousers</span>
+<span class="font-body-sm text-body-sm text-primary font-bold shrink-0">₹6,450</span>
+</div>
+<a class="w-full mt-1 py-2 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-bold text-center hover:bg-primary-container transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+            DISCOVER ON AMAZON.IN <span>↗</span>
+</a>
+</div>
+</article>
+<!-- Guide 4: Horology Under 35K -->
+<article data-reveal class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between group hover:bg-surface-container transition-all duration-300 shadow-md">
+<div>
+<div class="relative w-full aspect-[4/3] bg-surface-container-highest rounded overflow-hidden mb-space-md">
+<img alt="Horology Under ₹35,000: Mechanical Movements vs Quartz Finishing" decoding="async" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" data-alt="Microscope macro photography of an automatic mechanical watch balance wheel and oscillating rotor through a sapphire crystal exhibition caseback, set beside a full-grain brown alligator embossed leather strap and an antique brass watchmaker loupe on dark emerald velvet. Still life horology, no models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA53OFB0p0m5PKldDZyaFi_TMb2sgRfiRPqfcrH4tBPmWPZZTakQuPKMThwvG1jW7HYAd2BXBvp4QZVC6bm02UttdxzdlpeDom-jO3k8Cc-ZnhebgeX3kuqwQE9sRfNVh7ftAxS9iUaK4IB0CsMI2z-AgVYzGqCVGSmxWsUsXqvD5y7AGC-FREZ2P1WRQ4b4O1eTFGQCBfHRONabYXqrs_8TRVxjbbVfJwvkCVFuHk"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider">
+              TACTILE BUYING GUIDE
+            </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-on-surface-variant font-metadata text-metadata">
+              8 MIN READ
+            </div>
+</div>
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="text-primary font-metadata text-metadata uppercase tracking-widest">CHAPTER 04</span>
+<span class="text-outline text-xs">•</span>
+<span class="text-outline font-metadata text-metadata">VOL. IX</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mb-space-xs">
+            Horology Under ₹35,000: Mechanical Movements vs Quartz Finishing
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+            An unvarnished analysis of Seiko NH35 vs Miyota 9015 high-beat escapements in micro-brands available on Amazon, contrasted with thermally blued hands and AR-sapphire.
+          </p>
+</div>
+<!-- Featured Artifact Cardlet -->
+<div class="bg-surface-container-high p-space-sm rounded mt-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline font-metadata text-metadata">
+<span>EDITORIAL CHOICE</span>
+<span class="text-primary">4.9 ★ (340 REVIEWS)</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Atelier Fluted Bezel Champagne Automatic</span>
+<span class="font-body-sm text-body-sm text-primary font-bold shrink-0">₹11,999</span>
+</div>
+<a class="w-full mt-1 py-2 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-bold text-center hover:bg-primary-container transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+            DISCOVER ON AMAZON.IN <span>↗</span>
+</a>
+</div>
+</article>
+<!-- Guide 5: Trench Coat Anatomy -->
+<article data-reveal class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between group hover:bg-surface-container transition-all duration-300 shadow-md">
+<div>
+<div class="relative w-full aspect-[4/3] bg-surface-container-highest rounded overflow-hidden mb-space-md">
+<img alt="The Anatomy of a Trench Coat: Storm Flaps, Gabardine &amp; Horn Buttons" decoding="async" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" data-alt="Close-up still life photograph highlighting dense water-repellent honey-beige cotton gabardine weave, dark mottled tortoiseshell horn buttons, and polished brass D-ring belt hardware on a flat tailored overcoat lapel against dark graphite slate. Precision tailored garment detail, strictly no humans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbEbcsbC2vP1rlicKI229Wm8iuUj3flXw7zx4YzO4ISNjxPws9JLmXF9uWenvrXD5yqhZYAEXsxKxW457W9Yw2G_Dnhw3p6fREyrz3LsgRImcSPRTDoNw7QQBeEBInBnqmYmgB4fXooE-62x1ybTJY39Pj0KnWgZOa2m1xABfHQGZqRt3Ckce41cMWQXFNe5JlF9bckCgKbiZT-dQ-mZ4k7YoSQiExIqG2O4p1B_4"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider">
+              SARTORIAL HISTORY &amp; CODES
+            </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-on-surface-variant font-metadata text-metadata">
+              10 MIN READ
+            </div>
+</div>
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="text-primary font-metadata text-metadata uppercase tracking-widest">CHAPTER 05</span>
+<span class="text-outline text-xs">•</span>
+<span class="text-outline font-metadata text-metadata">VOL. IX</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mb-space-xs">
+            The Anatomy of a Trench Coat: Storm Flaps, Gabardine &amp; Horn Buttons
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+            From military officer utility in 1914 to contemporary oversized silhouettes. Evaluating double-faced weaves and weather-repellent proofing that justify investment.
+          </p>
+</div>
+<!-- Featured Artifact Cardlet -->
+<div class="bg-surface-container-high p-space-sm rounded mt-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline font-metadata text-metadata">
+<span>EDITORIAL CHOICE</span>
+<span class="text-primary">4.8 ★ (67 REVIEWS)</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Double-Faced Alpaca Belted Trench</span>
+<span class="font-body-sm text-body-sm text-primary font-bold shrink-0">₹21,500</span>
+</div>
+<a class="w-full mt-1 py-2 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-bold text-center hover:bg-primary-container transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+            DISCOVER ON AMAZON.IN <span>↗</span>
+</a>
+</div>
+</article>
+<!-- Guide 6: Tuscan Vachetta vs Box Calf -->
+<article data-reveal class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between group hover:bg-surface-container transition-all duration-300 shadow-md">
+<div>
+<div class="relative w-full aspect-[4/3] bg-surface-container-highest rounded overflow-hidden mb-space-md">
+<img alt="Tuscan Vachetta vs Box Calf: The Definitive Leather Glossary" decoding="async" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" data-alt="Artisan workshop flat-lay featuring stacked vegetable-tanned natural tan Tuscan leather hides, vintage solid brass saddler edge bevelers, burnishing wooden slicker, and handcrafted edge-creased leather card cases on an Italian Carrara dark marble slab. Pure object still life, no humans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCprSFNmXNqZxBL_F0sJEQbCM75IUq6gTFpE8j6aX_D-_Mro_UwlVpQ51j7xNW768-jVp3PB_EYVliNEvwczGi-o_ZYRrOHKmtBkKmfxdJNQoTjaqXpF5DVLXZsjS5iTRJxfRBEU6-2u6aiaRQOUcX7py_MYiKIeko66gC_AdcipR5iB4BKzRgYNb4inbXnojM4zD0JodpO7c2Fh-D0bNWIF_M4SsnvkObNVMxuV7w"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-primary font-label-caps-sm text-label-caps-sm uppercase tracking-wider">
+              FABRIC &amp; MATERIAL DEEP DIVE
+            </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm px-space-xs py-0.5 rounded text-on-surface-variant font-metadata text-metadata">
+              5 MIN READ
+            </div>
+</div>
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="text-primary font-metadata text-metadata uppercase tracking-widest">CHAPTER 06</span>
+<span class="text-outline text-xs">•</span>
+<span class="text-outline font-metadata text-metadata">VOL. IX</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mb-space-xs">
+            Tuscan Vachetta vs Box Calf: The Definitive Leather Glossary
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+            Understanding deep honey patina formation, vegetable vs chrome tanning chemistry, and tests to identify genuine full-grain leather across online accessories.
+          </p>
+</div>
+<!-- Featured Artifact Cardlet -->
+<div class="bg-surface-container-high p-space-sm rounded mt-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline font-metadata text-metadata">
+<span>EDITORIAL CHOICE</span>
+<span class="text-primary">5.0 ★ (43 REVIEWS)</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Sculptural Woven Leather Flap Bag</span>
+<span class="font-body-sm text-body-sm text-primary font-bold shrink-0">₹34,500</span>
+</div>
+<a class="w-full mt-1 py-2 px-space-md bg-primary text-on-primary rounded font-label-caps-sm text-label-caps-sm uppercase tracking-widest font-bold text-center hover:bg-primary-container transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://www.amazon.in" rel="noopener noreferrer" target="_blank">
+            DISCOVER ON AMAZON.IN <span>↗</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- INTERACTIVE CURATOR'S READING LIST / NEWSLETTER & DOSSIER DISPATCH -->
+<section class="bg-surface-container-low rounded-lg p-space-lg md:p-space-xl mb-space-xl relative overflow-hidden">
+<div class="max-w-3xl mx-auto flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-sm text-primary">
+<span class="material-symbols-outlined text-[24px]">mark_email_read</span>
+</div>
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-[0.25em] uppercase mb-space-xs">
+        THE SARTORIAL DOSSIER • WEEKLY CURATION
+      </span>
+<h3 class="font-headline-hero-mobile md:font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface font-medium leading-tight mb-space-sm">
+        Curated Essays Delivered <span class="italic text-primary font-serif">to Discerning Minds</span>
+</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg max-w-xl">
+        Zero promotional clutter. Only tactile breakdowns, verified Amazon India price dips on archival pieces, and deep material essays dispatching every Sunday morning.
+      </p>
+<!-- Interactive Subscription Form -->
+<form class="w-full max-w-lg flex flex-col sm:flex-row gap-space-xs" id="dossier-form" onsubmit="event.preventDefault(); document.getElementById('sub-toast').classList.remove('hidden');">
+<input class="flex-1 bg-surface-container-high px-space-md py-3 rounded text-on-surface font-body-md text-body-md placeholder-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="Enter your private email address..." required="" type="email"/>
+<button class="px-space-lg py-3 bg-primary text-on-primary rounded font-label-caps-lg text-label-caps-lg uppercase tracking-widest font-bold hover:bg-primary-container transition-colors shrink-0 shadow-md" type="submit">
+          SUBSCRIBE TO DOSSIER
+        </button>
+</form>
+<div class="hidden mt-space-sm p-space-xs px-space-md bg-surface-container text-primary font-body-sm text-body-sm rounded flex items-center gap-2" id="sub-toast">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>Invitation dispatched. Check your archive to confirm Sunday dispatches.</span>
+</div>
+<!-- Trust Metrics under Dispatch -->
+<div class="flex flex-wrap items-center justify-center gap-space-lg mt-space-lg text-outline font-metadata text-metadata uppercase tracking-wider">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">verified_user</span> 14,200+ Discerning Readers
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">lock</span> AES-256 Data Discretion
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">block</span> Zero Third-Party Advertising
+        </span>
+</div>
+</div>
+</section>
+<!-- AMAZON AFFILIATE TRUST ASSURANCE & STATUTORY NOTICE -->
+<section class="bg-surface-container-lowest p-space-lg rounded-lg mb-space-md">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md pb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">shield</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium">Amazon India Verified Gateway Protocol</h4>
+<span class="font-label-caps-sm text-label-caps-sm text-outline tracking-wider uppercase">Algorithmic Integrity &amp; Transparency Standard</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-high px-space-md py-1.5 rounded">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="font-metadata text-metadata text-on-surface tracking-wider uppercase">REAL-TIME INVENTORY HARMONIZED</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md py-space-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">DIRECT AMAZON.IN ROUTING</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Clicking any discovery button navigates directly to verified seller pages within the official Amazon India infrastructure. Veylora never handles payments or holds customer payment records.
+        </p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">ZERO CONSUMER SURCHARGE</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Product valuations in Indian Rupees (₹) are identical to direct visits. You pay nothing extra — our editorial curation receives a standard referral fee strictly paid by Amazon.
+        </p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">PRIME ELIGIBILITY CHECK</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          All featured artifacts maintain active Amazon Prime fulfillment ratings, guaranteeing certified doorstep dispatch, buyer protection, and 10-day replacement policies across India.
+        </p>
+</div>
+</div>
+<div class="pt-space-md text-outline font-metadata text-metadata leading-relaxed">
+      STATUTORY COMPLIANCE: As an official Amazon Associate, Veylora earns from qualifying purchases made via our curated editorial links. Listed prices, availability, and Prime delivery guarantees reflect values at the exact moment of editorial testing and may vary dynamically on Amazon.in.
+    </div>
+</section>
+</div>
+<script>
+  // Filter button interactive states
+  const filterPillContainer = document.getElementById('editorial-filter-pills');
+  if (filterPillContainer) {
+    const buttons = filterPillContainer.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.classList.remove('bg-surface-container-high', 'text-primary');
+          b.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-high', 'text-primary');
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      });
+    });
+  }
+</script></main>
+<!-- Editorial marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span>EVERY STYLE. ONE DESTINATION.</span><i>&#9670;</i>
+      <span>AMAZON.IN VERIFIED DISCOVERIES</span><i>&#9670;</i>
+      <span>18 AESTHETIC MOODS</span><i>&#9670;</i>
+      <span>ZERO MARKUP &mdash; HAUTE INTEGRITY</span><i>&#9670;</i>
+      <span>THE ART OF EVERYDAY STYLE</span><i>&#9670;</i>
+    </div>
+    <div class="marquee-group">
+      <span>EVERY STYLE. ONE DESTINATION.</span><i>&#9670;</i>
+      <span>AMAZON.IN VERIFIED DISCOVERIES</span><i>&#9670;</i>
+      <span>18 AESTHETIC MOODS</span><i>&#9670;</i>
+      <span>ZERO MARKUP &mdash; HAUTE INTEGRITY</span><i>&#9670;</i>
+      <span>THE ART OF EVERYDAY STYLE</span><i>&#9670;</i>
+    </div>
+  </div>
+</div>
+
+<footer class="w-full bg-surface-container-lowest mt-0">
+  <div class="max-w-[1680px] mx-auto px-margin py-10 sm:py-space-xl">
+
+    <div data-reveal class="flex flex-col md:flex-row justify-between items-start md:items-end gap-space-md pb-space-lg">
+      <div class="max-w-xl">
+        <a href="index.html" class="flex items-center gap-3 w-fit group">
+          <img src="assets/images/veylora-luxury-monogram-logo.png" alt="Veylora Monogram" class="h-12 w-auto transition-transform duration-700 group-hover:rotate-6"/>
+          <span class="font-headline-md text-headline-md tracking-tight text-primary uppercase">VEYLORA</span>
+        </a>
+        <p class="font-headline-sm text-headline-sm text-on-surface mt-space-xs italic">THE ART OF EVERYDAY STYLE &mdash; Curated Fashion Discoveries</p>
+        <p class="font-label-caps-sm text-label-caps-sm tracking-[0.2em] text-outline mt-space-xs uppercase">EVERY STYLE. ONE DESTINATION.</p>
+        <div class="flex items-center gap-space-md mt-space-xs">
+          <a class="footer-link cursor-pointer" href="https://www.instagram.com/veylora/" target="_blank" rel="noopener noreferrer" aria-label="Veylora on Instagram">INSTAGRAM</a>
+          <span class="font-metadata text-metadata text-primary" aria-hidden="true">&#9670;</span>
+          <a class="footer-link cursor-pointer" href="https://www.pinterest.com/veylora/" target="_blank" rel="noopener noreferrer" aria-label="Veylora on Pinterest">PINTEREST</a>
+        </div>
+
+      </div>
+      <div class="flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container rounded">
+        <span class="material-symbols-outlined text-primary text-[16px]">public</span>
+        <span class="font-metadata text-metadata text-on-surface-variant tracking-wider uppercase">EDITION INDIA / GLOBAL DISCOVERY</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 sm:gap-x-10 py-space-lg">
+      <div data-reveal class="flex flex-col gap-space-sm">
+        <span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Discovery</span>
+        <a class="footer-link" href="men.html">Men</a>
+        <a class="footer-link" href="women.html">Women</a>
+        <a class="footer-link" href="clothing.html">Clothing</a>
+        <a class="footer-link" href="footwear.html">Footwear</a>
+        <a class="footer-link" href="accessories.html">Accessories</a>
+        <a class="footer-link" href="aesthetics.html">Aesthetics</a>
+      </div>
+      <div data-reveal class="flex flex-col gap-space-sm">
+        <span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Editorial</span>
+        <a class="footer-link" href="style-edit.html">The Style Edit</a>
+        <a class="footer-link" href="trending.html">Trending Curations</a>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Wardrobe Guides">Wardrobe Guides</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Fabric Journal">Fabric Journal</button>
+      </div>
+      <div data-reveal class="flex flex-col gap-space-sm">
+        <span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Client Care</span>
+        <button type="button" class="footer-link cursor-pointer" data-soon="About Veylora">About Veylora</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Contact">Contact</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Wishlist Archive">Wishlist Archive</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="FAQ &amp; Assistance">FAQ &amp; Assistance</button>
+      </div>
+      <div data-reveal class="flex flex-col gap-space-sm">
+        <span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Legal &amp; Assurance</span>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Privacy Policy">Privacy Policy</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Terms &amp; Conditions">Terms &amp; Conditions</button>
+        <button type="button" class="footer-link cursor-pointer" data-soon="Affiliate Transparency">Affiliate Transparency</button>
+        <span class="font-metadata text-metadata text-outline mt-space-xs flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[14px]">lock</span>
+          SSL Secured Haute Gateway
+        </span>
+      </div>
+    </div>
+
+    <div class="bg-surface-container-low p-space-md rounded mt-space-md">
+      <p class="font-metadata text-metadata text-outline leading-relaxed tracking-wider">AFFILIATE DISCLOSURE: As an Amazon Associate, Veylora earns from qualifying purchases. Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon.in at the time of purchase will apply.</p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg">
+      <span class="font-metadata text-metadata text-outline uppercase tracking-widest text-center sm:text-left">&copy; <span id="footer-year">2025</span> VEYLORA. ALL RIGHTS RESERVED. ARCHITECTURAL COMMERCE ARCHIVE.</span>
+      <div class="flex items-center gap-space-md">
+        <span class="font-metadata text-metadata text-outline uppercase tracking-wider">OBJECT DISCOVERY</span>
+        <span class="font-metadata text-metadata text-primary uppercase tracking-wider">NOUVELLE &Eacute;DITION</span>
+      </div>
+    </div>
+  </div>
+
+  <script>var fy=document.getElementById("footer-year");if(fy){fy.textContent=new Date().getFullYear();}</script></footer>
+
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

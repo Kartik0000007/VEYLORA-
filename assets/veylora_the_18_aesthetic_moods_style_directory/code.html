@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#2f3035", "error-container": "#93000a", "secondary": "#c6c6cb", "inverse-on-surface": "#303033", "tertiary-container": "#aaacb4", "on-error": "#690005", "on-tertiary-fixed": "#191c21", "primary-fixed-dim": "#e1c290", "primary-container": "#c5a878", "background": "#121315", "surface-dim": "#121315", "on-secondary-container": "#bbbbc1", "outline": "#998f82", "secondary-container": "#4a4b50", "on-surface-variant": "#d0c5b7", "primary": "#e2c391", "on-background": "#e3e2e5", "on-secondary-fixed": "#1a1c20", "tertiary-fixed": "#e1e2ea", "surface-bright": "#38393b", "surface-variant": "#343537", "surface-tint": "#e1c290", "on-error-container": "#ffdad6", "on-tertiary-container": "#3d4047", "secondary-fixed": "#e2e2e8", "on-tertiary": "#2d3037", "surface": "#121315", "surface-container-high": "#292a2c", "on-primary": "#402d08", "tertiary-fixed-dim": "#c4c6ce", "surface-container-low": "#1b1c1e", "surface-container-lowest": "#0d0e10", "on-surface": "#e3e2e5", "on-primary-container": "#513d17", "inverse-primary": "#725b32", "on-tertiary-fixed-variant": "#44474d", "outline-variant": "#4d463b", "on-primary-fixed-variant": "#58431c", "secondary-fixed-dim": "#c6c6cb", "error": "#ffb4ab", "primary-fixed": "#fedeaa", "surface-container": "#1f2022", "tertiary": "#c5c7cf", "on-secondary-fixed-variant": "#45474b", "surface-container-highest": "#343537", "on-primary-fixed": "#271900", "inverse-surface": "#e3e2e5" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1.5rem", "space-md": "1rem", "margin": "2.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-hero": [ "Playfair Display" ], "body-sm": [ "Plus Jakarta Sans" ], "metadata": [ "Plus Jakarta Sans" ], "headline-hero-mobile": [ "Playfair Display" ], "headline-lg": [ "Playfair Display" ], "body-lg": [ "Plus Jakarta Sans" ], "label-caps-sm": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Playfair Display" ], "label-caps-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ], "headline-sm": [ "Playfair Display" ] }, "fontSize": { "headline-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "body-sm": [ "12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" } ], "metadata": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" } ], "headline-hero-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "label-caps-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.18em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" } ], "label-caps-lg": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.15em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 w-full max-w-[1680px] mx-auto px-margin flex flex-col justify-between py-space-sm"><div class="flex items-center justify-between w-full h-12"><div class="flex items-center gap-space-md"><img alt="Veylora Luxury Monogram Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VVWrcXQt4Y260Mj5h1Yk2rw7jHBCBcgP0kwaSQT-kRiwTaXCwE6BQ6UatEwJvOYEVFb0yu2cq2ff0HgNzoDm6AzcigP-CpIbtRu-3HWhzlV57L6Y00JYocBQZYDlUUfVlqRQWA-V1Vmb63Li308XPnU45Bgf42jrI_msbA9fzVyXddReO_uaG0PF0Epgzosxr34F9-mrcpVgoW3Pir-kQZDzN0_Hmh-rY3Syc3NmdKW9m35AfZZmt1lFk"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary">VEYLORA</span><span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] -mt-1 hidden sm:block">HAUTE CURATION</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">verified</span><span class="font-label-caps-sm text-label-caps-sm tracking-wider text-on-surface">AMAZON.IN VERIFIED DEALS</span></div><button aria-label="Search Archive" class="flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Saved Wishlist" class="relative flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">favorite</span><span class="absolute -top-1 -right-2 bg-primary text-on-primary font-metadata text-metadata px-1 rounded-full h-4 min-w-[16px] flex items-center justify-center font-bold">4</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><nav class="flex items-center justify-center gap-space-lg overflow-x-auto h-9 pb-1" data-active-classes="text-primary font-bold"><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="home" href="#">HOME</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="men" href="#">MEN</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="women" href="#">WOMEN</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="clothing" href="#">CLOTHING</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="footwear" href="#">FOOTWEAR</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="accessories" href="#">ACCESSORIES</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="aesthetics" href="#">AESTHETICS</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="trending" href="#">TRENDING</a><a class="font-label-caps-sm text-label-caps-sm uppercase tracking-[0.18em] text-on-surface-variant hover:text-on-surface transition-colors shrink-0" data-path="the-style-edit" href="#">THE STYLE EDIT</a></nav></div></header><main class="w-full max-w-[1680px] mx-auto px-margin pt-28 flex-1 min-h-[calc(100vh-112px)]"><div class="flex flex-col w-full">
+<!-- Top Active Nav Synchronizer Hook via Client Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll('header nav a[data-path="aesthetics"]');
+      navLinks.forEach(link => {
+        link.classList.add('text-primary', 'font-bold');
+        link.classList.remove('text-on-surface-variant');
+      });
+    });
+  </script>
+<!-- EDITORIAL HERO & INDEX PROLOGUE -->
+<section class="relative w-full pt-space-xl pb-space-lg">
+<!-- Atmospheric Ambient Glow Elements -->
+<div class="absolute -top-16 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-1/2 right-10 w-80 h-80 bg-surface-variant/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="flex flex-col gap-space-md">
+<!-- Volume Marker -->
+<div class="flex flex-wrap items-center gap-space-sm text-outline">
+<span class="px-2 py-0.5 bg-surface-container-high rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">EDITION MMXXV</span>
+<span class="font-metadata text-metadata text-outline tracking-[0.2em]">/</span>
+<span class="font-label-caps-sm text-label-caps-sm tracking-[0.25em] text-on-surface-variant uppercase">ARCHIVE VOL. 07 — SARTORIAL CODES &amp; VISUAL ARCHETYPES</span>
+</div>
+<!-- Hero Typography Cluster -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end">
+<div class="lg:col-span-8 flex flex-col">
+<h1 class="font-headline-hero text-headline-hero text-on-surface tracking-tight leading-none">
+            The 18 Aesthetic <span class="italic font-normal text-primary">Moods</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-md max-w-3xl leading-relaxed">
+            An architectural taxonomy of global fashion aesthetics, tactile subcultures, and enduring wardrobe philosophies. Every moodboard rigorously curated with zero human figures — only pure garment form, textile grain, and direct-to-cart Amazon India gateways.
+          </p>
+</div>
+<!-- Macro Stats Ribbon Panel -->
+<div class="lg:col-span-4 bg-surface-container-high p-space-md rounded shadow-xl flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<span class="font-label-caps-sm text-label-caps-sm text-outline tracking-widest uppercase">CURATORIAL RATIO</span>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm text-left">
+<div>
+<span class="block font-headline-md text-headline-md text-primary">18</span>
+<span class="font-metadata text-metadata text-on-surface-variant uppercase tracking-wider">Curated Disciplines</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md text-on-surface">1,420+</span>
+<span class="font-metadata text-metadata text-on-surface-variant uppercase tracking-wider">Archived Pieces</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-lowest px-space-sm py-1.5 rounded flex items-center justify-between">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase">FULFILLMENT GATE</span>
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest font-bold uppercase">AMAZON PRIME COMPATIBLE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- QUICK AESTHETIC FILTER & TAXONOMY BAR -->
+<section class="sticky top-28 z-30 py-space-sm bg-surface/90 backdrop-blur-xl shadow-md -mx-margin px-margin">
+<div class="flex flex-col gap-space-sm">
+<!-- Search & Sort Controls -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<!-- Live Taxonomy Search -->
+<div class="relative w-full sm:max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm pl-10 pr-4 py-2.5 rounded focus:outline-none focus:bg-surface-container-high transition-all placeholder:text-outline" id="aesthetic-search" placeholder="Filter aesthetics by texture, palette, or era..." type="text"/>
+</div>
+<!-- Sort Select & Counter -->
+<div class="flex items-center gap-space-md w-full sm:w-auto justify-between sm:justify-end">
+<div class="flex items-center gap-space-xs">
+<span class="font-metadata text-metadata text-outline uppercase tracking-wider hidden md:inline">ORDER BY:</span>
+<select class="bg-surface-container-low text-on-surface font-label-caps-sm text-label-caps-sm px-3 py-2 rounded focus:outline-none cursor-pointer uppercase tracking-wider" id="sort-selector">
+<option value="canon">Curator's Canon</option>
+<option value="pieces">Most Curated Pieces</option>
+<option value="az">A-Z Taxonomy</option>
+</select>
+</div>
+<div class="px-space-sm py-1 bg-surface-container-high rounded font-metadata text-metadata text-primary tracking-widest uppercase">
+<span id="results-count">18</span> ARCHETYPES
+          </div>
+</div>
+</div>
+<!-- Quick Jump Taxonomy Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 no-scrollbar text-nowrap">
+<button class="pill-filter active px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-primary text-on-primary font-bold shadow-sm" data-filter="all">
+          All 18 Moods
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="quiet-luxury">
+          Quiet Luxury
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="old-money">
+          Old Money Heritage
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="dark-academia">
+          Dark Academia
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="minimalist">
+          Minimalist Normcore
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="gorpcore">
+          Gorpcore &amp; Techwear
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="clean-girl">
+          Clean Girl Minimal
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="y2k">
+          Y2K High-Chic
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="coastal">
+          Coastal Breeze
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="streetwear">
+          Streetwear Archive
+        </button>
+<button class="pill-filter px-3.5 py-1.5 rounded font-label-caps-sm text-label-caps-sm tracking-wider uppercase transition-all bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="grunge">
+          Indie Sleaze / Grunge
+        </button>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE AESTHETIC SPOTLIGHT / "FIND YOUR SARTORIAL MOOD" -->
+<section class="my-space-xl bg-surface-container-lowest p-space-lg rounded shadow-xl relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row gap-space-xl items-center">
+<!-- Form / Selector Area -->
+<div class="w-full lg:w-7/12 flex flex-col gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-caps-sm text-label-caps-sm tracking-widest uppercase">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>ALGORITHMIC CURATOR ASSIST</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-space-xs">
+            Identify Your Sartorial Moodboard
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Answer three tactile calibration inquiries to triangulate your primary stylistic discipline and generate an immediate Amazon India wardrobe capsule.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs">
+<!-- Question 1 -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">1. Silhouette Bias</label>
+<select class="w-full bg-surface-container text-on-surface font-body-sm text-body-sm p-2.5 rounded focus:outline-none cursor-pointer" id="quiz-silhouette">
+<option value="tailored">Tailored &amp; Structured</option>
+<option value="fluid">Fluid &amp; Relaxed</option>
+<option value="technical">Technical &amp; Utilitarian</option>
+<option value="minimal">Minimal &amp; Slim</option>
+</select>
+</div>
+<!-- Question 2 -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">2. Palette Affinity</label>
+<select class="w-full bg-surface-container text-on-surface font-body-sm text-body-sm p-2.5 rounded focus:outline-none cursor-pointer" id="quiz-palette">
+<option value="dark">Monochrome Dark</option>
+<option value="earth">Warm Earth Neutrals</option>
+<option value="chalk">Chalk &amp; Raw Stone</option>
+<option value="jewel">Muted Jewel Tones</option>
+</select>
+</div>
+<!-- Question 3 -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">3. Accoutrement</label>
+<select class="w-full bg-surface-container text-on-surface font-body-sm text-body-sm p-2.5 rounded focus:outline-none cursor-pointer" id="quiz-accoutrement">
+<option value="chronograph">Mechanical Chronograph</option>
+<option value="tote">Unstructured Leather Tote</option>
+<option value="boots">Commando Lug Boots</option>
+<option value="scarf">Silk Pocket Square / Scarf</option>
+</select>
+</div>
+</div>
+<div class="pt-space-xs flex items-center gap-space-md">
+<button class="px-space-md py-2.5 bg-primary text-on-primary font-label-caps-lg text-label-caps-lg uppercase tracking-wider font-bold rounded shadow-md hover:bg-primary-container transition-all" id="btn-recalibrate">
+            Recalibrate Archetype
+          </button>
+<span class="font-metadata text-metadata text-outline tracking-wider">INSTANT MATRIX MATCH</span>
+</div>
+</div>
+<!-- Recommendation Display Card -->
+<div class="w-full lg:w-5/12 bg-surface-container-high p-space-md rounded flex flex-col justify-between shadow-2xl">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-caps-sm text-label-caps-sm text-primary uppercase tracking-widest">CALIBRATED RECOMMENDATION</span>
+<span class="font-metadata text-metadata text-outline">MATCH COEFFICIENT: 98.4%</span>
+</div>
+<div class="my-space-sm">
+<span class="font-label-caps-sm text-label-caps-sm text-outline tracking-[0.2em] uppercase" id="quiz-result-code">ARCHETYPE I</span>
+<h3 class="font-headline-md text-headline-md text-on-surface" id="quiz-result-title">Quiet Luxury Essentialism</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed" id="quiz-result-desc">
+            Subtle tonal tailoring, brushed cashmeres, unbranded Italian calfskin accessories, and architectural watch dials.
+          </p>
+</div>
+<div class="pt-space-sm flex items-center justify-between bg-surface-container-lowest p-space-sm rounded">
+<div class="flex flex-col">
+<span class="font-metadata text-metadata text-outline uppercase tracking-wider">CATALOGUED DEALS</span>
+<span class="font-label-caps-lg text-label-caps-lg text-on-surface font-bold" id="quiz-result-count">84 DISCOVERIES</span>
+</div>
+<a class="px-space-sm py-1.5 bg-surface-variant text-primary hover:bg-primary hover:text-on-primary transition-all font-label-caps-sm text-label-caps-sm uppercase tracking-wider rounded font-bold" href="#archetype-1">
+            VIEW CURATION ↗
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- THE 18 AESTHETIC MOODBOARDS DIRECTORY (Grid Gallery) -->
+<section class="w-full py-space-md">
+<div class="flex items-center justify-between mb-space-lg">
+<div class="flex flex-col">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">THE COMPLETE REGISTER</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">The 18 Aesthetic Archetypes</h2>
+</div>
+<div class="hidden md:flex items-center gap-space-xs text-outline font-metadata text-metadata uppercase tracking-widest">
+<span>STRICT STILL-LIFE CATALOG</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+<span>ZERO HUMAN MODELS</span>
+</div>
+</div>
+<!-- 18 Cards Responsive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="aesthetic-directory-grid">
+<!-- 1. QUIET LUXURY -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="84" data-name="Quiet Luxury Essentialism" data-tags="quiet-luxury minimal" id="archetype-1">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial flat-lay still-life photography of an unbranded charcoal cashmere double-face overcoat folded neatly alongside an Italian matte calfskin cardholder and an unbranded gold mechanical watch on raw porous slate stone. Studio dark chiaroscuro lighting, deep shadows, gold micro-glints, rich tactile textile fibers, no human figures, ultra-high resolution luxury catalog style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlkezh4-B5DNc5lIT-uPskuevn-9rkLkfTsBf41FKT427ckbSXiRIdSAjldd9_iLfnk5RIDJqhe-IcAjEAKPb3FXkCzxelBvDrnGo7WFbzadvTvsrnw4w-m_5a8a4Kcs8S_yegnV89dAUtbXL9X7Lu9tnZgjQ7SUK-ERWTbGvRTbWrIMwzCw9HCUKAtMrPpz_iaKLwTisc6myeJ0jg54tdg-eb9pHG8IEExXgnL9k"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE I
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            84 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Quiet Luxury Essentialism</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Understated opulence rooted in whisper-weight cashmeres, unlined jackets, and zero exterior logos.
+            </p>
+<!-- Color Swatches -->
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#E8DEC8]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Raw Cashmere</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#1A1A1A]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Basalt Black</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#3B2A1E]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Espresso Suede</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#E0D2B4]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Champagne Silk</span>
+</div>
+</div>
+</div>
+<!-- Key Garments & Accoutrements -->
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Double-Face Coat, 16-Gauge Mockneck, Goodyear Oxford</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Loro Piana Style Knit</span> •
+                <span class="text-[10px] text-outline">Vachetta Hide</span> •
+                <span class="text-[10px] text-outline">Horn Buttons</span>
+</div>
+</div>
+</div>
+<!-- Amazon India Gateway CTA -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 84 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 2. OLD MONEY HERITAGE -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="96" data-name="Old Money Heritage" data-tags="old-money" id="archetype-2">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Rich still-life photograph of a folded heavy British tweed sports jacket with horn buttons, placed next to a pair of Goodyear-welted oxblood brogues and a signet crest ring on an antique dark mahogany surface. Zero people, moody soft directional light, texture of heavy wool and patinated calf leather, dark haute curation style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA0xXABMN42iCs4YDSt8lC809A2E6St5y0WZQHKxW-90P3JCwJYI9vVnzAnJXUwKf7HyIZ7a60oWNJY9Xi3ofijHBpLFXLw0Ji_ekrspIw71RkiXYESZ2JT2e-G15DrLCt744vg72Usait979un8FhgxrKmq1qenRfw3QCsC3iSLMP01YkjKjadkwu25ekfGdvITjZdOU0c1ZY7PLiwxB-uYMEuCbPCJiekXA5yRQ"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE II
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            96 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Old Money Heritage</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Equestrian sensibilities, heritage cable-knits, unwashed heavy oxfords, and timeless generational tailoring.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#1C2826]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Racing Green</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#4B2E1E]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Oxblood</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#C2B69D]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Camel Tweed</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#192231]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Navy Wool</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Cable Knit Cricket Sweater, Waxed Barbour Jacket, Penny Loafers</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Donegal Tweed</span> •
+                <span class="text-[10px] text-outline">Supima Cotton</span> •
+                <span class="text-[10px] text-outline">Brass Hardware</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 96 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 3. DARK ACADEMIA -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="72" data-name="Dark Academia" data-tags="dark-academia" id="archetype-3">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still-life flat lay of a structured houndstooth wool blazer, a vintage leather fountain pen case, an antique brass pocket ruler, and stack of parchment notebooks resting on a dark walnut library table. Warm amber low-key lighting, scholarly moody textures, no human models, sophisticated haute couture vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_NgMxp5hKKmB8-lQunHJcmUc1It4WmlQV6c4-frskvK1TTtk3K_Cj5cu6ZjHZh5zNieNbkIn6oGdeQEk6AVY_wcVn8oXCOAUIDAguJ2m1oda3HiqAL54jKSZtDjMpfzfPSlGVNe5sI8pgmmz0vUNPxfzL4DfIC2nk9yxd57pujWzb_awFj7yJhC675Cm825rNjvHIuwRiPfokakr5neh2vo6rgODLY_lEVcyc-tw"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE III
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            72 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Dark Academia</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Scholastic romanticism, heavy houndstooth, deep espresso corduroy, and brass-fitted leather satchels.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#2A1E17]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Espresso Cord</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#18201A]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Forest Moss</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#6A4E38]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Parchment Tan</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#0D0E10]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Raven Noir</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Houndstooth Trench, Corduroy Pleated Trousers, Wingtip Boots</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Heavy Corduroy</span> •
+                <span class="text-[10px] text-outline">Merino Turtleneck</span> •
+                <span class="text-[10px] text-outline">Antiqued Brass</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 72 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 4. GORPCORE ARCHIVE -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="110" data-name="Gorpcore Archive &amp; Techwear" data-tags="gorpcore" id="archetype-4">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="High-detail product still-life flat lay of a 3-layer GORE-TEX olive alpine shell jacket folded beside a pair of rugged Vibram-soled trail sneakers and an ultra-light Dyneema cross-body pouch on rough volcanic basalt rock. Precise studio downlighting, waterproof technical membrane textures, no human models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaxpP49ApFADH2cX9IGhtF0hCgm6ZIDEN8nCjlQ-3tv2oabmb7xSj-5JierhBl1JN6ePPmLz5v-49jXmS8nGZE8JHElvOAAvoEQ8QeL9M519ih-SM0U7xv0z9kt39F3M9yQhlF0mcaUh2exG00yexzGRmw9Yw6JDY0r03vfnGyQTQTDowfm9aT3lAfWjBZiR0MUtRkur44EaDetMHkU1rQHlI5GGh-BPwYAktLcC0"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE IV
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            110 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Gorpcore &amp; Techwear</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Utilitarian mountain ergonomics repurposed for concrete grids: waterproof membranes and modular nylon.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#3E4438]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Olive Ripstop</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#272B2E]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Slate Membrane</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#D35400]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Safety Orange</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#7A7D7B]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Basalt Ash</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">GORE-TEX Pro Shell, Quick-Dry Cargo Pants, Trail Runners</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Cordura 500D</span> •
+                <span class="text-[10px] text-outline">Vibram Megagrip</span> •
+                <span class="text-[10px] text-outline">Waterproof Zips</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 110 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 5. MINIMALIST ESSENTIALISM -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="128" data-name="Minimalist Essentialism" data-tags="minimalist" id="archetype-5">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Minimal architectural still life of a crisp heavyweight white cotton poplin shirt folded with geometric precision next to charcoal grey straight-leg wool trousers and black leather minimalist derbies on light grey cast concrete. Natural diffused studio light, pure form, clean lines, no humans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79NYRedcgz7aQOruyhvLkuNVRFAyLDjC1EUT6F6nykB7BQ53shpr9_Fuqu2tKG59ssDhWUvg8r4Yb_mamvlHjj55iTq4eRrv92oTYxLsIk4oosHDNIVmF7l-jZZMTvNjJy6qf8LOJbRILhgoVzIztCZbQoXe_nuy8t10ncdxmfzn33kjLVx1N2O6tVmXiJ8vHUUCC8rqhRF7PyOOYrBc4ztuU-qe-zU7j5j2_95M"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE V
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            128 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Minimalist Essentialism</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Stripped back silhouettes, geometric tailoring, architectural cottons, and functional purity.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#F4F4F4]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Chalk Poplin</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#414246]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Cast Iron</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#9A9B9E]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Concrete Gray</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#101012]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Pitch Noir</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">240 GSM Boxy Tee, Tropical Wool Trousers, Commando Sole Derby</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Poplin Cotton</span> •
+                <span class="text-[10px] text-outline">High-Twist Wool</span> •
+                <span class="text-[10px] text-outline">Matte Hardware</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 128 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 6. CLEAN GIRL AESTHETIC -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="92" data-name="Clean Girl Minimal" data-tags="clean-girl" id="archetype-6">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still-life luxury flat lay of an oat-milk colored chunky ribbed knit sweater, thick gold hollow hoop earrings, a glass facial mist bottle, and sleek cream leather mules on light travertine marble. Clean, luminous morning light, zero human models, serene luxurious simplicity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcmahjpDXXxG4yehmJxdoQeqE85ayzSbRw5BCAJusmgSiBgvE4e8wm5iP96K35lKASqF1OWfEejwxLNATvXgSoPG4wC6RMWrm0M2PdVvgPKIibK6uI880UkfvqkVOJjEpUpqN71GTx1ZoF6o3RTpFDrCMtkOnpdGT6egdupF-lnu3r-1t6uSVtdP0RulWzjTyFJqikrMHk61rcfYjCNSlv96I5Ea_MjapN-NzaI_c"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE VI
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            92 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Clean Girl Minimal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Dewy neutrals, seamless ribbed basics, effortless gold chunky hoops, and structured camel trenches.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#E5DEC9]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Oat Milk</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#D4AF37]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Warm Gold</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#EDE8E1]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Bone Travertine</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#B89B72]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Toasted Pecan</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Oversized Linen Blazer, Chunky 18k Gold Hoops, Sleek Leather Slides</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Organic Jersey</span> •
+                <span class="text-[10px] text-outline">Gold Vermeil</span> •
+                <span class="text-[10px] text-outline">Pima Cotton</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 92 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 7. SCANDI MINIMALISM -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="64" data-name="Scandi Minimalism" data-tags="minimalist" id="archetype-7">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial flat-lay still-life of an oversized charcoal melange wool scarf, a boxy heavy alpaca blend cardigan, and a structured black leather cylinder bag on light pale birch timber planks. Diffused Nordic soft light, crisp hygge textures, zero humans, restrained design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLArGF7czUkCyDmfF12e_rPaUUHATPVAeuNw8-KVpJ6AimHKLzjUpwbsn_pBtcF3171Whg74x4RSEqTw8v4xMzgi87AgyoBjAKwVNLEDaSPI4ITbCgY5KlSksjfPA-SVgKSYE2xk_5DOnvUJQxYIZfO6OEQSBzux_HPM2s2-kdJERuChK6r_tHs9q8pkvMXQ58H1AhzSgaDa3KH2GSUzNBGP4oRDpJkfPGqqH9tCM"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE VII
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            64 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Scandi Minimalism</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Voluminous boxy outerwear, heavyweight alpaca knits, raw-hem denim, and crisp Copenhagen pragmatism.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#4B4C51]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Nordic Melange</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#D9D7D2]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Pale Birch</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#6E7B8B]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Fjord Blue</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#1D1E22]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Oslo Night</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Alpaca Knit Sweater, Wide Leg Japanese Denim, Puffer Scarf</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Brushed Alpaca</span> •
+                <span class="text-[10px] text-outline">Rigid Selvedge</span> •
+                <span class="text-[10px] text-outline">Recycled Down</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 64 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 8. STREETWEAR AVANT-GARDE -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="145" data-name="Streetwear Avant-Garde" data-tags="streetwear" id="archetype-8">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still life catalog shot of a heavy 500 GSM loopback cotton black hoodie, pair of chunky exaggerated vulcanized sole sneakers, and industrial silver cuban chain necklace resting on raw steel and concrete rebar. High contrast directional lighting, textural depth, no human figures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRfok6gWVUtKRaBSULfGjRt3BmFILeH__iFBuMPmAqtKS4VJLcgopqpZ7bAgDpnJXciFq9tfOFA1lVKfHbgtpAhVko3FIvYjCkc958hZHJBy1BsPfEx5rMuC1m_KVgBr-D1iL7f74rNSSzwHkrerkTEkbTOjtnQ0So8aRfLB9ZmMEKt8eoJIpP43Pc9YCxqSWqcbAUbt-LiZxzAemRFJ5jjo1RsHIbxfbdj6A-j-E"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE VIII
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            145 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Streetwear Avant-Garde</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Monumental weights, dropped shoulder geometry, distressed wash treatments, and subversive graphic codes.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#0A0A0C]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Heavy Washed Noir</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#4E5054]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Acid Gray</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#C7C8CC]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Raw Chrome</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#801414]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Crimson Wash</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">500 GSM Double-Fleece Hoodie, Baggy Carpenter Pants, Chunky Skate Shoes</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Heavyweight French Terry</span> •
+                <span class="text-[10px] text-outline">Solid Pewter</span> •
+                <span class="text-[10px] text-outline">Garment Dye</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 145 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 9. COASTAL BREEZE & LINEN -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="78" data-name="Coastal Breeze &amp; Linen" data-tags="coastal" id="archetype-9">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still life of unironed airy cream linen trousers neatly folded beside an unbuttoned nautical striped linen shirt, woven raffia tote bag, and tan leather espadrilles on sun-bleached driftwood. Sunlit organic shadow patterns, tactile flax fibers, no human figures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM4srGnTOANw31ty2Lvc_0JIcTVDPX7LIHnHMeLTuPZPyQwCJpRJI25iVyxEFL2Y8F9eMyLyv6Fm3GEmZSSQdTONpSao9FtxJv87X9GYDOJnxNngKS3UGG-9E4TXFOx8YZM210cpePzWQpj4cNNQVQUB2-Kjnk_VBELH7gYDmkw8bHUAssJTB8dKXJ03AB1fNwq4nG1itsBv9vHsI6ersYE_cTMf5LljdCcGyctbA"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE IX
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            78 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Coastal Breeze &amp; Linen</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Breathable open weaves, crinkled Normandy flax, nautical Breton knitwear, and unhurried sea-air comfort.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#E4DDD3]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Raw Flax</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#335368]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Deep Aegean</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#DFD3C3]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Woven Raffia</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#F8F6F0]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Chalk Dune</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">French Linen Camp Collar Shirt, Drawstring Trousers, Suede Espadrilles</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">100% Normandy Linen</span> •
+                <span class="text-[10px] text-outline">Braided Jute</span> •
+                <span class="text-[10px] text-outline">Mother of Pearl</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 78 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 10. Y2K ARCHIVAL NOSTALGIA -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="88" data-name="Y2K Archival Nostalgia" data-tags="y2k" id="archetype-10">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still life flat lay of vintage washed low-slung multi-pocket cargo denim, frameless tinted rimless sunglasses, metallic silver mini shoulder bag, and rhinestone-detailed accessory on reflective silver foil backdrop. Early 2000s cyber glam aesthetics, high gloss, no humans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALtENh5ZYCW9o2ncwsRbaLCCjhvB1xPYzZlMwfWq7aJ7GqyGV_xxgy-W9oudMWiVBgGKjbxiyF9TLNHATffiGeRF2f-rOe6ZIHPayGAcXPxAii83X2wYZ84rWYHCbEWdsi_33C7wb2ro_D7JJoNVikQL8GWsqbQBilIzCyhYvir51L3vuQTKOhhIhWbX0DT4-_rq38io5Hw3CS6bvWTlHzdyphDvEra4oP1o4zMeQ"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE X
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            88 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Y2K Archival Nostalgia</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Millennium cyber-futurism, tinted rimless eyewear, metallic coated textiles, and hardware-laden cargos.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#D2D6DC]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Chrome Silver</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#5A738E]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Bleached Denim</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#C75A7B]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Bubblegum Tint</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#202227]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Gunmetal</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Multi-Zip Cargo Denim, Metallic Baguette Bag, Wrap Shades</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Acid Washed Twill</span> •
+                <span class="text-[10px] text-outline">Mirrored Polycarbonate</span> •
+                <span class="text-[10px] text-outline">Silver Hardware</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 88 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 11. INDIE SLEAZE & GRUNGE -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="56" data-name="Indie Sleaze &amp; Archival Grunge" data-tags="grunge" id="archetype-11">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial flat lay of a distressed worn leather moto biker jacket, frayed thrifted flannel shirt, beaten-up leather lace-up combat boots, and vintage silver chain rings on an asphalt black studio background. Grungy analog camera aesthetic, deep textured grain, zero people." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHtFRyMJBHAfGRQqyZnnQnpsLGTtNfA0iNizIGZlPXfyD8qUb3QKDdLKvd1TydwrTXRz8OAsXNPEZ025sZJFZdRjlhXNOhINPYuhVogBzrlgPsLUksfll1vgWgkIQD72RX_Xiuw7f3rvHh8FkOKg0TTtE6YEUDT6L-UmBhrv3ESle-AUMFEcg-pdkrpHg_U210jJPyRJemVt-4ADHAbLtBp7_pe-S9o1NFC7f4hm4"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE XI
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            56 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Indie Sleaze / Grunge</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Distressed leather jackets, beaten combat boots, shredded mohair, and post-midnight downtown hedonism.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#111113]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Worn Biker Noir</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#6A2326]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Faded Burgundy</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#2D332D]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Sludge Khaki</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#B0B2B8]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Tarnished Silver</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Distressed Leather Biker, Brushed Mohair Cardigan, Combat Boots</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Heavy Steerhide</span> •
+                <span class="text-[10px] text-outline">Kid Mohair</span> •
+                <span class="text-[10px] text-outline">Tarnished Brass</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 56 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 12. SARTORIAL NEAPOLITAN -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="62" data-name="Sartorial Neapolitan" data-tags="quiet-luxury old-money" id="archetype-12">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial flat-lay still-life of an unconstructed Neapolitan blazer with spalla camicia shirt shoulders in tobacco linen-silk, folded neatly beside hand-rolled printed silk pocket square and suede tassel loafers on volcanic stone tile. Warm Mediterranean golden-hour chiaroscuro lighting, zero people." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8dEw4ffXtsVxd6m_zAWsG5yHrsSdYh6AIROLPpraYnudttb3j44rG82l7UdYqxE5LEuqBInGsPaw0p0w3RiHHGU5DYEUgsOLwixWa0SFerCK6rS5tmJ_NYiWp5lCauVHi5looGU5y4Z0WvKoiOMDnzywIy_4MRLQ5j_NQGpOQBeXtMvlqprbsRGg7zK16ztkvmq4dTzLmO2dLl75A_B8HQ7xa4Z62eJNL31-eywc"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE XII
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            62 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Sartorial Neapolitan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Spalla camicia shirting shoulders, unlined three-roll-two jackets, handmade silk ties, and casual Italian sprezzatura.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#7A4B29]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Tobacco Suede</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#1C3B5E]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Naples Azure</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#D6CAAD]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Linen Ecru</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#4C382A]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Espresso Crepe</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Unconstructed Solaro Jacket, Gurkha Trousers, Suede Loafers</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Irish Linen</span> •
+                <span class="text-[10px] text-outline">Mulberry Silk</span> •
+                <span class="text-[10px] text-outline">Hand-Sewn Canvas</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 62 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 13. TOKYO CYBER-PUNK TECH -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="94" data-name="Tokyo Cyber-Punk Tech" data-tags="gorpcore" id="archetype-13">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still life of an asymmetric black waterproof technical anorak with magnetic Fidlock buckles, paired with reinforced Cordura holster harness and futuristic matte black carbon fiber watch on wet asphalt with faint reflections. Cyberpunk minimalist noir style, zero human figures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVuiN8DQ2ZsxDhKjgujYliH2vXxjdbnTT9ryuzm3yF9MrUGKDU6ZDCnmZ2uNK_0upqtGTItSnhV21XspwAoQjhXq3HyZXNkHPnnffD559UvGJxLGJZd-VuLnPECLUhQaUdhhQjnoBxjKcGfWUI71UqZzlRWTGnsqF8FovR5yAIISb2rb5eMLG66fkzYP1NAsRS__F5_SYV3ItCC2hf_91zoQvE0ejxEL-8D71g3Z4"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE XIII
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            94 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Tokyo Cyber-Punk Tech</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Modular attachment systems, magnetic hardware, asymmetric hems, and jet-black weather-sealed membranes.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#090A0B]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Obsidian Black</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#1B1E22]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Carbon Fiber</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#0FF0FC]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Cyber Cyan</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#33373E]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Alloy Gray</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Asymmetric Technical Anorak, Molle Cargo Trousers, Fidlock Belt</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Cordura Ripstop</span> •
+                <span class="text-[10px] text-outline">Fidlock Magnets</span> •
+                <span class="text-[10px] text-outline">Taped Seams</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 94 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 14. FRENCH EFFORTLESS CHIC -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="70" data-name="French Effortless Chic" data-tags="clean-girl minimal" id="archetype-14">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still-life flat lay of a classic navy and ecru striped Breton knit, straight-cut vintage washed French blue denim, butter-soft black leather ballet flats, and woven wicker market basket on Parisian zinc cafe table surface. Soft morning light, zero human models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvWvVUJ9HdsQuboWvTWLuuxW6P1AThYetQ6vfWuvnShHVXS1HrXfdzHj_AP0sFnuYp7vnMZTl1WU-gTE0HHZxukY7IFAGf1xBhR_DXYZ3jeDJFhChDTOHKqDYBXcWHJ_ClRkvVPehASr2gSlPgiBFi2JRzl1Ra9vCznohCqQ7ttiKgHd3TkW_ALDePAi2tGktLlAIgeD3m_G_Q0D-M7DEHvEg7rTcVtnsqzrNbEH4"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE XIV
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            70 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">French Effortless Chic</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Subtle nonchalance, Saint-Germain cardigans, perfect mid-blue denim, and unassuming buttery ballet flats.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#1F2D42]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Marine Navy</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#F1EDE4]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Ecru Breton</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#7A93AC]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Paris Denim</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#9C1D26]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Rouge Noir</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Heavy Knit Breton Top, High-Rise Straight Jeans, Soft Lambskin Flats</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Combed Cotton</span> •
+                <span class="text-[10px] text-outline">Lambskin Nappa</span> •
+                <span class="text-[10px] text-outline">Tortoiseshell Acetate</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 70 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 15. MILITARY UTILITY & HERITAGE -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="68" data-name="Military Utility &amp; Heritage" data-tags="gorpcore old-money" id="archetype-15">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial flat-lay still-life of an authentic M-65 field jacket in olive sateen cotton with brass zipper pulls, a field mechanical wristwatch with green canvas NATO strap, and heavy roughout leather service boots on weathered ammunition crate wood. No human models, tactile vintage military aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFE8uYZHEkm_CLJeau0vtR3rvJnpfm1Lqa8SOaJHeaG-nXSFN6dpgizm3PDqcBYA4Kw7mv-E6BObIMTNFLj8u4gEHWd6HNepZ7600YCBBCPWkfTXcwypQigjyLwcMuCven1V5YLIrjaGyEvWvknowuFz1E444qkQ1jJSdByNGq04vPIEXcP6SbPUkpJPzNGSz2lAxXjVZVeHL9WRitO-iExe9HU-iKFxEjlaS8zCE"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE XV
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            68 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Military Utility &amp; Heritage</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              M-65 field jackets, heavy herringbone twill, authentic NATO straps, and indestructible service footwear.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#4B5320]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Army Drab</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#7A6A4F]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Khaki Twill</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#463D36]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Roughout Tan</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#1B1F1B]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Jungle Noir</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">M-65 Field Jacket, Herringbone Fatigue Trousers, Service Boots</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Cotton Sateen</span> •
+                <span class="text-[10px] text-outline">Roughout Leather</span> •
+                <span class="text-[10px] text-outline">Antiqued Brass</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 68 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 16. RESORT & RIVIERA -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="74" data-name="Resort &amp; Riviera" data-tags="coastal" id="archetype-16">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still-life flat lay of a terracotta silk-cotton knit polo, ivory pleated gurkha shorts, tortoiseshell D-frame acetate sunglasses, and woven leather slip-on driving shoes on warm sandstone. Luminous Mediterranean sunlight, sharp shadow geometry, no human models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmr7Ww9f_DrWyZsfVk2OcfoIIdl8NMDsFGmJUhAFoqZ_1iRVt4aZPNFg13UMMs3lKBNUrNuV6sYVORdcl1zqOVOtLnbgTisQpqnjAC0HfnFqN2Q7jrPVyy-JBj_98g9gQ0T2FiLkqAXN7lg80sP6EqOcXpBm_zzOBPWedHMPlvkW-SBscNXkwWMnGVKhQNeuCBym3H5IpL3IQOkeeUF45yS7Gwu33n-IDny6VDNRE"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE XVI
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            74 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Resort &amp; Riviera</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Open-stitch knit polos, crisp double-pleat bermudas, woven driving loafers, and warm terracotta afternoons.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#C05A46]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Terracotta</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#EFE8DC]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Ivory Sand</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#355B6C]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Riviera Blue</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#70422B]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Woven Cognac</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Crochet Knit Polo, Double Pleat Gurkha Shorts, Woven Leather Loafers</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Silk-Cotton Blend</span> •
+                <span class="text-[10px] text-outline">Woven Calfskin</span> •
+                <span class="text-[10px] text-outline">Mazzucchelli Acetate</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 74 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 17. BALLETCORE POETRY -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="58" data-name="Balletcore Poetry" data-tags="clean-girl" id="archetype-17">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still-life flat lay of a dusty rose ribbed cashmere wrap cardigan, silk satin ballet flats with elastic crossing bands, sheer layered tulle fabric, and pearl drop earrings on white polished alabaster stone. Delicate soft chiaroscuro lighting, zero humans, luxurious textile romance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqtdNHCjJhh2C9Lce_1yN-lBkkj0VCFwYmJyfruOEsRRNsoPq7bK8dOGa1_qupEXq6mOmS9gNUHEcUeA4oGmyPLRFvmZ8HP_syebJYLRuFugiW4OxSJ0bVMz0dsDeQIYNl_gD2XnSD24x3RPLXYQpqOlkZDh7TOe_rEyE2-f70rdoDNP3ZcJgXaFiNXq4v_5aooE5b7aR0qDv5qcKFZjKkpXwfj8KqlkfaniSMIw4"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE XVII
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            58 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Balletcore Poetry</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Featherlight cashmere wraps, satin slipper ribbons, gossamer sheer layering, and delicate pearl accoutrements.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#E4C8C4]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Dusty Rose</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#F8F3ED]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Alabaster</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#D3CAD0]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Pale Lilac</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#353335]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Swan Noir</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Cashmere Wrap Top, Satin Ribbon Flats, Pleated Tulle Skirt</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Featherweight Cashmere</span> •
+                <span class="text-[10px] text-outline">Duchess Satin</span> •
+                <span class="text-[10px] text-outline">Freshwater Pearls</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 58 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 18. MONOCHROME BRUTALISM -->
+<article class="aesthetic-card flex flex-col bg-surface-container-low rounded overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1" data-count="90" data-name="Monochrome Brutalism" data-tags="minimalist street" id="archetype-18">
+<div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Editorial still-life shot of a long sculptural pitch-black architectural wool cloak folded with razor-sharp geometry beside monolithic titanium sunglasses and heavy square-toe platform leather boots on dark rough-textured raw architectural concrete. Pure brutalist minimalism, zero human models." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoZoTyncTtGqbagvkXYd8OCacyQ4XMh7_hV1EckVA-JODm6u9TIn5D-O9CrxMiL8m8vaKlqCFUvXICaipHWb9-GcPJAH6D2JfmSJdhV25zYEpY2LfnwGftiEHhr0a_jU4Rl60psTUrTEnmx8hZJ82gnX_J6P7p1oYHpkDilFzwMr2pZBPYqBagGYJr3IP_NoMVgETGvIBchNX369TGjKNkbMaPNdn2yxRWEQsnbNo"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">
+            ARCHETYPE XVIII
+          </div>
+<div class="absolute bottom-3 right-3 px-2 py-0.5 bg-surface-container-high/90 backdrop-blur-md rounded font-metadata text-metadata text-on-surface uppercase tracking-wider">
+            90 PIECES
+          </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">SUBCULTURE / MOOD</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Monochrome Brutalism</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+              Monolithic silhouette architecture, pitch-absorbing noir wools, raw cast titanium, and uncompromising severity.
+            </p>
+<div class="mt-space-md">
+<span class="font-metadata text-metadata text-outline tracking-wider uppercase block mb-1">TACTILE PALETTE</span>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#080809]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Light-Void Black</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#202124]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Raw Concrete</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#53565A]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Brutal Gray</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="h-6 w-full rounded bg-[#9A9CA1]"></div>
+<span class="font-metadata text-[9px] text-outline truncate">Machined Titanium</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container p-space-xs rounded">
+<span class="font-metadata text-metadata text-primary uppercase tracking-wider block">KEY CODES:</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Architectural Wool Cloak, Square-Toe Platform Boots, Titanium Wrap Frames</p>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="text-[10px] text-outline">Heavy Melton Wool</span> •
+                <span class="text-[10px] text-outline">Grade 5 Titanium</span> •
+                <span class="text-[10px] text-outline">Polished Calfskin</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<a class="w-full py-2.5 px-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-caps-lg text-label-caps-lg font-bold uppercase tracking-wider rounded text-center transition-all flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>EXPLORE 90 PIECES IN ARCHIVE</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- HAUTE GATEWAY GUARANTEE & AFFILIATE TRANSPARENCY BANNER -->
+<section class="my-space-xl p-space-lg bg-surface-container-low rounded shadow-xl relative overflow-hidden">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md max-w-3xl">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[28px]">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Amazon.in Verified Haute Gateway</span>
+<span class="px-2 py-0.5 bg-surface-container rounded font-metadata text-metadata text-outline uppercase tracking-wider">OFFICIAL AFFILIATE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+            Every garment in the 18 Aesthetic Moods is linked directly to authenticated merchant listings on Amazon India with real-time price synchronization and Amazon Prime fulfillment guarantee. Veylora applies zero consumer markup. As an Amazon Associate, we earn from qualifying purchases at no additional cost to you.
+          </p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm w-full md:w-auto shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-label-caps-sm text-label-caps-sm text-on-surface font-bold">100% SECURE COMMERCE</span>
+<span class="font-metadata text-metadata text-outline">DIRECT CHECKOUT VIA AMAZON INDIA</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CLIENT-SIDE SCRIPT FOR FILTERING, SORTING & QUIZ LOGIC -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. FILTER PILLS
+      const pills = document.querySelectorAll(".pill-filter");
+      const cards = document.querySelectorAll(".aesthetic-card");
+      const countEl = document.getElementById("results-count");
+      const searchInput = document.getElementById("aesthetic-search");
+      const sortSelect = document.getElementById("sort-selector");
+      const grid = document.getElementById("aesthetic-directory-grid");
+
+      let currentFilter = "all";
+      let searchQuery = "";
+
+      function updateGrid() {
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const tags = card.getAttribute("data-tags") || "";
+          const name = (card.getAttribute("data-name") || "").toLowerCase();
+          const cardText = card.innerText.toLowerCase();
+
+          const matchesTag = (currentFilter === "all") || tags.includes(currentFilter);
+          const matchesSearch = !searchQuery || name.includes(searchQuery) || cardText.includes(searchQuery);
+
+          if (matchesTag && matchesSearch) {
+            card.style.display = "flex";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+        if (countEl) countEl.innerText = visibleCount;
+      }
+
+      pills.forEach(pill => {
+        pill.addEventListener("click", () => {
+          pills.forEach(p => {
+            p.classList.remove("bg-primary", "text-on-primary", "font-bold", "shadow-sm");
+            p.classList.add("bg-surface-container-low", "text-on-surface-variant");
+          });
+          pill.classList.remove("bg-surface-container-low", "text-on-surface-variant");
+          pill.classList.add("bg-primary", "text-on-primary", "font-bold", "shadow-sm");
+
+          currentFilter = pill.getAttribute("data-filter");
+          updateGrid();
+        });
+      });
+
+      // 2. LIVE SEARCH INPUT
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          searchQuery = e.target.value.toLowerCase().trim();
+          updateGrid();
+        });
+      }
+
+      // 3. SORT LOGIC
+      if (sortSelect && grid) {
+        sortSelect.addEventListener("change", () => {
+          const val = sortSelect.value;
+          const cardArray = Array.from(cards);
+
+          if (val === "pieces") {
+            cardArray.sort((a, b) => {
+              const countA = parseInt(a.getAttribute("data-count") || "0", 10);
+              const countB = parseInt(b.getAttribute("data-count") || "0", 10);
+              return countB - countA;
+            });
+          } else if (val === "az") {
+            cardArray.sort((a, b) => {
+              const nameA = a.getAttribute("data-name") || "";
+              const nameB = b.getAttribute("data-name") || "";
+              return nameA.localeCompare(nameB);
+            });
+          } else {
+            // Curator's canon (initial DOM order by id)
+            cardArray.sort((a, b) => {
+              const idA = parseInt(a.id.replace("archetype-", "") || "0", 10);
+              const idB = parseInt(b.id.replace("archetype-", "") || "0", 10);
+              return idA - idB;
+            });
+          }
+
+          cardArray.forEach(c => grid.appendChild(c));
+        });
+      }
+
+      // 4. INTERACTIVE QUIZ MATRIX
+      const btnQuiz = document.getElementById("btn-recalibrate");
+      const quizCode = document.getElementById("quiz-result-code");
+      const quizTitle = document.getElementById("quiz-result-title");
+      const quizDesc = document.getElementById("quiz-result-desc");
+      const quizCount = document.getElementById("quiz-result-count");
+
+      const archetypes = [
+        {
+          code: "ARCHETYPE I",
+          title: "Quiet Luxury Essentialism",
+          desc: "Subtle tonal tailoring, brushed cashmeres, unbranded Italian calfskin accessories, and architectural watch dials.",
+          count: "84 DISCOVERIES"
+        },
+        {
+          code: "ARCHETYPE II",
+          title: "Old Money Heritage",
+          desc: "Equestrian sensibilities, heritage cable-knits, unwashed heavy oxfords, and timeless generational tailoring.",
+          count: "96 DISCOVERIES"
+        },
+        {
+          code: "ARCHETYPE IV",
+          title: "Gorpcore Archive & Techwear",
+          desc: "Utilitarian mountain ergonomics repurposed for concrete grids: waterproof membranes and modular nylon.",
+          count: "110 DISCOVERIES"
+        },
+        {
+          code: "ARCHETYPE XVIII",
+          title: "Monochrome Brutalism",
+          desc: "Monolithic silhouette architecture, pitch-absorbing noir wools, raw cast titanium, and uncompromising severity.",
+          count: "90 DISCOVERIES"
+        },
+        {
+          code: "ARCHETYPE IX",
+          title: "Coastal Breeze & Linen",
+          desc: "Breathable open weaves, crinkled Normandy flax, nautical Breton knitwear, and unhurried sea-air comfort.",
+          count: "78 DISCOVERIES"
+        }
+      ];
+
+      if (btnQuiz) {
+        btnQuiz.addEventListener("click", () => {
+          const sil = document.getElementById("quiz-silhouette").value;
+          const pal = document.getElementById("quiz-palette").value;
+          
+          let selected = archetypes[0];
+          if (sil === "technical") {
+            selected = archetypes[2]; // Gorpcore
+          } else if (pal === "dark") {
+            selected = archetypes[3]; // Brutalism
+          } else if (sil === "fluid") {
+            selected = archetypes[4]; // Coastal
+          } else if (pal === "earth") {
+            selected = archetypes[1]; // Old Money
+          }
+
+          if (quizCode) quizCode.innerText = selected.code;
+          if (quizTitle) quizTitle.innerText = selected.title;
+          if (quizDesc) quizDesc.innerText = selected.desc;
+          if (quizCount) quizCount.innerText = selected.count;
+        });
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1680px] mx-auto px-margin py-space-xl"><div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-space-md pb-space-lg"><div class="max-w-xl"><div class="font-headline-md text-headline-md tracking-tight text-primary uppercase">VEYLORA</div><p class="font-headline-sm text-headline-sm text-on-surface mt-space-xs italic">THE ART OF EVERYDAY STYLE — Curated Fashion Discoveries</p><p class="font-label-caps-sm text-label-caps-sm tracking-[0.2em] text-outline mt-space-xs uppercase">EVERY STYLE. ONE DESTINATION.</p></div><div class="flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[16px]">public</span><span class="font-metadata text-metadata text-on-surface-variant tracking-wider uppercase">EDITION INDIA / GLOBAL DISCOVERY</span></div></div><div class="grid grid-cols-2 md:grid-cols-4 gap-space-xl py-space-lg"><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Discovery</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="men" href="#">Men</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="women" href="#">Women</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="clothing" href="#">Clothing</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="footwear" href="#">Footwear</a><a class="font-body-sm text-body-sm text-primary font-bold transition-colors" data-path="accessories" href="#">Accessories</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="aesthetics" href="#">Aesthetics</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Editorial</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="the-style-edit" href="#">The Style Edit</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="trending" href="#">Trending Curations</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="wardrobe-guides" href="#">Wardrobe Guides</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="fabric-journal" href="#">Fabric Journal</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Client Care</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-veylora" href="#">About Veylora</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="wishlist" href="#">Wishlist Archive</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="faq" href="#">FAQ &amp; Assistance</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-caps-lg text-label-caps-lg text-primary tracking-widest uppercase">Legal &amp; Assurance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-conditions" href="#">Terms &amp; Conditions</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="affiliate-disclosure" href="#">Affiliate Transparency</a><span class="font-metadata text-metadata text-outline mt-space-xs">SSL Secured Haute Gateway</span></div></div><div class="bg-surface-container-low p-space-md rounded mt-space-md"><p class="font-metadata text-metadata text-outline leading-relaxed tracking-wider">AFFILIATE DISCLOSURE: As an Amazon Associate, Veylora earns from qualifying purchases. Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon.in at the time of purchase will apply.</p></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg"><span class="font-metadata text-metadata text-outline uppercase tracking-widest">© 2025 VEYLORA. ALL RIGHTS RESERVED. ARCHITECTURAL COMMERCE ARCHIVE.</span><div class="flex items-center gap-space-md"><span class="font-metadata text-metadata text-outline uppercase tracking-wider">OBJECT DISCOVERY</span><span class="font-metadata text-metadata text-primary uppercase tracking-wider">NOUVELLE ÉDITION</span></div></div></div></footer></body></html>
