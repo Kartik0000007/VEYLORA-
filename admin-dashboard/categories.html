@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veylora Admin — Categories</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f0f11; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+  <aside class="fixed inset-y-0 left-0 z-50 w-64 bg-surface-container-low border-r border-outline-variant/30 transform -translate-x-full transition-transform duration-300" id="sidebar">
+    <div class="flex items-center justify-between px-6 py-4">
+      <span class="font-bold text-xl text-primary">Veylora</span>
+      <button id="closeSidebar" class="text-outline-variant hover:text-on-surface">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="px-4 py-2 space-y-1">
+      <a href="dashboard.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">dashboard</span> Dashboard
+      </a>
+      <a href="products.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">inventory_2</span> Products
+      </a>
+      <a href="categories.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-on-primary">
+        <span class="material-symbols-outlined">category</span> Categories
+      </a>
+      <a href="settings.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">settings</span> Settings
+      </a>
+    </nav>
+    <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-outline-variant/30">
+      <button id="logoutBtn" class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-red-400 hover:bg-red-400/10 transition-colors">
+        <span class="material-symbols-outlined">logout</span> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <div id="overlay" class="fixed inset-0 z-40 bg-black/50 hidden" onclick="toggleSidebar()"></div>
+
+  <div class="flex-1 pl-0 lg:pl-64 p-6">
+    <header class="flex items-center justify-between mb-6">
+      <div>
+        <button id="openSidebar" class="lg:hidden text-outline-variant">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+        <h1 class="text-2xl font-bold text-on-surface">Categories</h1>
+      </div>
+      <a href="#" id="addCategoryBtn" class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg hover:bg-primary-fixed transition-colors text-sm font-medium">
+        <span class="material-symbols-outlined">add</span> Add Category
+      </a>
+    </header>
+
+    <div id="categoryFormContainer" class="hidden mb-6 bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
+      <h3 class="font-bold text-on-surface mb-4">Category Form</h3>
+      <form id="categoryForm">
+        <input type="hidden" id="categoryId"/>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Name</label>
+            <input type="text" id="formName" required class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Slug</label>
+            <input type="text" id="formSlug" required class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none" placeholder="men"/>
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Description</label>
+            <textarea id="formDescription" rows="2" class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"></textarea>
+          </div>
+        </div>
+        <div class="flex justify-end gap-3 mt-4">
+          <button type="button" id="cancelCategoryBtn" class="px-6 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high">Cancel</button>
+          <button type="submit" class="px-6 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed">Save</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden">
+      <table class="w-full text-left">
+        <thead class="bg-surface-container-high/50">
+          <tr>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Name</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Slug</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Description</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="categoriesTableBody">
+          <tr><td colspan="4" class="px-6 py-8 text-center text-outline">Loading categories...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="src/js/api.js"></script>
+  <script src="src/js/auth.js"></script>
+  <script>
+    requireAuth();
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('veylora_admin_token');
+      localStorage.removeItem('veylora_admin_user');
+      window.location.href = 'login.html';
+    });
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('-translate-x-full');
+      document.getElementById('overlay').classList.toggle('hidden');
+    }
+    document.getElementById('openSidebar').addEventListener('click', toggleSidebar);
+    document.getElementById('closeSidebar').addEventListener('click', toggleSidebar);
+
+    let categories = [];
+    let editingId = null;
+
+    const formContainer = document.getElementById('categoryFormContainer');
+    const form = document.getElementById('categoryForm');
+    const addBtn = document.getElementById('addCategoryBtn');
+    const cancelBtn = document.getElementById('cancelCategoryBtn');
+
+    addBtn.addEventListener('click', () => {
+      editingId = null;
+      form.reset();
+      document.getElementById('categoryId').value = '';
+      formContainer.classList.remove('hidden');
+    });
+    cancelBtn.addEventListener('click', () => {
+      formContainer.classList.add('hidden');
+      editingId = null;
+    });
+
+    async function loadCategories() {
+      try {
+        categories = await api.get('/api/categories?active=false');
+        renderCategories();
+      } catch (err) {
+        document.getElementById('categoriesTableBody').innerHTML =
+          '<tr><td colspan="4" class="px-6 py-8 text-center text-red-400">Failed to load</td></tr>';
+      }
+    }
+
+    function renderCategories() {
+      const tbody = document.getElementById('categoriesTableBody');
+      tbody.innerHTML = '';
+      if (categories.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center text-outline">No categories found.</td></tr>';
+        return;
+      }
+      categories.forEach(c => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-surface-container-high/30 transition-colors';
+        tr.innerHTML = `
+          <td class="px-6 py-4 font-medium text-on-surface">${c.name}</td>
+          <td class="px-6 py-4 text-outline-variant text-sm">${c.slug}</td>
+          <td class="px-6 py-4 text-outline text-sm truncate max-w-xs">${c.description || '—'}</td>
+          <td class="px-6 py-4 text-right">
+            <button onclick="editCategory(${c.id})" class="text-primary hover:underline text-sm mr-3">Edit</button>
+            <button onclick="deleteCategory(${c.id})" class="text-red-400 hover:underline text-sm">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    window.editCategory = (id) => {
+      const c = categories.find(x => x.id === id);
+      if (!c) return;
+      editingId = id;
+      document.getElementById('categoryId').value = c.id;
+      document.getElementById('formName').value = c.name;
+      document.getElementById('formSlug').value = c.slug;
+      document.getElementById('formDescription').value = c.description || '';
+      formContainer.classList.remove('hidden');
+    };
+
+    window.deleteCategory = async (id) => {
+      if (!confirm('Delete this category? Products in this category will become uncategorized.')) return;
+      try {
+        await api.delete(`/api/categories/${id}`);
+        loadCategories();
+      } catch (err) { alert(err.message || 'Delete failed'); }
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('formName').value,
+        slug: document.getElementById('formSlug').value,
+        description: document.getElementById('formDescription').value,
+      };
+      try {
+        if (editingId) {
+          await api.put(`/api/categories/${editingId}`, data);
+        } else {
+          await api.post('/api/categories', data);
+        }
+        formContainer.classList.add('hidden');
+        editingId = null;
+        loadCategories();
+      } catch (err) { alert(err.message || 'Save failed'); }
+    });
+
+    loadCategories();
+  </script>
+</body>
+</html>

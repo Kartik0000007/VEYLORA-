@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veylora Admin — Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f0f11; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+  <!-- Sidebar -->
+  <aside class="fixed inset-y-0 left-0 z-50 w-64 bg-surface-container-low border-r border-outline-variant/30 transform -translate-x-full transition-transform duration-300" id="sidebar">
+    <div class="flex items-center justify-between px-6 py-4">
+      <span class="font-bold text-xl text-primary">Veylora</span>
+      <button id="closeSidebar" class="text-outline-variant hover:text-on-surface">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="px-4 py-2 space-y-1">
+      <a href="dashboard.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">dashboard</span>
+        Dashboard
+      </a>
+      <a href="products.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-on-primary">
+        <span class="material-symbols-outlined">inventory_2</span>
+        Products
+      </a>
+      <a href="categories.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">category</span>
+        Categories
+      </a>
+      <a href="settings.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">settings</span>
+        Settings
+      </a>
+    </nav>
+    <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-outline-variant/30">
+      <button id="logoutBtn" class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-red-400 hover:bg-red-400/10 transition-colors">
+        <span class="material-symbols-outlined">logout</span>
+        Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <div id="overlay" class="fixed inset-0 z-40 bg-black/50 hidden" onclick="toggleSidebar()"></div>
+
+  <div class="flex-1 pl-0 lg:pl-64 p-6">
+    <header class="flex items-center justify-between mb-6">
+      <div>
+        <button id="openSidebar" class="lg:hidden text-outline-variant">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+        <h1 class="text-2xl font-bold text-on-surface">Products</h1>
+      </div>
+      <a href="#" id="addProductBtn" class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg hover:bg-primary-fixed transition-colors text-sm font-medium">
+        <span class="material-symbols-outlined">add</span> Add Product
+      </a>
+    </header>
+
+    <!-- Product Form (hidden by default) -->
+    <div id="productFormContainer" class="hidden mb-6 bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
+      <h3 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary">edit</span>
+        <span id="formTitle">Add Product</span>
+      </h3>
+      <form id="productForm">
+        <input type="hidden" id="productId"/>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Name</label>
+            <input type="text" id="formName" required class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Slug</label>
+            <input type="text" id="formSlug" required class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-focus focus:border-primary focus:outline-none" placeholder="noir-hoodie"/>
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Description</label>
+            <textarea id="formDescription" rows="3" class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"></textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Brand</label>
+            <input type="text" id="formBrand" class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Price (₹)</label>
+            <input type="number" id="formPrice" required class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Original Price (₹)</label>
+            <input type="number" id="formOriginalPrice" class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Category</label>
+            <select id="formCategoryId" class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none">
+              <option value="">Uncategorized</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Image URL</label>
+            <input type="url" id="formImageUrl" required class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Affiliate URL (Amazon.in)</label>
+            <input type="url" id="formAffiliateUrl" required class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
+          </div>
+          <div class="md:col-span-2 flex items-center gap-3">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="formIsFeatured"/> <span class="text-sm text-on-surface">Featured</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer ml-4">
+              <input type="checkbox" id="formIsActive" checked/> <span class="text-sm text-on-surface">Active</span>
+            </label>
+          </div>
+        </div>
+        <div class="md:col-span-2 flex justify-end gap-3 mt-6">
+          <button type="button" id="cancelFormBtn" class="px-6 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">Cancel</button>
+          <button type="submit" class="px-6 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed transition-colors">Save Product</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Products Table -->
+    <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden">
+      <table class="w-full text-left">
+        <thead class="bg-surface-container-high/50">
+          <tr>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Image</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Name</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Category</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Price</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Status</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="productsTableBody" class="divide-y divide-outline-variant/20">
+          <tr><td colspan="6" class="px-6 py-8 text-center text-outline">Loading products...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="src/js/api.js"></script>
+  <script src="src/js/auth.js"></script>
+  <script>
+    requireAuth();
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('veylora_admin_token');
+      localStorage.removeItem('veylora_admin_user');
+      window.location.href = 'login.html';
+    });
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('-translate-x-full');
+      document.getElementById('overlay').classList.toggle('hidden');
+    }
+    document.getElementById('openSidebar').addEventListener('click', toggleSidebar);
+    document.getElementById('closeSidebar').addEventListener('click', toggleSidebar);
+
+    let products = [];
+    let categories = [];
+    let editingId = null;
+
+    const formContainer = document.getElementById('productFormContainer');
+    const form = document.getElementById('productForm');
+    const addBtn = document.getElementById('addProductBtn');
+    const cancelBtn = document.getElementById('cancelFormBtn');
+    const formTitle = document.getElementById('formTitle');
+
+    addBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      editingId = null;
+      formTitle.textContent = 'Add Product';
+      form.reset();
+      document.getElementById('productId').value = '';
+      document.getElementById('formIsActive').checked = true;
+      formContainer.classList.remove('hidden');
+    });
+    cancelBtn.addEventListener('click', () => {
+      formContainer.classList.add('hidden');
+      editingId = null;
+    });
+
+    async function loadCategories() {
+      try {
+        categories = await api.get('/api/categories?active=false');
+        const select = document.getElementById('formCategoryId');
+        categories.forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c.id;
+          opt.textContent = c.name;
+          select.appendChild(opt);
+        });
+      } catch (err) { console.error(err); }
+    }
+
+    async function loadProducts() {
+      try {
+        products = await api.get('/api/products?active=false');
+        renderProducts();
+      } catch (err) {
+        document.getElementById('productsTableBody').innerHTML =
+          '<tr><td colspan="6" class="px-6 py-8 text-center text-red-400">Failed to load products</td></tr>';
+      }
+    }
+
+    function renderProducts() {
+      const tbody = document.getElementById('productsTableBody');
+      tbody.innerHTML = '';
+      if (products.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="px-6 py-8 text-center text-outline">No products found.</td></tr>';
+        return;
+      }
+      products.forEach(p => {
+        const cat = categories.find(c => c.id === p.category_id);
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-surface-container-high/30 transition-colors';
+        tr.innerHTML = `
+          <td class="px-6 py-4">
+            <img src="${p.image_url}" alt="${p.name}" class="w-12 h-12 object-cover rounded-lg"/>
+          </td>
+          <td class="px-6 py-4">
+            <div class="font-medium text-on-surface truncate max-w-xs">${p.name}</div>
+            <div class="text-xs text-outline-variant">Slug: ${p.slug}</div>
+          </td>
+          <td class="px-6 py-4">
+            <span class="text-xs text-outline">${cat ? cat.name : 'Uncategorized'}</span>
+          </td>
+          <td class="px-6 py-4">
+            <span class="font-medium text-on-surface">₹${Number(p.price).toLocaleString()}</span>
+          </td>
+          <td class="px-6 py-4">
+            <span class="px-2 py-1 rounded-full text-xs font-medium ${p.is_active ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'}">
+              ${p.is_active ? 'Active' : 'Inactive'}
+            </span>
+          </td>
+          <td class="px-6 py-4 text-right">
+            <button onclick="editProduct(${p.id})" class="text-primary hover:underline text-sm mr-3">Edit</button>
+            <button onclick="deleteProduct(${p.id})" class="text-red-400 hover:underline text-sm">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    window.editProduct = async (id) => {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+      editingId = id;
+      formTitle.textContent = 'Edit Product';
+      document.getElementById('productId').value = p.id;
+      document.getElementById('formName').value = p.name;
+      document.getElementById('formSlug').value = p.slug;
+      document.getElementById('formDescription').value = p.description || '';
+      document.getElementById('formBrand').value = p.brand || '';
+      document.getElementById('formPrice').value = p.price;
+      document.getElementById('formOriginalPrice').value = p.original_price || '';
+      document.getElementById('formCategoryId').value = p.category_id || '';
+      document.getElementById('formImageUrl').value = p.image_url;
+      document.getElementById('formAffiliateUrl').value = p.affiliate_url;
+      document.getElementById('formIsFeatured').checked = p.is_featured === true;
+      document.getElementById('formIsActive').checked = p.is_active !== false;
+      formContainer.classList.remove('hidden');
+    };
+
+    window.deleteProduct = async (id) => {
+      if (!confirm('Delete this product? It will be removed from the website.')) return;
+      try {
+        await api.delete(`/api/products/${id}`);
+        loadProducts();
+      } catch (err) { alert(err.message || 'Delete failed'); }
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('formName').value,
+        slug: document.getElementById('formSlug').value,
+        description: document.getElementById('formDescription').value,
+        brand: document.getElementById('formBrand').value,
+        price: parseFloat(document.getElementById('formPrice').value),
+        original_price: document.getElementById('formOriginalPrice').value ? parseFloat(document.getElementById('formOriginalPrice').value) : null,
+        category_id: document.getElementById('formCategoryId').value ? parseInt(document.getElementById('formCategoryId').value) : null,
+        image_url: document.getElementById('formImageUrl').value,
+        affiliate_url: document.getElementById('formAffiliateUrl').value,
+        is_featured: document.getElementById('formIsFeatured').checked,
+        is_active: document.getElementById('formIsActive').checked,
+      };
+
+      try {
+        if (editingId) {
+          await api.put(`/api/products/${editingId}`, data);
+        } else {
+          await api.post('/api/products', data);
+        }
+        formContainer.classList.add('hidden');
+        editingId = null;
+        loadProducts();
+      } catch (err) { alert(err.message || 'Save failed'); }
+    });
+
+    loadCategories();
+    loadProducts();
+  </script>
+</body>
+</html>
