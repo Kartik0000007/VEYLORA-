@@ -1,111 +1,172 @@
 /**
  * Veylora Static Site Build Script
  * 
- * Fetches content from the backend API and generates static HTML/JSON files
- * for the main website. Run this before deploying to Vercel.
+ * Fetches content from the backend API and generates static JSON data files
+ * for the public website. Run this before deploying to Cloudflare Pages.
  * 
  * Usage:
- *   API_BASE=https://veylora-backend.onrender.com node scripts/build.js
+ *   API_BASE=https://api.veylora.example.com node scripts/build.js
  */
 
 const fs = require('fs');
 const path = require('path');
 
 const API_BASE = process.env.API_BASE || 'http://localhost:5000';
-const OUT_DIR = path.join(__dirname, '../website/frontend/data');
+const OUT_DIR = path.join(__dirname, '..', 'website', 'frontend', 'data');
+
+// Atomic write: write to temp file then rename
+function atomicWrite(filePath, data) {
+  const tmp = filePath + '.tmp';
+  fs.writeFileSync(tmp, data, 'utf8');
+  fs.renameSync(tmp, filePath);
+}
 
 async function fetchFromAPI(endpoint) {
   const res = await fetch(`${API_BASE}${endpoint}`);
-  if (!res.ok) throw new Error(`API ${endpoint} returned ${res.status}`);
-  return res.json();
+  if (!res.ok) {
+    throw new Error(`API ${endpoint} returned ${res.status}`);
+  }
+  const data = await res.json();
+  return data;
+}
+
+function stripAdminFields(products) {
+  return products.map((p) => {
+    const {
+      id, category_id, name, slug, description, brand, price, original_price,
+      currency, affiliate_url, image_url, is_active, is_featured, sort_order,
+      target_audience, aesthetic, product_type, tags, product_source,
+      affiliate_network, availability_status, last_price_verified,
+      last_content_update, seo_title, seo_description, created_at, updated_at,
+    } = p;
+    return {
+      id, category_id, name, slug, description, brand, price, original_price,
+      currency, affiliate_url, image_url, is_active, is_featured, sort_order,
+      target_audience, aesthetic, product_type, tags, product_source,
+      affiliate_network, availability_status, last_price_verified,
+      last_content_update, seo_title, seo_description, created_at, updated_at,
+    };
+  });
 }
 
 function slugify(text) {
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
-}
-
-function priceFormat(n) {
-  return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(n);
-}
-
-// Generate product card HTML
-function productCard(p, catName) {
-  return `
-    <div class="group bg-surface-container-low rounded overflow-hidden flex flex-col shadow-md transition-all duration-300 hover:shadow-2xl hover:bg-surface-container">
-      <div class="relative aspect-[4/5] bg-surface-container-high overflow-hidden">
-        <img alt="${p.name}" decoding="async" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${p.image_url}"/>
-        <span class="absolute top-3 left-3 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded font-metadata text-metadata text-on-surface-variant">${catName}</span>
-        ${p.is_featured ? `<span class="absolute top-3 right-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded flex items-center gap-1"><span class="material-symbols-outlined text-primary text-[14px]">bolt</span><span class="font-metadata text-metadata text-primary font-bold">Prime</span></span>` : ''}
-      </div>
-      <div class="p-space-md flex flex-col justify-between flex-1">
-        <div>
-          <span class="font-label-caps-sm text-label-caps-sm text-outline uppercase tracking-wider">${p.brand || 'Veylora'}</span>
-          <h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 line-clamp-1">${p.name}</h4>
-          <div class="flex items-baseline gap-2 mt-space-xs">
-            <span class="font-headline-sm text-headline-sm text-primary">₹${Number(p.price).toLocaleString()}</span>
-            ${p.original_price ? `<span class="font-metadata text-metadata text-outline line-through">₹${Number(p.original_price).toLocaleString()}</span>` : ''}
-          </div>
-        </div>
-        <a class="mt-space-md w-full py-2.5 rounded bg-primary text-on-primary font-label-caps-sm text-label-caps-sm tracking-[0.16em] uppercase flex items-center justify-center gap-space-xs hover:bg-primary-fixed transition-colors active:scale-95 shadow-sm" href="${p.affiliate_url}" target="_blank" rel="noopener noreferrer sponsored">
-          <span>View on Amazon.in</span>
-          <span class="material-symbols-outlined text-[15px]">arrow_outward</span>
-        </a>
-      </div>
-    </div>
-  `;
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
 }
 
 async function build() {
   console.log('🚀 Starting Veylora static build...');
   console.log(`API Base: ${API_BASE}`);
 
-  // Fetch data from API
+  // Fetch data from API — public endpoints only return active products/categories
   const [categories, products, settings] = await Promise.all([
-    fetchFromAPI('/api/categories?active=false'),
-    fetchFromAPI('/api/products?active=false'),
+    fetchFromAPI('/api/categories'),
+    fetchFromAPI('/api/products'),
     fetchFromAPI('/api/settings'),
   ]);
 
-  console.log(`Loaded ${categories.length} categories, ${products.length} products`);
+  // Filter to active products only (defensive — API should already do this)
+  const activeProducts = products.filter((p) => p.is_active !== false);
+  const featuredProducts = activeProducts.filter((p) => p.is_featured === true);
+
+  console.log(
+    `Loaded ${categories.length} categories, ${activeProducts.length} active products, ${featuredProducts.length} featured`
+  );
 
   // Create output directory
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  // Write JSON data files
-  fs.writeFileSync(path.join(OUT_DIR, 'categories.json'), JSON.stringify(categories, null, 2));
-  fs.writeFileSync(path.join(OUT_DIR, 'products.json'), JSON.stringify(products, null, 2));
-  fs.writeFileSync(path.join(OUT_DIR, 'settings.json'), JSON.stringify(settings, null, 2));
-  console.log('✓ JSON data files written');
+  // Strip admin-only fields from public output
+  const publicProducts = stripAdminFields(activeProducts);
+  const publicCategories = categories.map((c) => ({
+    id: c.id,
+    name: c.name,
+    slug: c.slug,
+    description: c.description,
+    image_url: c.image_url,
+    is_active: c.is_active,
+    sort_order: c.sort_order,
+    seo_title: c.seo_title,
+    seo_description: c.seo_description,
+    created_at: c.created_at,
+    updated_at: c.updated_at,
+  }));
 
-  // Group products by category
+  // Write JSON data files atomically
+  atomicWrite(path.join(OUT_DIR, 'categories.json'), JSON.stringify(publicCategories, null, 2));
+  atomicWrite(path.join(OUT_DIR, 'products.json'), JSON.stringify(publicProducts, null, 2));
+  atomicWrite(path.join(OUT_DIR, 'settings.json'), JSON.stringify(settings, null, 2));
+  atomicWrite(
+    path.join(OUT_DIR, 'featured.json'),
+    JSON.stringify(stripAdminFields(featuredProducts), null, 2)
+  );
+
+  console.log('✓ Core JSON data files written');
+
+  // Group products by category for category-specific files
   const productsByCategory = {};
-  products.forEach(p => {
+  activeProducts.forEach((p) => {
     const cid = p.category_id || 'uncategorized';
     if (!productsByCategory[cid]) productsByCategory[cid] = [];
     productsByCategory[cid].push(p);
   });
 
-  // Generate category-specific JSON for each category page
-  categories.forEach(cat => {
+  // Generate category-specific JSON files
+  publicCategories.forEach((cat) => {
     const catProducts = productsByCategory[cat.id] || [];
-    fs.writeFileSync(
+    atomicWrite(
       path.join(OUT_DIR, `category-${cat.slug}.json`),
-      JSON.stringify({ category: cat, products: catProducts }, null, 2)
+      JSON.stringify(
+        {
+          category: cat,
+          products: stripAdminFields(catProducts),
+        },
+        null,
+        2
+      )
     );
   });
 
-  // Generate featured products JSON
-  const featured = products.filter(p => p.is_featured);
-  fs.writeFileSync(
-    path.join(OUT_DIR, 'featured.json'),
-    JSON.stringify(featured, null, 2)
-  );
+  // Generate collections: featured, new, aesthetic-based
+  const aestheticSet = new Set();
+  activeProducts.forEach((p) => {
+    if (p.aesthetic) aestheticSet.add(p.aesthetic);
+  });
 
-  console.log('✓ Category data files written');
+  const collections = {
+    featured: stripAdminFields(featuredProducts),
+    newest: stripAdminFields(
+      [...activeProducts].sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, 20)
+    ),
+    aesthetics: Array.from(aestheticSet).map((aesthetic) => ({
+      name: aesthetic,
+      slug: slugify(aesthetic),
+      products: stripAdminFields(
+        activeProducts.filter((p) => p.aesthetic === aesthetic)
+      ),
+    })),
+  };
+
+  atomicWrite(path.join(OUT_DIR, 'collections.json'), JSON.stringify(collections, null, 2));
+  console.log('✓ Collections JSON written');
+
+  // Build summary
+  const recordCounts = {
+    categories: publicCategories.length,
+    products: publicProducts.length,
+    featured: featuredProducts.length,
+    settings: Object.keys(settings).length,
+    collections: collections.aesthetics.length + 2,
+  };
+  console.log('📊 Build summary:', JSON.stringify(recordCounts, null, 2));
   console.log('✅ Build complete. Static data ready in website/frontend/data/');
 }
 
-build().catch(err => {
+build().catch((err) => {
   console.error('❌ Build failed:', err.message);
   process.exit(1);
 });

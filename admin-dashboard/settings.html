@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Veylora Admin — Settings</title>
+  <title>Veylora Admin — Site Settings</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
   <style>
@@ -12,6 +12,7 @@
   </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen">
+  <!-- Sidebar -->
   <aside class="fixed inset-y-0 left-0 z-50 w-64 bg-surface-container-low border-r border-outline-variant/30 transform -translate-x-full transition-transform duration-300" id="sidebar">
     <div class="flex items-center justify-between px-6 py-4">
       <span class="font-bold text-xl text-primary">Veylora</span>
@@ -21,21 +22,30 @@
     </div>
     <nav class="px-4 py-2 space-y-1">
       <a href="dashboard.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
-        <span class="material-symbols-outlined">dashboard</span> Dashboard
+        <span class="material-symbols-outlined">dashboard</span>
+        Dashboard
       </a>
       <a href="products.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
-        <span class="material-symbols-outlined">inventory_2</span> Products
+        <span class="material-symbols-outlined">inventory_2</span>
+        Products
       </a>
       <a href="categories.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
-        <span class="material-symbols-outlined">category</span> Categories
+        <span class="material-symbols-outlined">category</span>
+        Categories
+      </a>
+      <a href="aesthetics.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">style</span>
+        Aesthetics
       </a>
       <a href="settings.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-on-primary">
-        <span class="material-symbols-outlined">settings</span> Settings
+        <span class="material-symbols-outlined">settings</span>
+        Settings
       </a>
     </nav>
     <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-outline-variant/30">
       <button id="logoutBtn" class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-red-400 hover:bg-red-400/10 transition-colors">
-        <span class="material-symbols-outlined">logout</span> Sign Out
+        <span class="material-symbols-outlined">logout</span>
+        Sign Out
       </button>
     </div>
   </aside>
@@ -58,30 +68,38 @@
           <h2 class="font-bold text-lg text-on-surface mb-4">Brand &amp; Hero</h2>
           <div class="space-y-4" id="settingsContainer">
             <!-- Settings injected here by JS -->
+            <div class="flex items-center justify-between py-4">
+              <span class="text-outline text-sm">Loading settings…</span>
+            </div>
           </div>
         </div>
         <div class="flex justify-end">
-          <button type="submit" class="px-8 py-3 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed transition-colors font-medium">
+          <button type="submit" id="saveSettingsBtn" class="px-8 py-3 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed">
             Save Settings
           </button>
         </div>
       </form>
 
-      <div class="mt-8 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-sm text-red-400">
-        <p class="font-medium">⚠️ After saving settings, redeploy the website on Vercel for changes to appear.</p>
+      <div class="mt-8 p-4 bg-surface-container-low border border-outline-variant/30 rounded-lg text-sm text-outline-variant">
+        <p class="font-medium mb-2">How settings publish to the website:</p>
+        <ul class="list-disc list-inside space-y-1 text-xs text-outline">
+          <li>Settings are saved to the PostgreSQL database via the API.</li>
+        </ul>
       </div>
     </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-4 right-4 z-[100] flex flex-col gap-2"></div>
   </div>
 
+  <script src="src/js/config.js" data-api-base=""></script>
   <script src="src/js/api.js"></script>
   <script src="src/js/auth.js"></script>
   <script>
     requireAuth();
 
     document.getElementById('logoutBtn').addEventListener('click', () => {
-      localStorage.removeItem('veylora_admin_token');
-      localStorage.removeItem('veylora_admin_user');
-      window.location.href = 'login.html';
+      logout();
     });
 
     function toggleSidebar() {
@@ -93,34 +111,79 @@
 
     const container = document.getElementById('settingsContainer');
 
+    // --- Toast ---
+    function showToast(message, type = 'success') {
+      const c = document.getElementById('toastContainer');
+      const t = document.createElement('div');
+      const bg = type === 'error' ? 'bg-red-500/90' : 'bg-primary/90';
+      const tc = type === 'error' ? 'text-on-red-500' : 'text-on-primary';
+      t.className = `px-4 py-3 rounded-lg shadow-xl ${bg} ${tc} text-sm font-medium min-w-[200px]`;
+      t.textContent = message;
+      c.appendChild(t);
+      setTimeout(() => {
+        t.style.opacity = '0';
+        setTimeout(() => t.remove(), 300);
+      }, 3000);
+    }
+
     async function loadSettings() {
       try {
         const settings = await api.get('/api/settings');
         container.innerHTML = '';
-        Object.entries(settings).forEach(([key, value]) => {
+        const entries = Object.entries(settings);
+        if (entries.length === 0) {
+          container.innerHTML = '<p class="text-outline text-sm py-4">No settings found.</p>';
+          return;
+        }
+        entries.forEach(([key, value]) => {
           const div = document.createElement('div');
           div.className = 'grid grid-cols-1 md:grid-cols-3 gap-4 items-end p-4 border border-outline-variant/20 rounded-lg bg-surface-container-lowest/50';
           div.innerHTML = `
-            <label class="text-sm font-medium text-on-surface-variant">${key}</label>
-            <input type="text" data-key="${key}" value="${value || ''}"
+            <label class="text-sm font-medium text-on-surface-variant break-words">${escapeHtml(key)}</label>
+            <input type="text" data-key="${escapeHtml(key)}" value="${escapeHtml(value || '')}"
               class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
           `;
           container.appendChild(div);
         });
       } catch (err) {
-        container.innerHTML = '<p class="text-red-400">Failed to load settings</p>';
+        container.innerHTML = '<p class="text-red-400 text-sm">Failed to load settings</p>';
+        showToast('Failed to load settings', 'error');
       }
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
     }
 
     document.getElementById('settingsForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const inputs = container.querySelectorAll('input[data-key]');
+      const btn = document.getElementById('saveSettingsBtn');
+      btn.disabled = true;
+      btn.textContent = 'Saving…';
+
       try {
+        let failed = 0;
         for (const input of inputs) {
-          await api.put(`/api/settings/${input.dataset.key}`, { setting_value: input.value });
+          try {
+            await api.put(`/api/settings/${input.dataset.key}`, { setting_value: input.value });
+          } catch {
+            failed += 1;
+          }
         }
-        alert('Settings saved successfully!');
-      } catch (err) { alert(err.message || 'Save failed'); }
+        if (failed === 0) {
+          showToast('Settings saved successfully');
+        } else {
+          showToast(`${failed} setting(s) failed to save`, 'error');
+        }
+      } catch (err) {
+        showToast(err.message || 'Save failed', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Save Settings';
+      }
     });
 
     loadSettings();

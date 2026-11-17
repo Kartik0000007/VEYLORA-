@@ -653,6 +653,7 @@ ${overlaysPartial}
 ${headerPartial}
 ${content.trim()}
 ${footerPartial}
+<script src="scripts/load-data.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>

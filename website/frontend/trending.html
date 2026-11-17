@@ -560,7 +560,12 @@
 </div>
 </div>
 <!-- The 12-Item Viral Discovery Grid (3 Columns Desktop, 2 Tablet, 1 Mobile) -->
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-space-lg 2xl:grid-cols-4">
+<div id="trending-product-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-space-lg 2xl:grid-cols-4">
+  <div class="col-span-full flex items-center justify-center py-12">
+    <p class="text-outline text-sm animate-pulse">Loading trending curiosities…</p>
+  </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-space-lg 2xl:grid-cols-4" style="display:none">
 <!-- Card 1 -->
 <article data-reveal class="flex flex-col bg-surface-container-low rounded overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
 <div class="aspect-[4/5] bg-surface-container-lowest relative overflow-hidden">
@@ -1069,6 +1074,37 @@
 </div>
 </section>
 </div></main>
+<script src="../scripts/load-data.js" defer></script>
+<script id="veylora-page-init" defer>
+  (() => {
+    'use strict';
+    const { loadData, renderProducts, showLoading } = window.VeyloraData || {};
+    if (!loadData) return;
+
+    const grid = document.getElementById('trending-product-grid');
+    if (!grid) return;
+
+    async function init() {
+      showLoading(grid, 'Loading trending curiosities…');
+      try {
+        const featured = await loadData.getFeatured();
+        renderProducts(grid, featured, { linkText: 'View on Amazon.in' });
+      } catch (err) {
+        try {
+          const products = await loadData.getProducts();
+          renderProducts(grid, products.slice(0, 20), { linkText: 'View on Amazon.in' });
+        } catch (err2) {
+          grid.innerHTML = '';
+          const errEl = document.createElement('div');
+          errEl.className = 'col-span-full text-center py-12';
+          errEl.innerHTML = '<p class="text-red-400 text-sm">Unable to load trending.</p>';
+          grid.appendChild(errEl);
+        }
+      }
+    }
+    init();
+  })();
+</script>
 <!-- Editorial marquee -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">

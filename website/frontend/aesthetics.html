@@ -1662,7 +1662,39 @@
       }
     });
   </script>
-</div></main>
+<section id="aesthetic-product-grid" class="mt-space-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+  <div class="col-span-full flex items-center justify-center py-12">
+    <p class="text-outline text-sm animate-pulse">Loading aesthetic moods…</p>
+  </div>
+</section>
+<script src="../scripts/load-data.js" defer></script>
+<script id="veylora-page-init" defer>
+  (() => {
+    'use strict';
+    const { loadData, renderProducts, showLoading } = window.VeyloraData || {};
+    if (!loadData) return;
+
+    const grid = document.getElementById('aesthetic-product-grid');
+    if (!grid) return;
+
+    async function init() {
+      showLoading(grid, 'Loading aesthetic moods…');
+      try {
+        const collections = await loadData.getCollections();
+        renderProducts(grid, collections.aesthetics.flatMap((a) => a.products), {
+          linkText: 'View on Amazon.in',
+        });
+      } catch (err) {
+        grid.innerHTML = '';
+        const errEl = document.createElement('div');
+        errEl.className = 'col-span-full text-center py-12';
+        errEl.innerHTML = '<p class="text-red-400 text-sm">Unable to load aesthetics.</p>';
+        grid.appendChild(errEl);
+      }
+    }
+    init();
+  })();
+</script></div></main>
 <!-- Editorial marquee -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">

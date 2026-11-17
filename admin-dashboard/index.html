@@ -4,13 +4,18 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Veylora Admin — Redirect</title>
+  <script src="src/js/config.js" data-api-base=""></script>
+  <script src="src/js/api.js"></script>
+  <script src="src/js/auth.js"></script>
   <script>
-    const token = localStorage.getItem('veylora_admin_token');
-    if (token) {
-      window.location.href = 'dashboard.html';
-    } else {
-      window.location.href = 'login.html';
-    }
+    (async () => {
+      const user = await checkAuth();
+      if (user) {
+        window.location.href = 'dashboard.html';
+      } else {
+        window.location.href = 'login.html';
+      }
+    })();
   </script>
 </head>
 <body>

@@ -528,7 +528,12 @@
 </div>
 </div>
 <!-- Product Grid (5 Architectural Discoveries) -->
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+<div id="search-empty-product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+  <div class="col-span-full flex items-center justify-center py-12">
+    <p class="text-outline text-sm animate-pulse">Loading aesthetic recommendations…</p>
+  </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" style="display:none">
 <!-- Product 1 -->
 <div class="bg-surface-container-low rounded-lg overflow-hidden flex flex-col justify-between group hover:bg-surface-container transition-all shadow-sm">
 <div>
@@ -777,6 +782,52 @@
 </div>
 </div>
 </main>
+<script src="../scripts/load-data.js" defer></script>
+<script id="veylora-page-init" defer>
+  (() => {
+    'use strict';
+    const { loadData, renderProducts, showLoading, escapeHtml } = window.VeyloraData || {};
+    if (!loadData) return;
+
+    const grid = document.getElementById('search-empty-product-grid');
+    const queryInput = document.getElementById('searchInputField');
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q') || '';
+
+    if (queryInput) queryInput.value = query;
+
+    async function renderSuggestions(q) {
+      showLoading(grid, 'Loading aesthetic recommendations…');
+      try {
+        const collections = await loadData.getCollections();
+        const allProducts = collections.aesthetics.flatMap((a) => a.products);
+        renderProducts(grid, allProducts.slice(0, 12), {
+          linkText: 'View on Amazon.in',
+          emptyMessage: 'No recommendations available.',
+        });
+      } catch (err) {
+        grid.innerHTML = '';
+        const errEl = document.createElement('div');
+        errEl.className = 'col-span-full text-center py-12';
+        errEl.innerHTML = '<p class="text-red-400 text-sm">Unable to load recommendations.</p>';
+        grid.appendChild(errEl);
+      }
+    }
+
+    renderSuggestions(query);
+
+    // Handle rescan button
+    const rescanBtn = document.querySelector('[data-rescan]');
+    if (rescanBtn && queryInput) {
+      rescanBtn.addEventListener('click', () => {
+        const q = queryInput.value.trim();
+        if (q) {
+          window.location.href = `search.html?q=${encodeURIComponent(q)}`;
+        }
+      });
+    }
+  })();
+</script>
 <!-- Editorial marquee -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">

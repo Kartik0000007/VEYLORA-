@@ -33,6 +33,10 @@
         <span class="material-symbols-outlined">category</span>
         Categories
       </a>
+      <a href="aesthetics.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">style</span>
+        Aesthetics
+      </a>
       <a href="settings.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
         <span class="material-symbols-outlined">settings</span>
         Settings
@@ -59,27 +63,31 @@
         <h1 class="text-2xl font-bold text-on-surface">Dashboard</h1>
       </div>
       <div class="flex items-center gap-3">
-        <span class="hidden sm:block text-sm text-outline-variant">Curator Panel</span>
+        <span id="currentUser" class="hidden sm:block text-sm text-outline-variant">Curator</span>
       </div>
     </header>
 
     <!-- Stats -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
       <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
         <p class="text-xs text-outline uppercase tracking-wider">Total Products</p>
         <p id="statProducts" class="text-2xl font-bold text-on-surface mt-1">-</p>
       </div>
       <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
-        <p class="text-xs text-outline uppercase tracking-wider">Categories</p>
-        <p id="statCategories" class="text-2xl font-bold text-on-surface mt-1">-</p>
+        <p class="text-xs text-outline uppercase tracking-wider">Active Products</p>
+        <p id="statActiveProducts" class="text-2xl font-bold text-green-500 mt-1">-</p>
+      </div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
+        <p class="text-xs text-outline uppercase tracking-wider">Inactive Products</p>
+        <p id="statInactiveProducts" class="text-2xl font-bold text-red-400 mt-1">-</p>
       </div>
       <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
         <p class="text-xs text-outline uppercase tracking-wider">Featured</p>
         <p id="statFeatured" class="text-2xl font-bold text-primary mt-1">-</p>
       </div>
       <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
-        <p class="text-xs text-outline uppercase tracking-wider">Site Status</p>
-        <p class="text-2xl font-bold text-green-500 mt-1">Online</p>
+        <p class="text-xs text-outline uppercase tracking-wider">Categories</p>
+        <p id="statCategories" class="text-2xl font-bold text-on-surface mt-1">-</p>
       </div>
     </div>
 
@@ -108,6 +116,15 @@
       </div>
     </div>
 
+    <!-- API Health -->
+    <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="font-bold text-on-surface">System Health</h3>
+        <span id="healthBadge" class="text-xs font-medium px-2 py-1 rounded bg-surface-container-high text-outline-variant">Checking…</span>
+      </div>
+      <div id="healthDetail" class="text-sm text-outline-variant">Loading API health…</div>
+    </div>
+
     <!-- Recent Products -->
     <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
       <div class="flex items-center justify-between mb-6">
@@ -115,20 +132,19 @@
         <a href="products.html" class="text-sm text-primary hover:underline">View all</a>
       </div>
       <div id="recentProducts" class="space-y-3">
-        <p class="text-outline text-sm">Loading products...</p>
+        <p class="text-outline text-sm">Loading products…</p>
       </div>
     </div>
   </div>
 
+  <script src="src/js/config.js" data-api-base=""></script>
   <script src="src/js/api.js"></script>
   <script src="src/js/auth.js"></script>
   <script>
     requireAuth();
 
     document.getElementById('logoutBtn').addEventListener('click', () => {
-      localStorage.removeItem('veylora_admin_token');
-      localStorage.removeItem('veylora_admin_user');
-      window.location.href = 'login.html';
+      logout();
     });
 
     function toggleSidebar() {
@@ -146,9 +162,19 @@
           api.get('/api/categories?active=false'),
           api.get('/api/products?active=false'),
         ]);
+
         document.getElementById('statCategories').textContent = catsRes.length;
         document.getElementById('statProducts').textContent = productsRes.length;
+        document.getElementById('statActiveProducts').textContent = productsRes.filter(p => p.is_active).length;
+        document.getElementById('statInactiveProducts').textContent = productsRes.filter(p => !p.is_active).length;
         document.getElementById('statFeatured').textContent = productsRes.filter(p => p.is_featured).length;
+
+        const currentUser = await api.get('/api/auth/me');
+        if (currentUser && currentUser.user) {
+          const userEl = document.getElementById('currentUser');
+          userEl.classList.remove('hidden');
+          userEl.textContent = currentUser.user.username;
+        }
 
         // Recent products
         const recent = productsRes.slice(0, 5);
@@ -161,10 +187,10 @@
             const div = document.createElement('div');
             div.className = 'flex items-center gap-3 py-2 border-b border-outline-variant/20 last:border-0';
             div.innerHTML = `
-              <img src="${p.image_url}" alt="${p.name}" class="w-12 h-12 object-cover rounded-lg"/>
+              <img src="${p.image_url || 'assets/images/favicon.png'}" alt="${p.name || 'Product'}" class="w-12 h-12 object-cover rounded-lg"/>
               <div class="flex-1">
-                <div class="text-sm font-medium text-on-surface truncate">${p.name}</div>
-                <div class="text-xs text-outline-variant">₹${p.price} · ${p.category_name || 'Uncategorized'}</div>
+                <div class="text-sm font-medium text-on-surface truncate">${p.name || 'Untitled'}</div>
+                <div class="text-xs text-outline-variant">₹${p.price || 0} · ${p.category_name || 'Uncategorized'}</div>
               </div>
               <span class="text-xs ${p.is_active ? 'text-green-500' : 'text-red-500'}">${p.is_active ? 'Active' : 'Inactive'}</span>
             `;
@@ -173,10 +199,37 @@
         }
       } catch (err) {
         console.error('Failed to load stats:', err);
+        document.getElementById('recentProducts').innerHTML =
+          '<p class="text-red-400 text-sm">Failed to load products.</p>';
+      }
+    }
+
+    async function loadHealth() {
+      try {
+        const health = await fetch(`${VEYLORA_API_BASE || window.location.origin}/api/health`);
+        const data = await health.json();
+        const badge = document.getElementById('healthBadge');
+        const detail = document.getElementById('healthDetail');
+        if (data.status === 'ok') {
+          badge.className = 'text-xs font-medium px-2 py-1 rounded bg-green-500/10 text-green-500';
+          badge.textContent = 'Online';
+          detail.textContent = `API ${data.status} · Database ${data.database} · ${data.environment}`;
+        } else {
+          badge.className = 'text-xs font-medium px-2 py-1 rounded bg-red-500/10 text-red-400';
+          badge.textContent = 'Degraded';
+          detail.textContent = `API ${data.status} · Database ${data.database}`;
+        }
+      } catch (err) {
+        const badge = document.getElementById('healthBadge');
+        const detail = document.getElementById('healthDetail');
+        badge.className = 'text-xs font-medium px-2 py-1 rounded bg-red-500/10 text-red-400';
+        badge.textContent = 'Offline';
+        detail.textContent = 'Unable to reach API';
       }
     }
 
     loadStats();
+    loadHealth();
   </script>
 </body>
 </html>

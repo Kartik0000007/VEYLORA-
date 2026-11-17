@@ -549,7 +549,12 @@
 </aside>
 <!-- Comprehensive Footwear Product Gallery (9 Columns) -->
 <section class="w-full lg:col-span-9 flex flex-col gap-space-xl">
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg 2xl:grid-cols-4">
+<div id="category-product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg 2xl:grid-cols-4">
+  <div class="col-span-full flex items-center justify-center py-12">
+    <p class="text-outline text-sm animate-pulse">Loading Footwear Index…</p>
+  </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg 2xl:grid-cols-4" style="display:none">
 <!-- Card 1 -->
 <article data-reveal class="group flex flex-col bg-surface-container-low rounded overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
 <div class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
@@ -999,6 +1004,40 @@
 </div>
 </section>
 </div></main>
+<script src="../scripts/load-data.js" defer></script>
+<script id="veylora-page-init" defer>
+  (() => {
+    'use strict';
+    const { loadData, renderProducts, showLoading } = window.VeyloraData || {};
+    if (!loadData) return;
+
+    const grid = document.getElementById('category-product-grid');
+    if (!grid) return;
+
+    async function init() {
+      showLoading(grid, 'Loading Footwear Index…');
+      try {
+        const data = await loadData.getCategory('footwear');
+        renderProducts(grid, data.products, { linkText: 'View on Amazon.in' });
+      } catch (err) {
+        try {
+          const products = await loadData.getProducts();
+          const filtered = products.filter(
+            (p) => p.category_slug === 'footwear' || (p.category_name || '').toLowerCase().includes('footwear')
+          );
+          renderProducts(grid, filtered, { linkText: 'View on Amazon.in' });
+        } catch (err2) {
+          grid.innerHTML = '';
+          const errEl = document.createElement('div');
+          errEl.className = 'col-span-full text-center py-12';
+          errEl.innerHTML = '<p class="text-red-400 text-sm">Unable to load products.</p>';
+          grid.appendChild(errEl);
+        }
+      }
+    }
+    init();
+  })();
+</script>
 <!-- Editorial marquee -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">

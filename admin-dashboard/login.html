@@ -18,51 +18,73 @@
         <p class="text-outline text-sm mt-2">Sign in to manage your archive</p>
       </div>
 
-      <form id="loginForm" class="space-y-4">
+      <form id="loginForm" class="space-y-4" novalidate>
         <div>
-          <label class="block text-sm font-medium text-on-surface-variant mb-1">Username</label>
+          <label for="username" class="block text-sm font-medium text-on-surface-variant mb-1">Username</label>
           <input type="text" id="username" required
             class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none transition-colors"
             placeholder="admin"/>
         </div>
         <div>
-          <label class="block text-sm font-medium text-on-surface-variant mb-1">Password</label>
+          <label for="password" class="block text-sm font-medium text-on-surface-variant mb-1">Password</label>
           <input type="password" id="password" required
             class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none transition-colors"
             placeholder="••••••••"/>
         </div>
-        <button type="submit"
-          class="w-full bg-primary text-on-primary font-medium py-3 rounded-xl hover:bg-primary-fixed transition-colors flex items-center justify-center gap-2">
+        <button type="submit" id="loginBtn"
+          class="w-full bg-primary text-on-primary font-medium py-3 rounded-xl hover:bg-primary-fixed transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
           <span>Sign In</span>
-          <span class="material-symbols-outlined">arrow_forward</span>
+          <span id="loginSpinner" class="hidden material-symbols-outlined animate-spin">loading</span>
         </button>
+
+        <p id="error" class="text-red-400 text-sm text-center mt-4 hidden"></p>
       </form>
 
-      <p id="error" class="text-red-400 text-sm text-center mt-4 hidden"></p>
       <p class="text-center text-outline text-xs mt-6">
-        Default: admin / admin123 <br/>
-        Change password after first login.
+        Forgot your password? Contact your system administrator.
       </p>
     </div>
   </div>
 
+  <script src="src/js/config.js" data-api-base=""></script>
   <script src="src/js/api.js"></script>
   <script src="src/js/auth.js"></script>
   <script>
-    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    const form = document.getElementById('loginForm');
+    const btn = document.getElementById('loginBtn');
+    const spinner = document.getElementById('loginSpinner');
+    const errorEl = document.getElementById('error');
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      errorEl.classList.add('hidden');
+      errorEl.textContent = '';
+
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
-      const errorEl = document.getElementById('error');
+
+      // UI loading state
+      btn.disabled = true;
+      spinner.classList.remove('hidden');
 
       try {
         const res = await api.post('/api/auth/login', { username, password });
-        localStorage.setItem('veylora_admin_token', res.token);
-        localStorage.setItem('veylora_admin_user', JSON.stringify(res.user));
+
+        // Server sets HttpOnly session cookie + XSRF-TOKEN cookie.
+        // CSRF token is returned in body for use on state-changing requests.
+        if (res.csrfToken) {
+          // CSRF token is also set as a cookie by the server; the body copy
+          // is a convenience for clients that can't read cookies.
+          console.debug('CSRF token received');
+        }
+
         window.location.href = 'dashboard.html';
       } catch (err) {
-        errorEl.textContent = err.message || 'Login failed';
+        errorEl.textContent = err.message || 'Login failed. Please try again.';
         errorEl.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        spinner.classList.add('hidden');
       }
     });
   </script>

@@ -12,6 +12,7 @@
   </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen">
+  <!-- Sidebar -->
   <aside class="fixed inset-y-0 left-0 z-50 w-64 bg-surface-container-low border-r border-outline-variant/30 transform -translate-x-full transition-transform duration-300" id="sidebar">
     <div class="flex items-center justify-between px-6 py-4">
       <span class="font-bold text-xl text-primary">Veylora</span>
@@ -21,21 +22,30 @@
     </div>
     <nav class="px-4 py-2 space-y-1">
       <a href="dashboard.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
-        <span class="material-symbols-outlined">dashboard</span> Dashboard
+        <span class="material-symbols-outlined">dashboard</span>
+        Dashboard
       </a>
       <a href="products.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
-        <span class="material-symbols-outlined">inventory_2</span> Products
+        <span class="material-symbols-outlined">inventory_2</span>
+        Products
       </a>
       <a href="categories.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-on-primary">
-        <span class="material-symbols-outlined">category</span> Categories
+        <span class="material-symbols-outlined">category</span>
+        Categories
+      </a>
+      <a href="aesthetics.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined">style</span>
+        Aesthetics
       </a>
       <a href="settings.html" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors">
-        <span class="material-symbols-outlined">settings</span> Settings
+        <span class="material-symbols-outlined">settings</span>
+        Settings
       </a>
     </nav>
     <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-outline-variant/30">
       <button id="logoutBtn" class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-red-400 hover:bg-red-400/10 transition-colors">
-        <span class="material-symbols-outlined">logout</span> Sign Out
+        <span class="material-symbols-outlined">logout</span>
+        Sign Out
       </button>
     </div>
   </aside>
@@ -55,57 +65,180 @@
       </a>
     </header>
 
+    <!-- Category Form (hidden by default) -->
     <div id="categoryFormContainer" class="hidden mb-6 bg-surface-container-low border border-outline-variant/30 rounded-xl p-6">
-      <h3 class="font-bold text-on-surface mb-4">Category Form</h3>
-      <form id="categoryForm">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-bold text-on-surface flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">edit</span>
+          <span id="formTitle">Add Category</span>
+        </h3>
+        <button type="button" id="cancelCategoryBtn" class="text-outline-variant hover:text-on-surface">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form id="categoryForm" class="space-y-4">
         <input type="hidden" id="categoryId"/>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="block text-sm font-medium text-on-surface-variant mb-1">Name</label>
-            <input type="text" id="formName" required class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Name <span class="text-red-400">*</span></label>
+            <input type="text" id="formName" required
+              class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"
+              placeholder="e.g. Men"/>
           </div>
           <div>
-            <label class="block text-sm font-medium text-on-surface-variant mb-1">Slug</label>
-            <input type="text" id="formSlug" required class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none" placeholder="men"/>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Slug <span class="text-red-400">*</span></label>
+            <input type="text" id="formSlug" required
+              class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"
+              placeholder="e.g. men"/>
           </div>
           <div class="md:col-span-2">
             <label class="block text-sm font-medium text-on-surface-variant mb-1">Description</label>
-            <textarea id="formDescription" rows="2" class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"></textarea>
+            <textarea id="formDescription" rows="3"
+              class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"
+              placeholder="Category description…"></textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Image URL</label>
+            <input type="url" id="formImageUrl"
+              class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"
+              placeholder="https://..."/>
+            <p class="text-[10px] text-outline-variant mt-1">Category banner image URL.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">Sort Order</label>
+            <input type="number" id="formSortOrder" value="0" min="0"
+              class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">SEO Title</label>
+            <input type="text" id="formSeoTitle"
+              class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"
+              placeholder="SEO page title"/>
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-on-surface-variant mb-1">SEO Description</label>
+            <textarea id="formSeoDescription" rows="2"
+              class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:outline-none"
+              placeholder="SEO meta description"></textarea>
+          </div>
+          <div class="md:col-span-2 flex items-center gap-3 pt-4 border-t border-outline-variant/20">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="formIsActive" checked/> <span class="text-sm text-on-surface">Active (visible on website)</span>
+            </label>
           </div>
         </div>
-        <div class="flex justify-end gap-3 mt-4">
-          <button type="button" id="cancelCategoryBtn" class="px-6 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high">Cancel</button>
-          <button type="submit" class="px-6 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed">Save</button>
+
+        <div class="md:col-span-2 flex justify-end gap-3 mt-6">
+          <button type="button" id="resetCategoryBtn" class="px-6 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">Cancel</button>
+          <button type="submit" id="saveCategoryBtn" class="px-6 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed transition-colors">Save Category</button>
         </div>
       </form>
     </div>
 
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="fixed inset-0 z-[100] hidden" aria-hidden="true">
+      <div class="fixed inset-0 bg-black/50 backdrop-blur-sm" onclick="closeConfirmModal()"></div>
+      <div class="fixed inset-0 z-10 flex items-center justify-center">
+        <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 w-full max-w-sm shadow-2xl">
+          <h3 class="font-bold text-on-surface mb-2">Confirm Action</h3>
+          <p id="confirmMessage" class="text-outline text-sm mb-6">Are you sure?</p>
+          <div class="flex justify-end gap-3">
+            <button type="button" id="confirmCancelBtn" class="px-6 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">Cancel</button>
+            <button type="button" id="confirmDeleteBtn" class="px-6 py-2 rounded-lg bg-red-500 text-on-red-500 hover:bg-red-500 transition-colors">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories Table -->
     <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl overflow-hidden">
       <table class="w-full text-left">
         <thead class="bg-surface-container-high/50">
           <tr>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Image</th>
             <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Name</th>
             <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Slug</th>
-            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Description</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Status</th>
+            <th class="px-6 py-3 text-xs font-medium text-outline uppercase">Sort</th>
             <th class="px-6 py-3 text-xs font-medium text-outline uppercase text-right">Actions</th>
           </tr>
         </thead>
-        <tbody id="categoriesTableBody">
-          <tr><td colspan="4" class="px-6 py-8 text-center text-outline">Loading categories...</td></tr>
+        <tbody id="categoriesTableBody" class="divide-y divide-outline-variant/20">
+          <tr><td colspan="6" class="px-6 py-8 text-center text-outline">Loading categories…</td></tr>
         </tbody>
       </table>
+      <div id="noCategories" class="hidden px-6 py-8 text-center text-outline">
+        No categories found.
+      </div>
     </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed bottom-4 right-4 z-[100] flex flex-col gap-2"></div>
   </div>
 
+  <script src="src/js/config.js" data-api-base=""></script>
   <script src="src/js/api.js"></script>
   <script src="src/js/auth.js"></script>
   <script>
     requireAuth();
 
+    // --- State ---
+    let categories = [];
+    let editingId = null;
+    let confirmCallback = null;
+
+    // --- Elements ---
+    const formContainer = document.getElementById('categoryFormContainer');
+    const form = document.getElementById('categoryForm');
+    const addBtn = document.getElementById('addCategoryBtn');
+    const cancelBtn = document.getElementById('cancelCategoryBtn');
+    const resetBtn = document.getElementById('resetCategoryBtn');
+    const formTitle = document.getElementById('formTitle');
+    const tbody = document.getElementById('categoriesTableBody');
+    const noCategoriesEl = document.getElementById('noCategories');
+
+    // --- Confirm Modal ---
+    const confirmModal = document.getElementById('confirmModal');
+    const confirmMessage = document.getElementById('confirmMessage');
+    const confirmCancelBtn = document.getElementById('confirmCancelBtn');
+    const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+
+    function showConfirm(message, onConfirm) {
+      confirmMessage.textContent = message;
+      confirmCallback = onConfirm;
+      confirmModal.classList.remove('hidden');
+      confirmModal.setAttribute('aria-hidden', 'false');
+    }
+    function closeConfirmModal() {
+      confirmModal.classList.add('hidden');
+      confirmModal.setAttribute('aria-hidden', 'true');
+      confirmCallback = null;
+    }
+    confirmCancelBtn.addEventListener('click', closeConfirmModal);
+    confirmDeleteBtn.addEventListener('click', () => {
+      if (confirmCallback) confirmCallback();
+      closeConfirmModal();
+    });
+
+    // --- Toast ---
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      const bg = type === 'error' ? 'bg-red-500/90' : 'bg-primary/90';
+      const textColor = type === 'error' ? 'text-on-red-500' : 'text-on-primary';
+      toast.className = `px-4 py-3 rounded-lg shadow-xl ${bg} ${textColor} text-sm font-medium min-w-[200px]`;
+      toast.textContent = message;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // --- Auth ---
     document.getElementById('logoutBtn').addEventListener('click', () => {
-      localStorage.removeItem('veylora_admin_token');
-      localStorage.removeItem('veylora_admin_user');
-      window.location.href = 'login.html';
+      logout();
     });
 
     function toggleSidebar() {
@@ -115,49 +248,48 @@
     document.getElementById('openSidebar').addEventListener('click', toggleSidebar);
     document.getElementById('closeSidebar').addEventListener('click', toggleSidebar);
 
-    let categories = [];
-    let editingId = null;
-
-    const formContainer = document.getElementById('categoryFormContainer');
-    const form = document.getElementById('categoryForm');
-    const addBtn = document.getElementById('addCategoryBtn');
-    const cancelBtn = document.getElementById('cancelCategoryBtn');
-
-    addBtn.addEventListener('click', () => {
-      editingId = null;
-      form.reset();
-      document.getElementById('categoryId').value = '';
-      formContainer.classList.remove('hidden');
-    });
-    cancelBtn.addEventListener('click', () => {
-      formContainer.classList.add('hidden');
-      editingId = null;
-    });
-
+    // --- Load Categories ---
     async function loadCategories() {
       try {
+        tbody.innerHTML = '<tr><td colspan="6" class="px-6 py-8 text-center text-outline">Loading categories…</td></tr>';
+        noCategoriesEl.classList.add('hidden');
+
         categories = await api.get('/api/categories?active=false');
         renderCategories();
       } catch (err) {
-        document.getElementById('categoriesTableBody').innerHTML =
-          '<tr><td colspan="4" class="px-6 py-8 text-center text-red-400">Failed to load</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" class="px-6 py-8 text-center text-red-400">Failed to load categories.</td></tr>';
+        showToast('Failed to load categories', 'error');
       }
     }
 
     function renderCategories() {
-      const tbody = document.getElementById('categoriesTableBody');
       tbody.innerHTML = '';
       if (categories.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center text-outline">No categories found.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" class="px-6 py-8 text-center text-outline">No categories found.</td></tr>';
         return;
       }
+
       categories.forEach(c => {
         const tr = document.createElement('tr');
         tr.className = 'hover:bg-surface-container-high/30 transition-colors';
         tr.innerHTML = `
-          <td class="px-6 py-4 font-medium text-on-surface">${c.name}</td>
-          <td class="px-6 py-4 text-outline-variant text-sm">${c.slug}</td>
-          <td class="px-6 py-4 text-outline text-sm truncate max-w-xs">${c.description || '—'}</td>
+          <td class="px-6 py-4">
+            ${c.image_url ? `<img src="${c.image_url}" alt="${c.name}" class="w-8 h-8 object-cover rounded-lg"/>` : '<span class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-[10px] text-outline">—</span>'}
+          </td>
+          <td class="px-6 py-4">
+            <div class="font-medium text-on-surface truncate max-w-xs">${c.name}</div>
+          </td>
+          <td class="px-6 py-4">
+            <span class="text-xs text-outline-variant">${c.slug}</span>
+          </td>
+          <td class="px-6 py-4">
+            <span class="px-2 py-1 rounded-full text-xs font-medium ${c.is_active ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'}">
+              ${c.is_active ? 'Active' : 'Inactive'}
+            </span>
+          </td>
+          <td class="px-6 py-4">
+            <span class="text-xs text-outline">${c.sort_order || 0}</span>
+          </td>
           <td class="px-6 py-4 text-right">
             <button onclick="editCategory(${c.id})" class="text-primary hover:underline text-sm mr-3">Edit</button>
             <button onclick="deleteCategory(${c.id})" class="text-red-400 hover:underline text-sm">Delete</button>
@@ -167,42 +299,107 @@
       });
     }
 
+    // --- Form Actions ---
+    addBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      editingId = null;
+      formTitle.textContent = 'Add Category';
+      form.reset();
+      document.getElementById('categoryId').value = '';
+      document.getElementById('formIsActive').checked = true;
+      document.getElementById('formSortOrder').value = '0';
+      formContainer.classList.remove('hidden');
+    });
+
+    cancelBtn.addEventListener('click', () => {
+      formContainer.classList.add('hidden');
+      editingId = null;
+    });
+
+    resetBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      form.reset();
+      document.getElementById('formIsActive').checked = true;
+      document.getElementById('formSortOrder').value = '0';
+      editingId = null;
+      formTitle.textContent = 'Add Category';
+    });
+
+    // --- Edit Category ---
     window.editCategory = (id) => {
       const c = categories.find(x => x.id === id);
       if (!c) return;
       editingId = id;
+      formTitle.textContent = 'Edit Category';
       document.getElementById('categoryId').value = c.id;
-      document.getElementById('formName').value = c.name;
-      document.getElementById('formSlug').value = c.slug;
+      document.getElementById('formName').value = c.name || '';
+      document.getElementById('formSlug').value = c.slug || '';
       document.getElementById('formDescription').value = c.description || '';
+      document.getElementById('formImageUrl').value = c.image_url || '';
+      document.getElementById('formSortOrder').value = c.sort_order || 0;
+      document.getElementById('formSeoTitle').value = c.seo_title || '';
+      document.getElementById('formSeoDescription').value = c.seo_description || '';
+      document.getElementById('formIsActive').checked = c.is_active !== false;
       formContainer.classList.remove('hidden');
     };
 
+    // --- Delete Category ---
     window.deleteCategory = async (id) => {
-      if (!confirm('Delete this category? Products in this category will become uncategorized.')) return;
-      try {
-        await api.delete(`/api/categories/${id}`);
-        loadCategories();
-      } catch (err) { alert(err.message || 'Delete failed'); }
+      showConfirm('Delete this category? Products in this category will become uncategorized.', async () => {
+        try {
+          await api.delete(`/api/categories/${id}`);
+          showToast('Category deleted');
+          loadCategories();
+        } catch (err) {
+          showToast(err.message || 'Delete failed', 'error');
+        }
+      });
     };
 
+    // --- Save Category ---
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
       const data = {
         name: document.getElementById('formName').value,
         slug: document.getElementById('formSlug').value,
         description: document.getElementById('formDescription').value,
+        image_url: document.getElementById('formImageUrl').value,
+        sort_order: parseInt(document.getElementById('formSortOrder').value) || 0,
+        seo_title: document.getElementById('formSeoTitle').value || null,
+        seo_description: document.getElementById('formSeoDescription').value || null,
+        is_active: document.getElementById('formIsActive').checked,
       };
+
+      if (!data.name || !data.slug) {
+        showToast('Name and slug are required', 'error');
+        return;
+      }
+
       try {
+        const btn = document.getElementById('saveCategoryBtn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Saving…';
+        btn.disabled = true;
+
         if (editingId) {
           await api.put(`/api/categories/${editingId}`, data);
+          showToast('Category updated');
         } else {
           await api.post('/api/categories', data);
+          showToast('Category created');
         }
+
         formContainer.classList.add('hidden');
         editingId = null;
         loadCategories();
-      } catch (err) { alert(err.message || 'Save failed'); }
+      } catch (err) {
+        showToast(err.message || 'Save failed', 'error');
+      } finally {
+        const btn = document.getElementById('saveCategoryBtn');
+        btn.textContent = 'Save Category';
+        btn.disabled = false;
+      }
     });
 
     loadCategories();

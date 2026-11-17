@@ -523,7 +523,12 @@
 </aside>
 <!-- RIGHT CATALOG: 3-COLUMN PRODUCT GRID (STRICTLY NO HUMANS) -->
 <section class="lg:col-span-9 flex flex-col gap-space-lg">
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter 2xl:grid-cols-4">
+<div id="category-product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter 2xl:grid-cols-4">
+  <div class="col-span-full flex items-center justify-center py-12">
+    <p class="text-outline text-sm animate-pulse">Loading Women’s Edit…</p>
+  </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter 2xl:grid-cols-4" style="display:none">
 <!-- CARD 1: Mulberry Silk Slip Dress -->
 <article data-reveal class="group bg-surface-container-low rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
 <div>
@@ -939,6 +944,40 @@
     if (headerLogo && !headerLogo.getAttribute('src').includes('veylora-luxury-monogram-logo')) {
       headerLogo.setAttribute('src', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCrt1OPBLFY6vTEyH2wQU6xUfofnzvs7bI1TYCaPJWp1Vv00KIbmM8AHf51q9avN9ZEGd3vCJOTUX4rtahfpDWvU5hcnSeT9U8qX2H11C4JfoQxJovOyPm6kJy2xUkfcbmw7lxpugqYwrW7F024tdt4UP60oq5VesCGV3PkLeLiFCQtOfLcWllgd-Mf-5hCzLzeZ6fX8C0CY44E4C3L9jn37vJIQeTn4oEfH7V8hf2WpOtlhEqZ6CdH');
     }
+  })();
+</script>
+<script src="../scripts/load-data.js" defer></script>
+<script id="veylora-page-init" defer>
+  (() => {
+    'use strict';
+    const { loadData, renderProducts, showLoading } = window.VeyloraData || {};
+    if (!loadData) return;
+
+    const grid = document.getElementById('category-product-grid');
+    if (!grid) return;
+
+    async function init() {
+      showLoading(grid, 'Loading Women’s Edit…');
+      try {
+        const data = await loadData.getCategory('women');
+        renderProducts(grid, data.products, { linkText: 'View on Amazon.in' });
+      } catch (err) {
+        try {
+          const products = await loadData.getProducts();
+          const filtered = products.filter(
+            (p) => p.category_slug === 'women' || (p.category_name || '').toLowerCase().includes('women')
+          );
+          renderProducts(grid, filtered, { linkText: 'View on Amazon.in' });
+        } catch (err2) {
+          grid.innerHTML = '';
+          const errEl = document.createElement('div');
+          errEl.className = 'col-span-full text-center py-12';
+          errEl.innerHTML = '<p class="text-red-400 text-sm">Unable to load products.</p>';
+          grid.appendChild(errEl);
+        }
+      }
+    }
+    init();
   })();
 </script></main>
 <!-- Editorial marquee -->
