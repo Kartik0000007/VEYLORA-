@@ -10,7 +10,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
 
 const API_BASE = process.env.API_BASE || 'http://localhost:5000';
 const OUT_DIR = path.join(__dirname, '../website/frontend/data');
