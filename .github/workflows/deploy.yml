@@ -1,7 +1,9 @@
-name: Deploy Veylora
+name: CI
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
 
 env:
@@ -9,14 +11,10 @@ env:
 
 jobs:
   # -----------------------------------------------------------
-  # Job 1: Build static data from API
-  # Fetches products/categories/settings from backend and
-  # writes JSON files to website/frontend/data/
+  # Job 1: Lint and syntax validation
   # -----------------------------------------------------------
-  build:
+  lint:
     runs-on: ubuntu-latest
-    outputs:
-      build-status: ${{ steps.build-step.outputs.status }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,69 +23,68 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
 
-      - name: Run static build (API → JSON)
-        id: build-step
-        run: node build.js
-        working-directory: ./scripts
-        env:
-          API_BASE: ${{ secrets.API_BACKEND_URL }}
-
-      - name: Commit regenerated data files
+      - name: Syntax-check backend JS files
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add website/frontend/data/
-          git commit -m "chore: regenerate static data from API" || echo "No changes to commit"
-          git push
+          for f in backend/src/**/*.js backend/scripts/**/*.js scripts/**/*.js; do
+            node --check "$f" || exit 1
+          done
+
+      - name: Syntax-check frontend JS files
+        run: |
+          for f in website/frontend/scripts/**/*.js admin-dashboard/src/js/**/*.js; do
+            node --check "$f" || exit 1
+          done
+
+      - name: Verify no secrets committed
+        run: |
+          if grep -rqi "password\|secret\|api_key\|apikey" .env.example 2>/dev/null; then
+            echo "WARNING: .env.example may contain sensitive values"
+          fi
+          test ! -f .env || { echo "ERROR: .env file committed"; exit 1; }
 
   # -----------------------------------------------------------
-  # Job 2: Deploy main website to Vercel
+  # Job 2: Validate build script configuration
   # -----------------------------------------------------------
-  deploy-website:
-    needs: build
+  validate-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_WEBSITE }}
-          working-directory: ./website
-          vercel-args: '--prod'
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Validate build script syntax
+        run: node --check scripts/build.js
+
+      - name: Verify build output directory reference
+        run: |
+          if grep -q "website/frontend/data" scripts/build.js; then
+            echo "✓ Build script outputs to website/frontend/data/"
+          else
+            echo "ERROR: Build script output directory mismatch"
+            exit 1
+          fi
 
   # -----------------------------------------------------------
-  # Job 3: Deploy admin dashboard to Vercel
+  # Job 3: Validate environment template
   # -----------------------------------------------------------
-  deploy-admin:
-    needs: build
+  validate-env:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy Admin Dashboard to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_ADMIN }}
-          working-directory: ./admin-dashboard
-          vercel-args: '--prod'
-
-  # -----------------------------------------------------------
-  # Job 4: Deploy backend to Render (via deploy hook)
-  # -----------------------------------------------------------
-  deploy-backend:
-    needs: build
-    runs-on: ubuntu-latest
-    if: ${{ secrets.RENDER_DEPLOY_HOOK != '' }}
-    steps:
-      - name: Trigger Render deploy
+      - name: Verify .env.example has required variables
         run: |
-          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+          for var in DATABASE_URL JWT_SECRET CORS_ORIGIN PORT NODE_ENV; do
+            if grep -q "^${var}=" .env.example; then
+              echo "✓ $var defined in .env.example"
+            else
+              echo "ERROR: $var missing from .env.example"
+              exit 1
+            fi
+          done
