@@ -44,3 +44,6 @@ temp/
 __pycache__/
 *.pyc
 *.pyo
+
+# Agent tooling (not project source)
+.agent/
